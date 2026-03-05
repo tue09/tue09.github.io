@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tue Le | AI Research</title>
+    <meta
+      name="description"
+      content="Personal academic website of Tue Le, AI researcher focusing on post-training large language models for code and reasoning."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand">Tue Le</a>
+        <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#education">Education</a>
+          <a href="#honors">Honors</a>
+          <a href="#resume">Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <p class="eyebrow reveal">AI Researcher | PhD Track in Computer Science</p>
+        <h1 class="reveal" style="--delay: 0.1s">Tue Le</h1>
+        <p class="lead reveal" style="--delay: 0.2s">
+          Researching post-training for large language models, with emphasis on reinforcement fine-tuning,
+          reliability, and generalization in code and reasoning tasks.
+        </p>
+        <div class="hero-cta reveal" style="--delay: 0.3s">
+          <a class="btn btn-primary" href="#publications">View Publications</a>
+          <a class="btn btn-secondary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
+        </div>
+        <ul class="contact-row reveal" style="--delay: 0.4s">
+          <li><a href="mailto:tue209003@gmail.com">tue209003@gmail.com</a></li>
+          <li><a href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
+          <li><a href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+
+      <section id="about" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">About</p>
+          <h2>Research Profile</h2>
+        </div>
+        <div class="panel reveal" style="--delay: 0.1s">
+          <p>
+            I am an AI researcher based in Hanoi, Vietnam. My work centers on post-training large language models,
+            particularly reinforcement fine-tuning methods that improve alignment, robustness, and out-of-distribution
+            generalization for code and reasoning.
+          </p>
+          <p>
+            I have worked across both academic and applied settings, including AI research roles at Fsoft AI Center,
+            VinBigdata Institute, and BKAI labs. I am actively building a long-term research agenda at the intersection
+            of reliable LLM systems, optimization, and practical deployment.
+          </p>
+          <div class="chips">
+            <span>Post-training LLMs</span>
+            <span>Reinforcement Fine-Tuning</span>
+            <span>Code Intelligence</span>
+            <span>Reasoning Models</span>
+            <span>Model Alignment</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Publications</p>
+          <h2>Selected Papers</h2>
+        </div>
+
+        <div class="pub-grid">
+          <article class="pub-card reveal">
+            <p class="venue">NAACL 2025</p>
+            <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
+            <p>Co-first author</p>
+            <a href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+          </article>
+
+          <article class="pub-card reveal" style="--delay: 0.05s">
+            <p class="venue">ACL 2025 (Findings)</p>
+            <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
+            <p>Co-first author</p>
+            <a href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+          </article>
+
+          <article class="pub-card reveal" style="--delay: 0.1s">
+            <p class="venue">EMNLP 2025 (Findings)</p>
+            <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
+            <p>First author</p>
+            <a href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+          </article>
+
+          <article class="pub-card reveal" style="--delay: 0.15s">
+            <p class="venue">NeurIPS 2025</p>
+            <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
+            <p>First author</p>
+            <a href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
+          </article>
+
+          <article class="pub-card reveal" style="--delay: 0.2s">
+            <p class="venue">AAAI 2026</p>
+            <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
+            <p>Co-author</p>
+            <span class="coming-soon">Link not public in resume</span>
+          </article>
+
+          <article class="pub-card reveal" style="--delay: 0.25s">
+            <p class="venue">Under Review</p>
+            <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
+            <p>Co-first author</p>
+            <a href="https://www.arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Preprint</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="education" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2>Academic Background</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <h3>Hanoi University of Science and Technology</h3>
+            <p class="meta">B.S. in Computer Science (Talented Program) | Sep 2021 - Jul 2025</p>
+            <p>GPA: 3.4/4.0, Hanoi, Vietnam</p>
+          </article>
+          <article class="timeline-item reveal" style="--delay: 0.1s">
+            <h3>Ha Tinh High School for Gifted Students</h3>
+            <p class="meta">Math Honors Class | Aug 2018 - Jun 2021</p>
+            <p>Grade: 9.4/10, Ha Tinh, Vietnam</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="honors" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Honors</p>
+          <h2>Awards & Distinctions</h2>
+        </div>
+        <div class="panel reveal" style="--delay: 0.1s">
+          <ul class="honor-list">
+            <li>Second Prize, Vietnam National Mathematical Olympiad (VMO), 2021</li>
+            <li>Third Prize, Vietnam National Mathematical Olympiad (VMO), 2020</li>
+            <li>Participant, Vietnam Team Selection Tests for IMO</li>
+            <li>Odon Vallet Scholarship, 2020</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="resume" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Resume</p>
+          <h2>Curriculum Vitae</h2>
+        </div>
+        <div class="panel resume-panel reveal" style="--delay: 0.1s">
+          <p>
+            Full CV with experience, activities, and publication details.
+          </p>
+          <div class="resume-actions">
+            <a class="btn btn-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
+            <a class="btn btn-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download PDF</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Copyright <span id="year"></span> Tue Le</p>
+        <p>Built for GitHub Pages</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
