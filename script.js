@@ -1,31 +1,27 @@
 const root = document.documentElement;
 const yearNode = document.getElementById("year");
-const menuButton = document.querySelector(".menu-btn");
+const themeButton = document.getElementById("themeToggle");
+const themeValue = document.getElementById("themeToggleValue");
+const menuButton = document.getElementById("menuToggle");
 const nav = document.querySelector(".site-nav");
-const themeToggle = document.getElementById("themeToggle");
-const themeToggleValue = document.getElementById("themeToggleValue");
 
-function setTheme(theme) {
-  root.setAttribute("data-theme", theme);
-  if (themeToggleValue) {
-    themeToggleValue.textContent = theme === "light" ? "Light" : "Dark";
-  }
-  if (themeToggle) {
-    themeToggle.setAttribute(
-      "aria-label",
-      theme === "light" ? "Switch to dark mode" : "Switch to light mode"
-    );
-    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-  }
-}
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  root.setAttribute("data-theme", isDark ? "dark" : "light");
 
-function toggleTheme() {
-  const nextTheme = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-  setTheme(nextTheme);
+  if (themeValue) {
+    themeValue.textContent = isDark ? "Dark" : "Light";
+  }
+
+  if (themeButton) {
+    themeButton.setAttribute("aria-pressed", String(isDark));
+    themeButton.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+
   try {
-    localStorage.setItem("theme", nextTheme);
+    localStorage.setItem("site-theme", isDark ? "dark" : "light");
   } catch (error) {
-    // Ignore storage failures and keep the in-memory theme.
+    // Storage is optional for this site.
   }
 }
 
@@ -33,10 +29,13 @@ if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
 }
 
-setTheme(root.getAttribute("data-theme") || "dark");
+applyTheme(root.getAttribute("data-theme") || "dark");
 
-if (themeToggle) {
-  themeToggle.addEventListener("click", toggleTheme);
+if (themeButton) {
+  themeButton.addEventListener("click", () => {
+    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
 }
 
 if (menuButton && nav) {
@@ -54,19 +53,21 @@ if (menuButton && nav) {
 }
 
 const revealNodes = document.querySelectorAll(".reveal");
-if (revealNodes.length && "IntersectionObserver" in window) {
+
+if ("IntersectionObserver" in window && revealNodes.length > 0) {
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) {
           return;
         }
+
         entry.target.classList.add("in-view");
         revealObserver.unobserve(entry.target);
       });
     },
     {
-      threshold: 0.16,
+      threshold: 0.14,
       rootMargin: "0px 0px -8% 0px",
     }
   );

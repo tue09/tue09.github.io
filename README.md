@@ -1,34 +1,24 @@
-# Tue Le Personal Website
+# Tue Le Arcade Portfolio
 
-Static personal portfolio for GitHub Pages.
+Static GitHub Pages website for Tue Le, rebuilt with a retro 2000s game theme and a dark/light mode toggle.
 
-## Local structure
+## Files
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `assets/LeDinhTriTue_resume.pdf`
+- `index.html` - main single-page portfolio
+- `styles.css` - retro arcade visual system and theme tokens
+- `script.js` - mode toggle, mobile navigation, reveal effects
+- `404.html` - matching GitHub Pages fallback
+- `assets/LeDinhTriTue_resume.pdf` - source resume PDF linked from the site
 
-## Deploy to GitHub Pages (`username.github.io`)
-
-For your GitHub account (`tue09`), create a repository named:
-
-- `tue09.github.io`
-
-Then run:
+## Deploy
 
 ```bash
 cd /mnt/data/safetyCode/tue09.github.io
-git init
 git add .
-git commit -m "Initial personal academic website"
-git branch -M main
-git remote add origin https://github.com/tue09/tue09.github.io.git
-git push -u origin main
+git commit -m "Rewrite site with arcade theme"
+git push
 ```
 
-After push, your website will be live at:
+Site URL:
 
 - `https://tue09.github.io`
-
-GitHub Pages is automatically enabled for this special repository name.
