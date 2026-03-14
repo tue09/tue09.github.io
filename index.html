@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Le Dinh Tri Tue | AI Researcher</title>
+    <title>Le Dinh Tri Tue | Academic Homepage</title>
     <meta
       name="description"
-      content="Academic website of Le Dinh Tri Tue, AI researcher working on post-training for large language models, AI for code, reasoning, and alignment."
+      content="Academic homepage of Le Dinh Tri Tue, AI researcher focused on post-training for large language models, AI for code, reasoning, and reinforcement fine-tuning."
     />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <script>
       (() => {
         try {
@@ -16,24 +16,27 @@
           const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
           document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.setAttribute("data-theme", "light");
         }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Spectral:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="container topbar">
         <a class="brand" href="#top" aria-label="Go to top of page">
-          <span class="brand-name">Le Dinh Tri Tue</span>
-          <span class="brand-role">AI researcher</span>
+          <span class="brand-mark">LT</span>
+          <span class="brand-text">
+            <strong>Le Dinh Tri Tue</strong>
+            <span>AI researcher</span>
+          </span>
         </a>
 
         <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">
@@ -51,308 +54,336 @@
 
         <div class="header-actions">
           <a class="button button-secondary desktop-only" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="true">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
             <span>Theme</span>
-            <strong id="themeLabel">Dark</strong>
+            <strong id="themeLabel">Light</strong>
           </button>
         </div>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Hanoi, Vietnam</p>
-            <h1>Research on post-training large language models for code, reasoning, and reliability.</h1>
-            <p class="hero-lead">
-              I work on reinforcement fine-tuning, AI for code, and evaluation methods that improve generalization,
-              reliability, and alignment in LLM systems.
-            </p>
-            <p class="hero-body">
-              My recent work spans post-training pipelines for large language models, reasoning-heavy evaluation, and
-              practical systems for code-focused model improvement. I am currently an AI Resident at Fsoft AI Center.
+    <main id="top" class="page-shell">
+      <div class="container shell-grid">
+        <aside class="profile-rail">
+          <div class="profile-card">
+            <div class="profile-mark" aria-hidden="true">LT</div>
+            <p class="eyebrow">Academic profile</p>
+            <h1>Le Dinh Tri Tue</h1>
+            <p class="profile-role">AI Resident at Fsoft AI Center</p>
+            <p class="profile-role muted">B.S. in Computer Science, Hanoi University of Science and Technology</p>
+            <p class="profile-summary">
+              My research focuses on post-training large language models, particularly for AI for code and reasoning
+              tasks. I mainly work on reinforcement fine-tuning to improve generalization, reliability, and alignment.
             </p>
 
-            <div class="hero-actions">
-              <a class="button button-primary" href="#publications">Selected publications</a>
-              <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+            <div class="profile-actions">
+              <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
               <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
             </div>
-          </div>
 
-          <aside class="hero-panel">
-            <div class="panel-block">
-              <span class="panel-label">Current position</span>
-              <strong>AI Resident</strong>
-              <p>Fsoft AI Center</p>
+            <div class="opportunity-card">
+              <span class="opportunity-label">PhD applications</span>
+              <p>Open to PhD opportunities in machine learning, NLP, post-training, AI for code, and reasoning.</p>
             </div>
 
-            <div class="panel-block">
-              <span class="panel-label">Research interests</span>
-              <ul class="tag-list">
-                <li>Post-training for LLMs</li>
-                <li>Reinforcement fine-tuning</li>
-                <li>AI for code</li>
-                <li>Reasoning and alignment</li>
-              </ul>
+            <dl class="fact-list">
+              <div>
+                <dt>Location</dt>
+                <dd>Hanoi, Vietnam</dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd><a href="mailto:tue209003@gmail.com">tue209003@gmail.com</a></dd>
+              </div>
+              <div>
+                <dt>Mobile</dt>
+                <dd><a href="tel:0835224458">0835 224 458</a></dd>
+              </div>
+            </dl>
+
+            <div class="profile-links">
+              <a href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+              <a href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
 
-            <div class="panel-block">
-              <span class="panel-label">Academic profile</span>
-              <p>B.S. in Computer Science, Talented Program, Hanoi University of Science and Technology</p>
+            <ul class="interest-pills" aria-label="Research interests">
+              <li>Post-training</li>
+              <li>AI for code</li>
+              <li>Reasoning</li>
+              <li>RFT</li>
+              <li>Alignment</li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="content-column">
+          <section class="section" id="about">
+            <div class="section-heading">
+              <p class="eyebrow">About</p>
+              <h2>Research overview</h2>
             </div>
-          </aside>
-        </div>
-      </section>
 
-      <section class="section" id="about">
-        <div class="container section-layout">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>Research profile</h2>
-          </div>
+            <div class="card-grid card-grid-two">
+              <article class="section-card lead-card">
+                <p>
+                  I work on post-training large language models, with emphasis on code and reasoning tasks. My research
+                  spans reinforcement fine-tuning, evaluation, and training strategies that improve generalization,
+                  reliability, and alignment.
+                </p>
+                <p>
+                  Before joining Fsoft AI Center, I worked at VinBigdata Institute on multimodal language models and
+                  audio-text alignment. I also conducted research at BKAI on optimization algorithms, topic models, and
+                  combinatorial optimization.
+                </p>
+              </article>
 
-          <article class="content-card prose-card">
-            <p>
-              I am an AI researcher focused on post-training large language models, especially for code and reasoning
-              tasks. My work emphasizes reinforcement fine-tuning, evaluation, and methods that improve reliability and
-              alignment.
-            </p>
-            <p>
-              Before joining Fsoft AI Center, I worked at VinBigdata Institute on multimodal language models and
-              speech-language systems. I also conducted research at BKAI on optimization methods for neural networks,
-              topic models, and combinatorial optimization.
-            </p>
-          </article>
+              <article class="section-card">
+                <h3>Current interests</h3>
+                <ul class="clean-list">
+                  <li>Post-training pipelines for large language models</li>
+                  <li>Reinforcement fine-tuning for code and reasoning</li>
+                  <li>Evaluation and reliability on long-horizon tasks</li>
+                  <li>Alignment-aware model improvement methods</li>
+                </ul>
+              </article>
+            </div>
+          </section>
 
-          <article class="content-card">
-            <h3>Research areas</h3>
-            <ul class="simple-list">
-              <li>Post-training for large language models</li>
-              <li>Reinforcement fine-tuning and generalization</li>
-              <li>AI for code and long-horizon reasoning</li>
-              <li>Reliability, evaluation, and alignment</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+          <section class="section" id="publications">
+            <div class="section-heading">
+              <p class="eyebrow">Publications</p>
+              <h2>Selected publications</h2>
+              <p class="section-note">Selected papers from the resume, ordered by topic relevance and recency.</p>
+            </div>
 
-      <section class="section" id="publications">
-        <div class="container">
-          <div class="section-heading section-heading-wide">
-            <p class="eyebrow">Publications</p>
-            <h2>Selected papers</h2>
-            <p class="section-note">A selection from the resume. External links are included when available.</p>
-          </div>
-
-          <div class="publication-list">
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>NeurIPS 2025</span>
-                <span>First author</span>
-              </div>
-              <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
-              <p>Post-training large language models with token-level self-play and importance-aware guidance.</p>
-              <a href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>EMNLP 2025</span>
-                <span>First author</span>
-              </div>
-              <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
-              <p>Optimization methods for topic models with multiple surrogate objectives.</p>
-              <a href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>ACL 2025</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
-              <p>Topic model improvements using optimal transport and contrastive learning.</p>
-              <a href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>NAACL 2025</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
-              <p>Sharpness-aware optimization for more stable and effective topic modeling.</p>
-              <a href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>AAAI 2026</span>
-                <span>Co-author</span>
-              </div>
-              <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
-              <p>Knowledge distillation for large language models with multi-cost Wasserstein objectives.</p>
-              <span class="muted-note">Public link not listed in the resume.</span>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>Under review</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
-              <p>A benchmark for coding agents in realistic, long-horizon software evolution tasks.</p>
-              <a href="https://arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Open preprint</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="experience">
-        <div class="container">
-          <div class="section-heading section-heading-wide">
-            <p class="eyebrow">Experience</p>
-            <h2>Work and research experience</h2>
-          </div>
-
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>AI Resident</h3>
-                  <p>Fsoft AI Center</p>
+            <div class="publication-stack">
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">NeurIPS 2025</span>
+                  <span class="meta-badge meta-badge-muted">First author</span>
+                  <span class="meta-badge meta-badge-soft">LLM post-training</span>
                 </div>
-                <span>May 2025 - Present</span>
-              </div>
-              <ul class="simple-list">
-                <li>Research on post-training for LLMs, reinforcement fine-tuning, and AI for code.</li>
-                <li>Develop and evaluate training pipelines for reliability and generalization on reasoning and coding tasks.</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>AI Engineer</h3>
-                  <p>VinBigdata Institute</p>
+                <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
+                <p>Research on token-level self-play for improving large language models.</p>
+                <div class="publication-links">
+                  <a href="https://openreview.net/pdf?id=3VvdoCcVPU" target="_blank" rel="noopener noreferrer">Paper</a>
                 </div>
-                <span>Jul 2024 - May 2025</span>
-              </div>
-              <ul class="simple-list">
-                <li>Worked on multimodal LLMs, audio-text alignment, and post-training for language models.</li>
-                <li>Built and trained multimodal systems for speech-language understanding and generation.</li>
-              </ul>
-            </article>
+              </article>
 
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Research Student</h3>
-                  <p>Data Science Laboratory, BKAI - HUST</p>
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">Under review</span>
+                  <span class="meta-badge meta-badge-muted">Co-first author</span>
+                  <span class="meta-badge meta-badge-soft">Coding agents</span>
                 </div>
-                <span>Oct 2023 - Sep 2025</span>
-              </div>
-              <ul class="simple-list">
-                <li>Studied optimization algorithms for neural networks, multi-objective optimization, and sharpness-aware methods.</li>
-                <li>Designed training algorithms to improve stability and generalization.</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Research Student</h3>
-                  <p>MSO Laboratory, BKAI - HUST</p>
+                <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
+                <p>Benchmarking coding agents in realistic long-horizon software evolution settings.</p>
+                <div class="publication-links">
+                  <a href="https://arxiv.org/abs/2512.18470" target="_blank" rel="noopener noreferrer">Preprint</a>
                 </div>
-                <span>Feb 2023 - Jan 2024</span>
+              </article>
+
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">AAAI 2026</span>
+                  <span class="meta-badge meta-badge-muted">Co-author</span>
+                  <span class="meta-badge meta-badge-soft">Distillation</span>
+                </div>
+                <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
+                <p>Knowledge distillation for large language models using multi-cost Wasserstein objectives.</p>
+              </article>
+
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">EMNLP 2025</span>
+                  <span class="meta-badge meta-badge-muted">First author</span>
+                  <span class="meta-badge meta-badge-soft">Topic models</span>
+                </div>
+                <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
+                <p>Optimization strategies for neural topic models with multiple surrogate objectives.</p>
+                <div class="publication-links">
+                  <a href="https://aclanthology.org/2025.findings-emnlp.9/" target="_blank" rel="noopener noreferrer">Paper</a>
+                </div>
+              </article>
+
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">ACL 2025</span>
+                  <span class="meta-badge meta-badge-muted">Co-first author</span>
+                  <span class="meta-badge meta-badge-soft">Topic models</span>
+                </div>
+                <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
+                <p>Improving neural topic models via optimal transport and contrastive learning.</p>
+                <div class="publication-links">
+                  <a href="https://aclanthology.org/2025.findings-acl.715/" target="_blank" rel="noopener noreferrer">Paper</a>
+                </div>
+              </article>
+
+              <article class="publication-item">
+                <div class="publication-badges">
+                  <span class="meta-badge">NAACL 2025</span>
+                  <span class="meta-badge meta-badge-muted">Co-first author</span>
+                  <span class="meta-badge meta-badge-soft">Optimization</span>
+                </div>
+                <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
+                <p>Sharpness-aware optimization for topic models with stronger document representations.</p>
+                <div class="publication-links">
+                  <a href="https://aclanthology.org/2025.naacl-long.231/" target="_blank" rel="noopener noreferrer">Paper</a>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="experience">
+            <div class="section-heading">
+              <p class="eyebrow">Experience</p>
+              <h2>Research and industry experience</h2>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-item">
+                <div class="timeline-header">
+                  <div>
+                    <h3>AI Resident</h3>
+                    <p>Fsoft AI Center</p>
+                  </div>
+                  <span>May 2025 - Present</span>
+                </div>
+                <ul class="clean-list">
+                  <li>Research topics: post-training for LLMs, reinforcement fine-tuning, and AI for code.</li>
+                  <li>Develop and evaluate training pipelines to improve reliability and generalization on reasoning and code tasks.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-item">
+                <div class="timeline-header">
+                  <div>
+                    <h3>AI Engineer</h3>
+                    <p>VinBigdata Institute</p>
+                  </div>
+                  <span>Jul 2024 - May 2025</span>
+                </div>
+                <ul class="clean-list">
+                  <li>Research topics: multimodal LLMs, audio-text alignment, and post-training for LLMs.</li>
+                  <li>Built and trained multimodal models focused on speech-language understanding and generation.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-item">
+                <div class="timeline-header">
+                  <div>
+                    <h3>Research Student</h3>
+                    <p>Data Science Laboratory, BKAI - HUST</p>
+                  </div>
+                  <span>Oct 2023 - Sep 2025</span>
+                </div>
+                <ul class="clean-list">
+                  <li>Research topics: optimization algorithms for neural networks, multi-objective optimization, and sharpness-aware minimization.</li>
+                  <li>Designed and evaluated optimization algorithms to improve training stability and generalization.</li>
+                </ul>
+              </article>
+
+              <article class="timeline-item">
+                <div class="timeline-header">
+                  <div>
+                    <h3>Research Student</h3>
+                    <p>MSO Laboratory, BKAI - HUST</p>
+                  </div>
+                  <span>Feb 2023 - Jan 2024</span>
+                </div>
+                <ul class="clean-list">
+                  <li>Research topics: evolutionary algorithms, vehicle routing problem, and combinatorial optimization.</li>
+                  <li>Developed metaheuristic algorithms for VRP variants.</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="education">
+            <div class="section-heading">
+              <p class="eyebrow">Education</p>
+              <h2>Education, honors, and activities</h2>
+            </div>
+
+            <div class="card-grid card-grid-three">
+              <article class="section-card">
+                <h3>Education</h3>
+                <ul class="clean-list">
+                  <li>Hanoi University of Science and Technology, B.S. Computer Science (Talented Program), GPA 3.4/4.0, Sep 2021 - Jul 2025</li>
+                  <li>Ha Tinh High School for Gifted Students, Math Honors Class, Grade 9.4/10, Aug 2018 - Jun 2021</li>
+                </ul>
+              </article>
+
+              <article class="section-card">
+                <h3>Honors and awards</h3>
+                <ul class="clean-list">
+                  <li>Second Prize in VMO 2021 and Third Prize in VMO 2020</li>
+                  <li>Participant in the Vietnam Team Selection Tests</li>
+                  <li>Odon Vallet Scholarship, 2020</li>
+                </ul>
+              </article>
+
+              <article class="section-card">
+                <h3>Activities</h3>
+                <ul class="clean-list">
+                  <li>SOICT Hackathon 2023 - Routing Optimization (Samsung-Tiki track)</li>
+                  <li>IAI Hackathon 2024 - Intelligence Decode-a-thon</li>
+                  <li>SOICT Hackathon 2024 - Legal Document Retrieval (Naver track)</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="resume">
+            <div class="resume-band">
+              <div>
+                <p class="eyebrow">Curriculum vitae</p>
+                <h2>Full resume, links, and publication details</h2>
+                <p class="section-note">The PDF includes the complete experience list, publication links, and contact details.</p>
               </div>
-              <ul class="simple-list">
-                <li>Researched evolutionary algorithms, vehicle routing problems, and combinatorial optimization.</li>
-                <li>Developed metaheuristic algorithms for VRP variants.</li>
-              </ul>
-            </article>
-          </div>
+
+              <div class="resume-actions">
+                <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
+                <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="section" id="contact">
+            <div class="section-heading">
+              <p class="eyebrow">Contact</p>
+              <h2>Get in touch</h2>
+            </div>
+
+            <div class="contact-grid">
+              <a class="contact-card" href="mailto:tue209003@gmail.com">
+                <span>Email</span>
+                <strong>tue209003@gmail.com</strong>
+              </a>
+              <a class="contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
+                <span>GitHub</span>
+                <strong>github.com/tue09</strong>
+              </a>
+              <a class="contact-card" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
+                <span>Hugging Face</span>
+                <strong>huggingface.co/LeTue09</strong>
+              </a>
+              <a class="contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
+                <span>LinkedIn</span>
+                <strong>linkedin.com/in/tue-le-2b1769280</strong>
+              </a>
+            </div>
+          </section>
         </div>
-      </section>
-
-      <section class="section" id="education">
-        <div class="container two-column-grid">
-          <article class="content-card">
-            <p class="eyebrow">Education</p>
-            <h2>Academic background</h2>
-            <ul class="simple-list">
-              <li>Hanoi University of Science and Technology, B.S. in Computer Science, Talented Program, GPA 3.4/4.0, Sep 2021 - Jul 2025</li>
-              <li>Ha Tinh High School for Gifted Students, Math Honors Class, Grade 9.4/10, Aug 2018 - Jun 2021</li>
-            </ul>
-          </article>
-
-          <article class="content-card">
-            <p class="eyebrow">Honors</p>
-            <h2>Selected awards</h2>
-            <ul class="simple-list">
-              <li>Second Prize in VMO 2021</li>
-              <li>Third Prize in VMO 2020</li>
-              <li>Participant in the Vietnam Team Selection Tests</li>
-              <li>Odon Vallet scholarship, 2020</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="resume">
-        <div class="container resume-card">
-          <div>
-            <p class="eyebrow">Curriculum Vitae</p>
-            <h2>Full CV and publication details</h2>
-            <p class="section-note">The PDF resume includes the full publication list, role descriptions, and external links.</p>
-          </div>
-
-          <div class="resume-actions">
-            <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-            <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="container">
-          <div class="section-heading section-heading-wide">
-            <p class="eyebrow">Contact</p>
-            <h2>Professional links</h2>
-          </div>
-
-          <div class="contact-grid">
-            <a class="contact-card" href="mailto:tue209003@gmail.com">
-              <span>Email</span>
-              <strong>tue209003@gmail.com</strong>
-            </a>
-            <a class="contact-card" href="tel:0835224458">
-              <span>Phone</span>
-              <strong>0835 224 458</strong>
-            </a>
-            <a class="contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
-              <span>GitHub</span>
-              <strong>github.com/tue09</strong>
-            </a>
-            <a class="contact-card" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
-              <span>Hugging Face</span>
-              <strong>huggingface.co/LeTue09</strong>
-            </a>
-            <a class="contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
-              <span>LinkedIn</span>
-              <strong>linkedin.com/in/tue-le-2b1769280</strong>
-            </a>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>Le Dinh Tri Tue</p>
-        <p>Updated <span id="year"></span></p>
+        <p>Academic homepage for research and PhD applications</p>
+        <p><span id="year"></span></p>
       </div>
     </footer>
 

@@ -4,6 +4,8 @@ const themeLabel = document.getElementById("themeLabel");
 const navToggle = document.getElementById("navToggle");
 const siteNav = document.getElementById("siteNav");
 const yearNode = document.getElementById("year");
+const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+const sections = Array.from(document.querySelectorAll("main section[id]"));
 
 function applyTheme(theme) {
   const next = theme === "dark" ? "dark" : "light";
@@ -52,4 +54,39 @@ if (navToggle && siteNav) {
 
 if (yearNode) {
   yearNode.textContent = String(new Date().getFullYear());
+}
+
+if (sections.length > 0 && navLinks.length > 0 && "IntersectionObserver" in window) {
+  const linkMap = {};
+
+  navLinks.forEach((link) => {
+    const target = link.getAttribute("href");
+    if (target && target.charAt(0) === "#") {
+      linkMap[target.slice(1)] = link;
+    }
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        const link = id ? linkMap[id] : null;
+
+        if (!link) {
+          return;
+        }
+
+        if (entry.isIntersecting) {
+          navLinks.forEach((node) => node.classList.remove("is-active"));
+          link.classList.add("is-active");
+        }
+      });
+    },
+    {
+      rootMargin: "-30% 0px -55% 0px",
+      threshold: 0.01,
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
 }
