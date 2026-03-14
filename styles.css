@@ -561,10 +561,6 @@ h3 {
 }
 
 .section-heading h2 {
-  max-width: 15ch;
-}
-
-.section-title-wide {
   max-width: none;
   white-space: nowrap;
 }
@@ -950,9 +946,6 @@ h3 {
     flex-direction: column;
   }
 
-  .section-title-wide {
-    white-space: normal;
-  }
 }
 
 @media (max-width: 640px) {
