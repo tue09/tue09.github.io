@@ -1,339 +1,330 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tue Le | Personal Website</title>
+    <title>Le Dinh Tri Tue | AI Research Blog</title>
     <meta
       name="description"
-      content="Personal website for Tue Le, an AI researcher working on post-training for large language models, code, and reasoning."
+      content="Personal blog and research website of Le Dinh Tri Tue, focused on LLM post-training, reasoning, and AI for code."
     />
-    <meta name="color-scheme" content="dark light" />
+    <meta name="color-scheme" content="light dark" />
     <script>
       (() => {
         try {
-          const savedTheme = localStorage.getItem("site-theme");
-          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
+          const saved = localStorage.getItem("site-theme");
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "dark");
+          document.documentElement.setAttribute("data-theme", "light");
         }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="#top" aria-label="Go to top of page">
-          <span class="brand-name">Tue Le</span>
-          <span class="brand-role">AI researcher</span>
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="brand-name">Le Dinh Tri Tue</span>
+          <span class="brand-role">AI Researcher</span>
         </a>
 
-        <nav class="site-nav" aria-label="Main navigation">
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav">
+          Menu
+        </button>
+
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
           <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
+          <a href="#research">Research</a>
+          <a href="#blog">Blog</a>
+          <a href="#projects">Projects</a>
           <a href="#resume">Resume</a>
           <a href="#contact">Contact</a>
         </nav>
 
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="true">
-          <span>Theme</span>
-          <strong id="themeToggleValue">Dark</strong>
-        </button>
+        <div class="header-actions">
+          <a class="btn btn-ghost" href="assets/LeDinhTriTue_resume.pdf" download>Download Resume</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
+            <span class="theme-toggle-label">Theme</span>
+            <strong id="themeLabel">Light</strong>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="container hero-inner">
+      <section class="hero section">
+        <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Hanoi, Vietnam</p>
-            <h1>Tue Le</h1>
+            <h1>Building reliable AI systems for code and reasoning.</h1>
             <p class="hero-lead">
-              I work on post-training for large language models, with a focus on code, reasoning, reliability, and alignment.
+              I write about post-training, evaluation, and practical research workflows that make large models more useful in real applications.
             </p>
-            <p class="hero-body">
-              My research focuses on post-training large language models, particularly for AI for code and reasoning tasks.
-              I mainly work on reinforcement fine-tuning to improve generalization, reliability, and alignment. I am
-              highly curious and open to exploring new research directions.
-            </p>
-
             <div class="hero-actions">
-              <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">Open resume</a>
-              <a class="button button-secondary" href="#publications">See publications</a>
+              <a class="btn btn-primary" href="#blog">Read Blog</a>
+              <a class="btn btn-ghost" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View Resume</a>
+              <a class="btn btn-ghost" href="assets/LeDinhTriTue_resume.pdf" download>Download Resume</a>
+            </div>
+
+            <div class="stat-grid">
+              <article class="stat-card">
+                <span>Primary focus</span>
+                <strong>LLM Post-Training</strong>
+              </article>
+              <article class="stat-card">
+                <span>Current interests</span>
+                <strong>Code Agents + Alignment</strong>
+              </article>
+              <article class="stat-card">
+                <span>Writing cadence</span>
+                <strong>Weekly Research Notes</strong>
+              </article>
             </div>
           </div>
 
           <aside class="hero-panel">
-            <div class="panel-block">
-              <span class="panel-label">Current role</span>
-              <strong>AI Resident</strong>
-              <p>Fsoft AI Center</p>
-            </div>
-            <div class="panel-block">
-              <span class="panel-label">Current focus</span>
-              <ul class="tag-list">
-                <li>Post-training for LLMs</li>
-                <li>Reinforcement fine-tuning</li>
-                <li>AI for code</li>
-                <li>Reasoning</li>
-              </ul>
-            </div>
+            <h2>Now Exploring</h2>
+            <ul class="clean-list">
+              <li>Reward modeling for long-horizon coding tasks</li>
+              <li>Stability strategies for reinforcement fine-tuning</li>
+              <li>Benchmark design for real-world agentic behavior</li>
+              <li>Evaluation protocols for trustworthy model deployment</li>
+            </ul>
+            <p class="hero-note">This website is fully static and optimized for GitHub Pages.</p>
           </aside>
         </div>
       </section>
 
       <section class="section" id="about">
-        <div class="container section-grid">
-          <div class="section-heading">
+        <div class="container">
+          <div class="section-head">
             <p class="eyebrow">About</p>
-            <h2>A simple overview</h2>
+            <h2>Researcher profile</h2>
           </div>
-
-          <div class="content-card prose-card">
-            <p>
-              I am an AI researcher based in Hanoi, with work spanning post-training for large language models,
-              reinforcement fine-tuning, and AI for code. My recent projects focus on making models more reliable on
-              reasoning-heavy and code-heavy tasks.
-            </p>
-            <p>
-              Before my current role at Fsoft AI Center, I worked at VinBigdata Institute on multimodal language
-              models and speech-language systems, and I was involved in research at BKAI on optimization methods for
-              neural networks and combinatorial optimization.
-            </p>
-          </div>
-
-          <div class="content-card">
-            <h3>Focus areas</h3>
-            <ul class="simple-list">
-              <li>Post-training for large language models</li>
-              <li>Reinforcement fine-tuning</li>
-              <li>AI for code and reasoning</li>
-              <li>Reliability and alignment</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="publications">
-        <div class="container">
-          <div class="section-heading section-heading-wide">
-            <p class="eyebrow">Publications</p>
-            <h2>Selected papers</h2>
-            <p class="section-note">Links are included where they are available in the resume. The AAAI paper does not have a public link there yet.</p>
-          </div>
-
-          <div class="publication-list">
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>NAACL 2025</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
-              <a href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
+          <div class="two-col">
+            <article class="card">
+              <p>
+                I am an AI researcher working on post-training large language models. My work emphasizes model reliability on reasoning-heavy and code-heavy tasks.
+              </p>
+              <p>
+                I use this blog to document experiments, distilled lessons from papers, and implementation notes that can help practitioners move faster.
+              </p>
             </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>ACL 2025</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
-              <a href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>EMNLP 2025</span>
-                <span>First author</span>
-              </div>
-              <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
-              <a href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>NeurIPS 2025</span>
-                <span>First author</span>
-              </div>
-              <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
-              <a href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>AAAI 2026</span>
-                <span>Co-author</span>
-              </div>
-              <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
-              <p class="muted-note">Public link not listed in the resume.</p>
-            </article>
-
-            <article class="publication-card">
-              <div class="publication-meta">
-                <span>Under review</span>
-                <span>Co-first author</span>
-              </div>
-              <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
-              <a href="https://www.arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Open preprint</a>
+            <article class="card">
+              <h3>Core topics</h3>
+              <ul class="clean-list">
+                <li>Reinforcement fine-tuning and policy optimization</li>
+                <li>AI for code generation and software engineering tasks</li>
+                <li>Evaluation, error analysis, and safety checks</li>
+                <li>Alignment-aware model improvement strategies</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="experience">
+      <section class="section" id="research">
         <div class="container">
-          <div class="section-heading section-heading-wide">
-            <p class="eyebrow">Experience</p>
-            <h2>Work and research</h2>
+          <div class="section-head">
+            <p class="eyebrow">Research</p>
+            <h2>Current directions</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="card feature">
+              <h3>Post-Training Pipelines</h3>
+              <p>Designing robust loops for supervised adaptation, preference learning, and policy refinement.</p>
+            </article>
+            <article class="card feature">
+              <h3>AI for Code</h3>
+              <p>Improving long-context coding behavior, repo-level reasoning, and tool-aware generation.</p>
+            </article>
+            <article class="card feature">
+              <h3>Reasoning Reliability</h3>
+              <p>Studying error modes, calibration, and interventions to improve consistency under pressure.</p>
+            </article>
+            <article class="card feature">
+              <h3>Evaluation Design</h3>
+              <p>Building practical benchmarks that reflect realistic product constraints and failure boundaries.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="blog">
+        <div class="container">
+          <div class="section-head section-head-wide">
+            <p class="eyebrow">Blog</p>
+            <h2>Research notes</h2>
+            <p class="section-note">Use search and filters to quickly find notes by topic.</p>
           </div>
 
+          <div class="blog-controls card">
+            <label class="search-wrap" for="postSearch">
+              <span>Search notes</span>
+              <input id="postSearch" type="search" placeholder="Try: reward model, coding agent, alignment..." />
+            </label>
+
+            <div class="chip-row" role="tablist" aria-label="Post topics">
+              <button class="chip is-active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="llm">LLM</button>
+              <button class="chip" type="button" data-filter="code">Code Agents</button>
+              <button class="chip" type="button" data-filter="alignment">Alignment</button>
+              <button class="chip" type="button" data-filter="eval">Evaluation</button>
+            </div>
+          </div>
+
+          <div class="post-grid" id="postGrid">
+            <article class="post-card card" data-tags="llm alignment">
+              <p class="post-meta">March 2026 · 8 min</p>
+              <h3>Reward signals that survive long-horizon coding trajectories</h3>
+              <p>A practical checklist for diagnosing sparse reward collapse in multi-step coding tasks.</p>
+              <div class="tag-row"><span>#llm</span><span>#alignment</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+
+            <article class="post-card card" data-tags="code eval">
+              <p class="post-meta">February 2026 · 6 min</p>
+              <h3>Repo-level benchmarks for coding agents: what actually matters</h3>
+              <p>Why pass@k alone is insufficient, and which failure categories are most predictive in production.</p>
+              <div class="tag-row"><span>#code</span><span>#eval</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+
+            <article class="post-card card" data-tags="llm eval">
+              <p class="post-meta">January 2026 · 10 min</p>
+              <h3>Post-training regression tests that catch hidden reasoning drift</h3>
+              <p>A lightweight testing recipe to catch skill degradation before shipping a new checkpoint.</p>
+              <div class="tag-row"><span>#llm</span><span>#eval</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+
+            <article class="post-card card" data-tags="alignment code">
+              <p class="post-meta">December 2025 · 7 min</p>
+              <h3>Safety constraints for autonomous code edits</h3>
+              <p>Concrete guardrail patterns for agents that generate and execute patches over real repositories.</p>
+              <div class="tag-row"><span>#alignment</span><span>#code</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+
+            <article class="post-card card" data-tags="llm code">
+              <p class="post-meta">November 2025 · 5 min</p>
+              <h3>Prompt templates that improve code-refactor precision</h3>
+              <p>Prompt structure patterns that reduce diff noise and improve task completion consistency.</p>
+              <div class="tag-row"><span>#llm</span><span>#code</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+
+            <article class="post-card card" data-tags="alignment eval">
+              <p class="post-meta">October 2025 · 9 min</p>
+              <h3>From benchmark wins to trustworthy behavior</h3>
+              <p>How to bridge offline metrics and real deployment requirements with explicit risk review loops.</p>
+              <div class="tag-row"><span>#alignment</span><span>#eval</span></div>
+              <a class="post-link" href="#">Read note</a>
+            </article>
+          </div>
+
+          <p class="no-results" id="noPostResults" hidden>No posts match your filter. Try a broader keyword.</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Projects</p>
+            <h2>Build logs</h2>
+          </div>
           <div class="timeline">
-            <article class="timeline-item">
+            <article class="card timeline-item">
               <div class="timeline-top">
-                <div>
-                  <h3>AI Resident</h3>
-                  <p>Fsoft AI Center</p>
-                </div>
-                <span>May 2025 - Present</span>
+                <h3>Long-Horizon SWE Agent Evaluation</h3>
+                <span>2026</span>
               </div>
-              <ul class="simple-list">
-                <li>Research topics: Post-training for LLMs, reinforcement fine-tuning, AI for code.</li>
-                <li>Develop and evaluate training pipelines to improve reliability and generalization on reasoning and code tasks.</li>
-              </ul>
+              <p>
+                Built a suite for multi-commit repository tasks with explicit trajectory grading and safety-gated execution.
+              </p>
             </article>
-
-            <article class="timeline-item">
+            <article class="card timeline-item">
               <div class="timeline-top">
-                <div>
-                  <h3>AI Engineer</h3>
-                  <p>VinBigdata Institute</p>
-                </div>
-                <span>Jul 2024 - May 2025</span>
+                <h3>Reasoning Stability Toolkit</h3>
+                <span>2025</span>
               </div>
-              <ul class="simple-list">
-                <li>Research topics: Multimodal LLMs, audio-text alignment, Post-training for LLMs.</li>
-                <li>Build and train multimodal model with a focus on speech-language understanding and generation.</li>
-              </ul>
+              <p>
+                Implemented automated regression checks for symbolic and code reasoning tasks across model updates.
+              </p>
             </article>
-
-            <article class="timeline-item">
+            <article class="card timeline-item">
               <div class="timeline-top">
-                <div>
-                  <h3>Research Student</h3>
-                  <p>Data Science Laboratory, BKAI - HUST</p>
-                </div>
-                <span>Oct 2023 - Sep 2025</span>
+                <h3>Post-Training Experiment Dashboard</h3>
+                <span>2025</span>
               </div>
-              <ul class="simple-list">
-                <li>Research topics: Optimization algorithm for neural networks, multi-objective optimization, sharpness-aware minimization.</li>
-                <li>Design and evaluate optimization algorithms to improve training stability and generalization across tasks.</li>
-              </ul>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-top">
-                <div>
-                  <h3>Research Student</h3>
-                  <p>MSO Laboratory, BKAI - HUST</p>
-                </div>
-                <span>Feb 2023 - Jan 2024</span>
-              </div>
-              <ul class="simple-list">
-                <li>Research topics: Evolutionary algorithms, vehicle routing problem, combinatorial optimization.</li>
-                <li>Develop metaheuristics algorithm for VRP variants.</li>
-              </ul>
+              <p>
+                Developed reproducible analysis views for reward-model quality, policy behavior, and failure taxonomy.
+              </p>
             </article>
           </div>
-        </div>
-      </section>
-
-      <section class="section" id="education">
-        <div class="container two-column-grid">
-          <article class="content-card">
-            <p class="eyebrow">Education</p>
-            <h2>Academic background</h2>
-            <ul class="simple-list">
-              <li>Hanoi University of Science and Technology, B.S. in Computer Science, Talented Program, GPA 3.4/4.0, Sep 2021 - Jul 2025.</li>
-              <li>Ha Tinh High School for Gifted Students, Math Honors Class, Grade 9.4/10, Aug 2018 - Jun 2021.</li>
-            </ul>
-          </article>
-
-          <article class="content-card">
-            <p class="eyebrow">Honors</p>
-            <h2>Selected awards</h2>
-            <ul class="simple-list">
-              <li>Second Prize in VMO 2021</li>
-              <li>Third Prize in VMO 2020</li>
-              <li>Participant in the Vietnam Team Selection Tests</li>
-              <li>Odon Vallet scholarship, 2020</li>
-            </ul>
-          </article>
         </div>
       </section>
 
       <section class="section" id="resume">
-        <div class="container resume-card">
-          <div>
-            <p class="eyebrow">Resume</p>
-            <h2>Full CV in PDF</h2>
-            <p class="section-note">
-              The PDF version includes the full publication list and the original role descriptions.
-            </p>
-          </div>
-
-          <div class="resume-actions">
-            <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
-            <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download PDF</a>
+        <div class="container">
+          <div class="resume-banner card">
+            <div>
+              <p class="eyebrow">Resume</p>
+              <h2>CV and publication details</h2>
+              <p class="section-note">Use the PDF for complete roles, publications, and links.</p>
+            </div>
+            <div class="resume-actions">
+              <a class="btn btn-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
+              <a class="btn btn-ghost" href="assets/LeDinhTriTue_resume.pdf" download>Download Resume</a>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="section" id="contact">
         <div class="container">
-          <div class="section-heading section-heading-wide">
+          <div class="section-head">
             <p class="eyebrow">Contact</p>
-            <h2>Find me online</h2>
+            <h2>Let’s collaborate</h2>
           </div>
-
           <div class="contact-grid">
-            <a class="contact-card" href="mailto:tue209003@gmail.com">
+            <a class="card contact-card" href="mailto:tue209003@gmail.com">
               <span>Email</span>
               <strong>tue209003@gmail.com</strong>
             </a>
-            <a class="contact-card" href="tel:0835224458">
-              <span>Phone</span>
-              <strong>Call by phone</strong>
-            </a>
-            <a class="contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
+            <a class="card contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
               <span>GitHub</span>
-              <strong>Open profile</strong>
+              <strong>github.com/tue09</strong>
             </a>
-            <a class="contact-card" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
-              <span>Hugging Face</span>
-              <strong>Open profile</strong>
-            </a>
-            <a class="contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
+            <a class="card contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
               <span>LinkedIn</span>
-              <strong>Open profile</strong>
+              <strong>Connect on LinkedIn</strong>
             </a>
           </div>
+          <button class="btn btn-ghost copy-btn" id="copyEmailBtn" type="button" data-email="tue209003@gmail.com">
+            Copy Email Address
+          </button>
+          <p class="copy-status" id="copyStatus" aria-live="polite"></p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>Tue Le</p>
+        <p>Le Dinh Tri Tue · AI Research Blog</p>
         <p>Updated <span id="year"></span></p>
       </div>
     </footer>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
 
     <script src="script.js"></script>
   </body>
