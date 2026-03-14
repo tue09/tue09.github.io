@@ -3,7 +3,6 @@ const themeToggle = document.getElementById("themeToggle");
 const themeLabel = document.getElementById("themeLabel");
 const navToggle = document.getElementById("navToggle");
 const siteNav = document.getElementById("siteNav");
-const yearNode = document.getElementById("year");
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const sections = Array.from(document.querySelectorAll("main section[id]"));
 
@@ -50,10 +49,6 @@ if (navToggle && siteNav) {
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
-}
-
-if (yearNode) {
-  yearNode.textContent = String(new Date().getFullYear());
 }
 
 if (sections.length > 0 && navLinks.length > 0 && "IntersectionObserver" in window) {
