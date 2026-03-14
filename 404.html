@@ -1,38 +1,70 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 | AI Residency CV Screening</title>
-    <meta
-      name="description"
-      content="Custom 404 page for the AI Residency CV Screening prototype."
-    />
+    <title>404 | Tue Le</title>
+    <meta name="description" content="404 page for the personal site of Le Dinh Tri Tue." />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+          document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=VT323&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="not-found">
-    <div class="bg-orb bg-orb-one" aria-hidden="true"></div>
-    <div class="bg-orb bg-orb-two" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
+  <body class="error-page">
+    <div class="scene scene-grid" aria-hidden="true"></div>
+    <div class="scene scene-glow" aria-hidden="true"></div>
+    <div class="scene scene-scan" aria-hidden="true"></div>
 
-    <main class="not-found-shell">
-      <section class="glass-card not-found-card">
-        <p class="eyebrow">404</p>
-        <h1>That route fell out of the recruitment funnel.</h1>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="./" class="brand" aria-label="Go to homepage">
+          <span class="brand-mark">TL</span>
+          <span class="brand-copy">
+            <strong>Tue Le</strong>
+            <span>AI research log</span>
+          </span>
+        </a>
+
+        <div class="header-actions">
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
+            <span class="theme-kicker">Mode</span>
+            <strong id="themeToggleValue">Dark</strong>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container error-shell">
+      <section class="panel error-card reveal in-view">
+        <span class="error-code">404 / Off-map</span>
+        <p class="eyebrow">You walked outside the current level.</p>
+        <h1>This page is not in the build.</h1>
         <p class="lead">
-          The page does not exist, but the CV screening prototype is still available from the main workspace.
+          The route does not exist, but the main site is still available with publications, timeline, resume, and contact
+          links.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="./">Open Home</a>
-          <a class="btn btn-secondary" href="./#workspace">Jump to Workspace</a>
+        <div class="hero-actions compact-actions">
+          <a class="button button-primary" href="./">Return Home</a>
+          <a class="button button-secondary" href="./#publications">Jump to Papers</a>
         </div>
       </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
