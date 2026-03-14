@@ -172,17 +172,23 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 3.05rem;
+  height: 3.05rem;
   min-width: 3.05rem;
   min-height: 3.05rem;
-  padding: 0 1rem;
+  padding: 0;
   border-radius: 999px;
   background:
     radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.26), transparent 38%),
     linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
-  color: var(--button-text);
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
+}
+
+.brand-mark::after {
+  content: "";
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 242, 0.92);
 }
 
 .brand-text {
@@ -323,7 +329,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.5rem, 7vw, 6.25rem);
+  font-size: clamp(3.1rem, 6.3vw, 5.55rem);
 }
 
 h2 {
@@ -451,6 +457,11 @@ h3 {
 .tile-icon-img {
   width: 1.1rem;
   height: 1.1rem;
+}
+
+.social-link img {
+  border-radius: 0.35rem;
+  object-fit: contain;
 }
 
 .masthead-panel {
@@ -817,6 +828,10 @@ h3 {
   align-items: center;
   justify-content: center;
   font-weight: 800;
+}
+
+.contact-brand-icon {
+  object-fit: contain;
 }
 
 .tile-icon-img,

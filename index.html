@@ -33,10 +33,10 @@
     <header class="site-header">
       <div class="container topbar">
         <a class="brand" href="#top" aria-label="Go to top of page">
-          <span class="brand-mark">Le Tue</span>
+          <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-text">
-            <strong>Le Tue</strong>
-            <span>academic website</span>
+            <strong>Academic website</strong>
+            <span>AI researcher</span>
           </span>
         </a>
 
@@ -49,12 +49,17 @@
           <a href="#publications">Publications</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
-          <a href="#resume">CV</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="header-actions">
-          <a class="button button-secondary desktop-only" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
+          <a
+            class="button button-secondary desktop-only"
+            href="assets/LeDinhTriTue_resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View CV</a
+          >
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
             <span>Theme</span>
             <strong id="themeLabel">Light</strong>
@@ -77,22 +82,17 @@
               I am highly curious and open to exploring new research directions.
             </p>
 
-            <div class="masthead-actions">
-              <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-              <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
-            </div>
-
             <div class="social-row" aria-label="External profiles">
               <a class="social-link" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/github.svg" alt="" />
+                <img src="assets/icons/github.png" alt="" />
                 <span>GitHub</span>
               </a>
               <a class="social-link" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/huggingface.svg" alt="" />
+                <img src="assets/icons/huggingface.png" alt="" />
                 <span>Hugging Face</span>
               </a>
               <a class="social-link" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
-                <img src="assets/icons/linkedin-line.svg" alt="" />
+                <img src="assets/icons/linkedin.png" alt="" />
                 <span>LinkedIn</span>
               </a>
             </div>
@@ -336,21 +336,6 @@
           </div>
         </section>
 
-        <section class="section" id="resume">
-          <div class="resume-band">
-            <div>
-              <p class="eyebrow">Curriculum vitae</p>
-              <h2>Full resume, links, and publication details</h2>
-              <p class="section-note">The PDF resume includes the complete experience list, publication links, and contact details.</p>
-            </div>
-
-            <div class="resume-actions">
-              <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-              <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download CV</a>
-            </div>
-          </div>
-        </section>
-
         <section class="section" id="contact">
           <div class="section-heading">
             <p class="eyebrow">Contact</p>
@@ -366,21 +351,21 @@
               </div>
             </a>
             <a class="contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
-              <img class="contact-brand-icon" src="assets/icons/github.svg" alt="" />
+              <img class="contact-brand-icon" src="assets/icons/github.png" alt="" />
               <div>
                 <span>GitHub</span>
                 <strong>github.com/tue09</strong>
               </div>
             </a>
             <a class="contact-card" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
-              <img class="contact-brand-icon" src="assets/icons/huggingface.svg" alt="" />
+              <img class="contact-brand-icon" src="assets/icons/huggingface.png" alt="" />
               <div>
                 <span>Hugging Face</span>
                 <strong>huggingface.co/LeTue09</strong>
               </div>
             </a>
             <a class="contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
-              <img class="contact-brand-icon" src="assets/icons/linkedin-line.svg" alt="" />
+              <img class="contact-brand-icon" src="assets/icons/linkedin.png" alt="" />
               <div>
                 <span>LinkedIn</span>
                 <strong>linkedin.com/in/tue-le-2b1769280</strong>
@@ -393,7 +378,7 @@
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>Le Tue</p>
+        <p>Research homepage</p>
         <p>AI researcher</p>
         <p><span id="year"></span></p>
       </div>
