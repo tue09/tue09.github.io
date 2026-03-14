@@ -1,13 +1,13 @@
 const root = document.documentElement;
-const yearNode = document.getElementById("year");
 const themeButton = document.getElementById("themeToggle");
 const themeValue = document.getElementById("themeToggleValue");
-const menuButton = document.getElementById("menuToggle");
-const nav = document.querySelector(".site-nav");
+const yearNode = document.getElementById("year");
 
 function applyTheme(theme) {
-  const isDark = theme === "dark";
-  root.setAttribute("data-theme", isDark ? "dark" : "light");
+  const nextTheme = theme === "light" ? "light" : "dark";
+  const isDark = nextTheme === "dark";
+
+  root.setAttribute("data-theme", nextTheme);
 
   if (themeValue) {
     themeValue.textContent = isDark ? "Dark" : "Light";
@@ -19,60 +19,21 @@ function applyTheme(theme) {
   }
 
   try {
-    localStorage.setItem("site-theme", isDark ? "dark" : "light");
+    localStorage.setItem("site-theme", nextTheme);
   } catch (error) {
-    // Storage is optional for this site.
+    // Ignore storage errors on static hosting.
   }
-}
-
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
 }
 
 applyTheme(root.getAttribute("data-theme") || "dark");
 
 if (themeButton) {
   themeButton.addEventListener("click", () => {
-    const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    applyTheme(nextTheme);
+    const currentTheme = root.getAttribute("data-theme");
+    applyTheme(currentTheme === "dark" ? "light" : "dark");
   });
 }
 
-if (menuButton && nav) {
-  menuButton.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    menuButton.setAttribute("aria-expanded", String(open));
-  });
-
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-    });
-  });
-}
-
-const revealNodes = document.querySelectorAll(".reveal");
-
-if ("IntersectionObserver" in window && revealNodes.length > 0) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("in-view");
-        revealObserver.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.14,
-      rootMargin: "0px 0px -8% 0px",
-    }
-  );
-
-  revealNodes.forEach((node) => revealObserver.observe(node));
-} else {
-  revealNodes.forEach((node) => node.classList.add("in-view"));
+if (yearNode) {
+  yearNode.textContent = new Date().getFullYear();
 }

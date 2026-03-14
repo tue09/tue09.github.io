@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tue Le | Arcade Research Portfolio</title>
+    <title>Tue Le | Personal Website</title>
     <meta
       name="description"
-      content="Arcade-themed personal website for Tue Le, an AI researcher working on post-training large language models for code, reasoning, reliability, and alignment."
+      content="Personal website for Tue Le, an AI researcher working on post-training for large language models, code, and reasoning."
     />
     <meta name="color-scheme" content="dark light" />
     <script>
       (() => {
         try {
           const savedTheme = localStorage.getItem("site-theme");
-          const fallbackTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", savedTheme || fallbackTheme);
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
         } catch (error) {
           document.documentElement.setAttribute("data-theme", "dark");
         }
@@ -22,399 +22,316 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="scene-art scene-art-coin" aria-hidden="true">
-      <svg viewBox="0 0 64 64" role="presentation">
-        <rect x="16" y="0" width="32" height="8" class="coin-fill" />
-        <rect x="8" y="8" width="48" height="8" class="coin-fill" />
-        <rect x="0" y="16" width="56" height="8" class="coin-fill" />
-        <rect x="0" y="24" width="56" height="8" class="coin-fill" />
-        <rect x="8" y="32" width="40" height="8" class="coin-fill" />
-        <rect x="16" y="40" width="24" height="8" class="coin-fill" />
-        <rect x="24" y="48" width="8" height="8" class="coin-fill" />
-        <rect x="48" y="8" width="8" height="32" class="coin-shadow" />
-        <rect x="40" y="40" width="8" height="8" class="coin-shadow" />
-      </svg>
-    </div>
-
-    <div class="scene-art scene-art-alien" aria-hidden="true">
-      <svg viewBox="0 0 88 88" role="presentation">
-        <rect x="24" y="8" width="40" height="8" class="alien-fill" />
-        <rect x="16" y="16" width="56" height="8" class="alien-fill" />
-        <rect x="8" y="24" width="72" height="8" class="alien-fill" />
-        <rect x="8" y="32" width="24" height="8" class="alien-fill" />
-        <rect x="40" y="32" width="8" height="8" class="alien-fill" />
-        <rect x="56" y="32" width="24" height="8" class="alien-fill" />
-        <rect x="8" y="40" width="72" height="8" class="alien-fill" />
-        <rect x="16" y="48" width="56" height="8" class="alien-fill" />
-        <rect x="24" y="56" width="16" height="8" class="alien-fill" />
-        <rect x="48" y="56" width="16" height="8" class="alien-fill" />
-        <rect x="24" y="24" width="8" height="8" class="alien-eye" />
-        <rect x="56" y="24" width="8" height="8" class="alien-eye" />
-        <rect x="72" y="16" width="8" height="40" class="alien-shadow" />
-        <rect x="64" y="56" width="8" height="8" class="alien-shadow" />
-      </svg>
-    </div>
-
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#top" class="brand" aria-label="Go to homepage">
-          <span class="brand-badge">TL</span>
-          <span class="brand-copy">
-            <strong>Tue Le</strong>
-            <span>arcade research portfolio</span>
-          </span>
+        <a class="brand" href="#top" aria-label="Go to top of page">
+          <span class="brand-name">Tue Le</span>
+          <span class="brand-role">AI researcher</span>
         </a>
-
-        <div class="header-controls">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
-            <span class="toggle-kicker">Mode</span>
-            <strong id="themeToggleValue">Dark</strong>
-          </button>
-          <button class="menu-btn" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-            Menu
-          </button>
-        </div>
 
         <nav class="site-nav" aria-label="Main navigation">
           <a href="#about">About</a>
           <a href="#publications">Publications</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
-          <a href="#contact">Resume</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
         </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="true">
+          <span>Theme</span>
+          <strong id="themeToggleValue">Dark</strong>
+        </button>
       </div>
     </header>
 
     <main id="top">
-      <section class="hero container">
-        <div class="hero-copy">
-          <p class="kicker">AI researcher / Hanoi, Vietnam</p>
-          <h1 class="arcade-title">
-            <span>TUE</span>
-            <span>LE</span>
-          </h1>
-          <p class="hero-nameplate">Le Dinh Tri Tue</p>
-          <p class="hero-tagline">Post-training large language models for code, reasoning, reliability, and alignment.</p>
-          <p class="hero-body">
-            My research focuses on post-training large language models, particularly for AI for code and reasoning
-            tasks. I mainly work on reinforcement fine-tuning to improve generalization, reliability, and alignment. I
-            am highly curious and open to exploring new research directions.
-          </p>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Hanoi, Vietnam</p>
+            <h1>Tue Le</h1>
+            <p class="hero-lead">
+              I work on post-training for large language models, with a focus on code, reasoning, reliability, and alignment.
+            </p>
+            <p class="hero-body">
+              My research focuses on post-training large language models, particularly for AI for code and reasoning tasks.
+              I mainly work on reinforcement fine-tuning to improve generalization, reliability, and alignment. I am
+              highly curious and open to exploring new research directions.
+            </p>
 
-          <div class="hero-actions">
-            <a class="button button-primary" href="#publications">View publications</a>
-            <a
-              class="button button-secondary"
-              href="assets/LeDinhTriTue_resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open resume
-            </a>
+            <div class="hero-actions">
+              <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">Open resume</a>
+              <a class="button button-secondary" href="#publications">See publications</a>
+            </div>
           </div>
 
-          <ul class="link-row">
-            <li><a href="mailto:tue209003@gmail.com">Email</a></li>
-            <li><a href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-            <li><a href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-            <li><a href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          </ul>
-        </div>
-
-        <div class="hero-stack">
-          <article class="screen-card">
-            <div class="screen-top">
-              <span>Current status</span>
-              <span class="screen-chip">active</span>
+          <aside class="hero-panel">
+            <div class="panel-block">
+              <span class="panel-label">Current role</span>
+              <strong>AI Resident</strong>
+              <p>Fsoft AI Center</p>
             </div>
-            <div class="stat-grid">
-              <div class="stat-cell">
-                <span>Current role</span>
-                <strong>AI Resident</strong>
-              </div>
-              <div class="stat-cell">
-                <span>Base</span>
-                <strong>Hanoi</strong>
-              </div>
-              <div class="stat-cell">
-                <span>Research area</span>
-                <strong>LLM post-training</strong>
-              </div>
-              <div class="stat-cell">
-                <span>Publications</span>
-                <strong>6 listed</strong>
-              </div>
+            <div class="panel-block">
+              <span class="panel-label">Current focus</span>
+              <ul class="tag-list">
+                <li>Post-training for LLMs</li>
+                <li>Reinforcement fine-tuning</li>
+                <li>AI for code</li>
+                <li>Reasoning</li>
+              </ul>
             </div>
-          </article>
-
-          <article class="screen-card">
-            <div class="screen-top">
-              <span>Current focus</span>
-              <span class="screen-chip">focus</span>
-            </div>
-            <div class="chip-cloud">
-              <span>Post-training LLMs</span>
-              <span>RL fine-tuning</span>
-              <span>AI for code</span>
-              <span>Reasoning</span>
-              <span>Reliability</span>
-              <span>Alignment</span>
-            </div>
-            <p class="screen-copy">
-              AI Resident at Fsoft AI Center since May 2025, working on post-training for LLMs, reinforcement
-              fine-tuning, and AI for code.
-            </p>
-          </article>
+          </aside>
         </div>
       </section>
 
-      <section class="section container" id="about">
-        <div class="section-head">
-          <p class="section-kicker">About</p>
-          <h2>Research focus</h2>
-          <p class="section-copy">
-            The content below follows the resume directly. The layout is simplified so publications, timeline, and
-            contact actions are easier to read.
-          </p>
-        </div>
+      <section class="section" id="about">
+        <div class="container section-grid">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>A simple overview</h2>
+          </div>
 
-        <div class="card-grid about-grid">
-          <article class="panel-card">
-            <p class="panel-kicker">Overview</p>
-            <h3>Research direction</h3>
+          <div class="content-card prose-card">
             <p>
-              My research focuses on post-training large language models, particularly for AI for code and reasoning
-              tasks.
+              I am an AI researcher based in Hanoi, with work spanning post-training for large language models,
+              reinforcement fine-tuning, and AI for code. My recent projects focus on making models more reliable on
+              reasoning-heavy and code-heavy tasks.
             </p>
-          </article>
-
-          <article class="panel-card">
-            <p class="panel-kicker">Main work</p>
-            <h3>What I mainly do</h3>
             <p>
-              I mainly work on reinforcement fine-tuning to improve generalization, reliability, and alignment.
+              Before my current role at Fsoft AI Center, I worked at VinBigdata Institute on multimodal language
+              models and speech-language systems, and I was involved in research at BKAI on optimization methods for
+              neural networks and combinatorial optimization.
             </p>
-          </article>
+          </div>
 
-          <article class="panel-card">
-            <p class="panel-kicker">Areas</p>
-            <h3>Current topics</h3>
-            <div class="chip-cloud chip-cloud-simple">
-              <span>Post-training for LLMs</span>
-              <span>Reinforcement fine-tuning</span>
-              <span>AI for code</span>
-              <span>Reasoning tasks</span>
-              <span>Reliability</span>
-              <span>Alignment</span>
-            </div>
-          </article>
+          <div class="content-card">
+            <h3>Focus areas</h3>
+            <ul class="simple-list">
+              <li>Post-training for large language models</li>
+              <li>Reinforcement fine-tuning</li>
+              <li>AI for code and reasoning</li>
+              <li>Reliability and alignment</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="section container" id="publications">
-        <div class="section-head">
-          <p class="section-kicker">Publications</p>
-          <h2>Publication select</h2>
-          <p class="section-copy">Titles, venues, and roles follow the resume. Public links are shown where the resume includes them.</p>
-        </div>
+      <section class="section" id="publications">
+        <div class="container">
+          <div class="section-heading section-heading-wide">
+            <p class="eyebrow">Publications</p>
+            <h2>Selected papers</h2>
+            <p class="section-note">Links are included where they are available in the resume. The AAAI paper does not have a public link there yet.</p>
+          </div>
 
-        <div class="publication-grid">
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">NAACL 2025</span>
-              <span class="role-tag">Co-first author</span>
-            </div>
-            <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
-            <a class="button button-ghost" href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Paper PDF</a>
-          </article>
+          <div class="publication-list">
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>NAACL 2025</span>
+                <span>Co-first author</span>
+              </div>
+              <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
+              <a href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
+            </article>
 
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">ACL 2025</span>
-              <span class="role-tag">Co-first author</span>
-            </div>
-            <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
-            <a class="button button-ghost" href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Paper PDF</a>
-          </article>
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>ACL 2025</span>
+                <span>Co-first author</span>
+              </div>
+              <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
+              <a href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
+            </article>
 
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">EMNLP 2025</span>
-              <span class="role-tag role-tag-strong">First author</span>
-            </div>
-            <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
-            <a class="button button-ghost" href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Paper PDF</a>
-          </article>
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>EMNLP 2025</span>
+                <span>First author</span>
+              </div>
+              <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
+              <a href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
+            </article>
 
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">NeurIPS 2025</span>
-              <span class="role-tag role-tag-strong">First author</span>
-            </div>
-            <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
-            <a class="button button-ghost" href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Paper PDF</a>
-          </article>
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>NeurIPS 2025</span>
+                <span>First author</span>
+              </div>
+              <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
+              <a href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Open paper</a>
+            </article>
 
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">AAAI 2026</span>
-              <span class="role-tag">Co-author</span>
-            </div>
-            <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
-            <span class="paper-note">Link pending</span>
-          </article>
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>AAAI 2026</span>
+                <span>Co-author</span>
+              </div>
+              <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
+              <p class="muted-note">Public link not listed in the resume.</p>
+            </article>
 
-          <article class="paper-card">
-            <div class="paper-topline">
-              <span class="venue-tag">Under review</span>
-              <span class="role-tag">Co-first author</span>
-            </div>
-            <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
-            <a class="button button-ghost" href="https://www.arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Preprint</a>
-          </article>
+            <article class="publication-card">
+              <div class="publication-meta">
+                <span>Under review</span>
+                <span>Co-first author</span>
+              </div>
+              <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
+              <a href="https://www.arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Open preprint</a>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section container" id="experience">
-        <div class="section-head">
-          <p class="section-kicker">Experience</p>
-          <h2>Experience timeline</h2>
-          <p class="section-copy">Each entry below follows the resume wording instead of shortened summaries.</p>
-        </div>
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-heading section-heading-wide">
+            <p class="eyebrow">Experience</p>
+            <h2>Work and research</h2>
+          </div>
 
-        <div class="experience-layout">
           <div class="timeline">
-            <article class="timeline-card">
-              <span class="timeline-date">May 2025 - Present</span>
-              <h3>AI Resident | Fsoft AI Center</h3>
-              <p class="timeline-location">Hanoi, Vietnam</p>
-              <ul class="detail-list">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>AI Resident</h3>
+                  <p>Fsoft AI Center</p>
+                </div>
+                <span>May 2025 - Present</span>
+              </div>
+              <ul class="simple-list">
                 <li>Research topics: Post-training for LLMs, reinforcement fine-tuning, AI for code.</li>
                 <li>Develop and evaluate training pipelines to improve reliability and generalization on reasoning and code tasks.</li>
               </ul>
             </article>
 
-            <article class="timeline-card">
-              <span class="timeline-date">Jul 2024 - May 2025</span>
-              <h3>AI Engineer | VinBigdata Institute</h3>
-              <p class="timeline-location">Hanoi, Vietnam</p>
-              <ul class="detail-list">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>AI Engineer</h3>
+                  <p>VinBigdata Institute</p>
+                </div>
+                <span>Jul 2024 - May 2025</span>
+              </div>
+              <ul class="simple-list">
                 <li>Research topics: Multimodal LLMs, audio-text alignment, Post-training for LLMs.</li>
                 <li>Build and train multimodal model with a focus on speech-language understanding and generation.</li>
               </ul>
             </article>
 
-            <article class="timeline-card">
-              <span class="timeline-date">Oct 2023 - Sep 2025</span>
-              <h3>Research Student | Data Science Laboratory, BKAI - HUST</h3>
-              <p class="timeline-location">Hanoi, Vietnam</p>
-              <ul class="detail-list">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>Research Student</h3>
+                  <p>Data Science Laboratory, BKAI - HUST</p>
+                </div>
+                <span>Oct 2023 - Sep 2025</span>
+              </div>
+              <ul class="simple-list">
                 <li>Research topics: Optimization algorithm for neural networks, multi-objective optimization, sharpness-aware minimization.</li>
                 <li>Design and evaluate optimization algorithms to improve training stability and generalization across tasks.</li>
               </ul>
             </article>
 
-            <article class="timeline-card">
-              <span class="timeline-date">Feb 2023 - Jan 2024</span>
-              <h3>Research Student | MSO Laboratory, BKAI - HUST</h3>
-              <p class="timeline-location">Hanoi, Vietnam</p>
-              <ul class="detail-list">
-                <li>Research topics: Evolutionary algorithms, vehicle routing problem (VRP), combinatorial optimization.</li>
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <div>
+                  <h3>Research Student</h3>
+                  <p>MSO Laboratory, BKAI - HUST</p>
+                </div>
+                <span>Feb 2023 - Jan 2024</span>
+              </div>
+              <ul class="simple-list">
+                <li>Research topics: Evolutionary algorithms, vehicle routing problem, combinatorial optimization.</li>
                 <li>Develop metaheuristics algorithm for VRP variants.</li>
               </ul>
             </article>
           </div>
-
-          <aside class="panel-card activity-card">
-            <p class="panel-kicker">Activities</p>
-            <h3>Hackathons</h3>
-            <ul class="detail-list">
-              <li>Participate in SOICT Hackathon 2023 - Routing Optimization (SAMSUNG-TIKI) track.</li>
-              <li>Participate in IAI Hackathon 2024 - Intelligence DECODE-A-THON.</li>
-              <li>Participate in SOICT Hackathon 2024 - Legal Document Retrieval (NAVER) track.</li>
-            </ul>
-          </aside>
         </div>
       </section>
 
-      <section class="section container" id="education">
-        <div class="section-head">
-          <p class="section-kicker">Education</p>
-          <h2>Education and honors</h2>
-          <p class="section-copy">Education, awards, and competition background from the resume.</p>
-        </div>
-
-        <div class="education-grid">
-          <article class="panel-card">
-            <p class="panel-kicker">Education</p>
-            <h3>Academic path</h3>
-            <ul class="detail-list">
-              <li>Hanoi University of Science and Technology, B.S. Computer Science (Talented Program), GPA: 3.4/4.0, Sep 2021 - Jul 2025, Hanoi, Vietnam.</li>
-              <li>Ha Tinh High School for Gifted Students, Math Honors Class, Grade: 9.4/10, Aug 2018 - Jun 2021, Ha Tinh, Vietnam.</li>
+      <section class="section" id="education">
+        <div class="container two-column-grid">
+          <article class="content-card">
+            <p class="eyebrow">Education</p>
+            <h2>Academic background</h2>
+            <ul class="simple-list">
+              <li>Hanoi University of Science and Technology, B.S. in Computer Science, Talented Program, GPA 3.4/4.0, Sep 2021 - Jul 2025.</li>
+              <li>Ha Tinh High School for Gifted Students, Math Honors Class, Grade 9.4/10, Aug 2018 - Jun 2021.</li>
             </ul>
           </article>
 
-          <article class="panel-card">
-            <p class="panel-kicker">Honors</p>
-            <h3>Achievement board</h3>
-            <ul class="detail-list">
-              <li>Second Prize in VMO 2021 and Third Prize in VMO 2020.</li>
-              <li>Participate in the Vietnam Team Selection Tests.</li>
-              <li>Odon Vallet scholarship in 2020.</li>
+          <article class="content-card">
+            <p class="eyebrow">Honors</p>
+            <h2>Selected awards</h2>
+            <ul class="simple-list">
+              <li>Second Prize in VMO 2021</li>
+              <li>Third Prize in VMO 2020</li>
+              <li>Participant in the Vietnam Team Selection Tests</li>
+              <li>Odon Vallet scholarship, 2020</li>
             </ul>
-          </article>
-
-          <article class="panel-card">
-            <p class="panel-kicker">Notes</p>
-            <h3>Competition and scholarship</h3>
-            <p>
-              The Team Selection Tests are held to determine the members of the national team who will participate in
-              the IMO. The Odon Vallet scholarship commends the best students of the year.
-            </p>
           </article>
         </div>
       </section>
 
-      <section class="section container" id="contact">
-        <div class="section-head">
-          <p class="section-kicker">Contact</p>
-          <h2>Resume and links</h2>
-          <p class="section-copy">Actions only. The page no longer shows raw profile URLs in the contact block.</p>
-        </div>
-
-        <article class="contact-shell">
-          <div class="contact-copy">
-            <p class="panel-kicker">Contact</p>
-            <h3>Contact and download</h3>
-            <p>
-              The resume PDF remains the main source document for the full publication list, dates, and role details.
+      <section class="section" id="resume">
+        <div class="container resume-card">
+          <div>
+            <p class="eyebrow">Resume</p>
+            <h2>Full CV in PDF</h2>
+            <p class="section-note">
+              The PDF version includes the full publication list and the original role descriptions.
             </p>
           </div>
 
-          <div class="contact-actions">
+          <div class="resume-actions">
             <a class="button button-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
-            <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download resume</a>
+            <a class="button button-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download PDF</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-heading section-heading-wide">
+            <p class="eyebrow">Contact</p>
+            <h2>Find me online</h2>
           </div>
 
-          <ul class="contact-grid">
-            <li><span>Email</span><a href="mailto:tue209003@gmail.com">Send email</a></li>
-            <li><span>Phone</span><a href="tel:0835224458">Call by phone</a></li>
-            <li><span>GitHub</span><a href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">Open GitHub</a></li>
-            <li><span>Hugging Face</span><a href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">Open Hugging Face</a></li>
-            <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">Open LinkedIn</a></li>
-          </ul>
-        </article>
+          <div class="contact-grid">
+            <a class="contact-card" href="mailto:tue209003@gmail.com">
+              <span>Email</span>
+              <strong>tue209003@gmail.com</strong>
+            </a>
+            <a class="contact-card" href="tel:0835224458">
+              <span>Phone</span>
+              <strong>Call by phone</strong>
+            </a>
+            <a class="contact-card" href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <strong>Open profile</strong>
+            </a>
+            <a class="contact-card" href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">
+              <span>Hugging Face</span>
+              <strong>Open profile</strong>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span>
+              <strong>Open profile</strong>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>Copyright <span id="year"></span> Tue Le</p>
-        <p>Built for GitHub Pages in retro arcade mode</p>
+        <p>Tue Le</p>
+        <p>Updated <span id="year"></span></p>
       </div>
     </footer>
 

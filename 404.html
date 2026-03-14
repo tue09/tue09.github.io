@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 | Tue Le</title>
-    <meta name="description" content="Arcade-style 404 page for Tue Le's personal website." />
+    <meta name="description" content="Page not found on Tue Le's personal website." />
     <meta name="color-scheme" content="dark light" />
     <script>
       (() => {
         try {
           const savedTheme = localStorage.getItem("site-theme");
-          const fallbackTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", savedTheme || fallbackTheme);
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
         } catch (error) {
           document.documentElement.setAttribute("data-theme", "dark");
         }
@@ -19,78 +19,37 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="error-page">
-    <div class="scene-art scene-art-coin" aria-hidden="true">
-      <svg viewBox="0 0 64 64" role="presentation">
-        <rect x="16" y="0" width="32" height="8" class="coin-fill" />
-        <rect x="8" y="8" width="48" height="8" class="coin-fill" />
-        <rect x="0" y="16" width="56" height="8" class="coin-fill" />
-        <rect x="0" y="24" width="56" height="8" class="coin-fill" />
-        <rect x="8" y="32" width="40" height="8" class="coin-fill" />
-        <rect x="16" y="40" width="24" height="8" class="coin-fill" />
-        <rect x="24" y="48" width="8" height="8" class="coin-fill" />
-        <rect x="48" y="8" width="8" height="32" class="coin-shadow" />
-        <rect x="40" y="40" width="8" height="8" class="coin-shadow" />
-      </svg>
-    </div>
-
-    <div class="scene-art scene-art-alien" aria-hidden="true">
-      <svg viewBox="0 0 88 88" role="presentation">
-        <rect x="24" y="8" width="40" height="8" class="alien-fill" />
-        <rect x="16" y="16" width="56" height="8" class="alien-fill" />
-        <rect x="8" y="24" width="72" height="8" class="alien-fill" />
-        <rect x="8" y="32" width="24" height="8" class="alien-fill" />
-        <rect x="40" y="32" width="8" height="8" class="alien-fill" />
-        <rect x="56" y="32" width="24" height="8" class="alien-fill" />
-        <rect x="8" y="40" width="72" height="8" class="alien-fill" />
-        <rect x="16" y="48" width="56" height="8" class="alien-fill" />
-        <rect x="24" y="56" width="16" height="8" class="alien-fill" />
-        <rect x="48" y="56" width="16" height="8" class="alien-fill" />
-        <rect x="24" y="24" width="8" height="8" class="alien-eye" />
-        <rect x="56" y="24" width="8" height="8" class="alien-eye" />
-        <rect x="72" y="16" width="8" height="40" class="alien-shadow" />
-        <rect x="64" y="56" width="8" height="8" class="alien-shadow" />
-      </svg>
-    </div>
-
+  <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a href="./" class="brand" aria-label="Go to homepage">
-          <span class="brand-badge">TL</span>
-          <span class="brand-copy">
-            <strong>Tue Le</strong>
-            <span>arcade research portfolio</span>
-          </span>
+        <a class="brand" href="./" aria-label="Go to homepage">
+          <span class="brand-name">Tue Le</span>
+          <span class="brand-role">AI researcher</span>
         </a>
 
-        <div class="header-controls">
-          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
-            <span class="toggle-kicker">Mode</span>
-            <strong id="themeToggleValue">Dark</strong>
-          </button>
-        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="true">
+          <span>Theme</span>
+          <strong id="themeToggleValue">Dark</strong>
+        </button>
       </div>
     </header>
 
-    <main class="container error-shell">
-      <section class="contact-shell error-card">
-        <p class="section-kicker">404 / missing level</p>
-        <h1 class="arcade-title error-title">
-          <span>GAME</span>
-          <span>OVER</span>
-        </h1>
-        <p class="hero-body">
-          This route is outside the current map. The homepage still has the full publication board, campaign timeline,
-          resume, and contact links.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="./">Return home</a>
-          <a class="button button-secondary" href="./#publications">Jump to publications</a>
+    <main class="hero">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">404</p>
+          <h1>Page not found</h1>
+          <p class="hero-body">
+            This page does not exist. The main site still has the overview, publications, experience, and resume.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./">Go back home</a>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <script src="script.js"></script>
