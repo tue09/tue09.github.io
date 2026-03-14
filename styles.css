@@ -1,6 +1,6 @@
 :root {
-  --font-body: "Manrope", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
   --max-width: 1100px;
   --radius-2xl: 2rem;
   --radius-xl: 1.6rem;
@@ -104,6 +104,10 @@ body,
 button,
 a {
   font: inherit;
+}
+
+body * {
+  font-family: var(--font-body);
 }
 
 a {
@@ -256,7 +260,7 @@ img {
 .section-card:hover,
 .contact-card:hover,
 .panel-tile:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.01);
   box-shadow: var(--shadow-soft);
 }
 
@@ -311,9 +315,9 @@ h2,
 h3 {
   margin: 0;
   font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.96;
 }
 
 h1 {
@@ -356,13 +360,68 @@ h3 {
 .resume-band,
 .contact-card,
 .error-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease,
+    background-color 0.24s ease;
+}
+
+.masthead-copy::after,
+.panel-tile::after,
+.orbital-card::after,
+.publication-item::after,
+.timeline-item::after,
+.section-card::after,
+.resume-band::after,
+.contact-card::after,
+.error-card::after {
+  content: "";
+  position: absolute;
+  inset: -35%;
+  z-index: 0;
+  opacity: 0;
+  transform: translate3d(-12%, 10%, 0) rotate(10deg);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(126, 214, 197, 0.16), transparent 22%),
+    linear-gradient(115deg, transparent 18%, rgba(126, 214, 197, 0.08) 42%, transparent 66%);
+  transition:
+    opacity 0.28s ease,
+    transform 0.38s ease;
+  pointer-events: none;
+}
+
+.masthead-copy:hover,
+.panel-tile:hover,
+.orbital-card:hover,
+.publication-item:hover,
+.timeline-item:hover,
+.section-card:hover,
+.resume-band:hover,
+.contact-card:hover,
+.error-card:hover {
+  border-color: var(--line-strong);
+}
+
+.masthead-copy:hover::after,
+.panel-tile:hover::after,
+.orbital-card:hover::after,
+.publication-item:hover::after,
+.timeline-item:hover::after,
+.section-card:hover::after,
+.resume-band:hover::after,
+.contact-card:hover::after,
+.error-card:hover::after {
+  opacity: 1;
+  transform: translate3d(10%, -6%, 0) rotate(0deg);
 }
 
 .masthead-copy {
-  position: relative;
-  overflow: hidden;
   display: grid;
   gap: 0.95rem;
   padding: clamp(1.65rem, 2.2vw, 2.35rem);
@@ -385,6 +444,18 @@ h3 {
 }
 
 .masthead-copy > * {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-tile > *,
+.orbital-card > *,
+.publication-item > *,
+.timeline-item > *,
+.section-card > *,
+.resume-band > *,
+.contact-card > *,
+.error-card > * {
   position: relative;
   z-index: 1;
 }
@@ -431,15 +502,17 @@ h3 {
   font-size: 0.82rem;
   font-weight: 700;
   transition:
-    transform 0.18s ease,
-    background-color 0.18s ease,
-    border-color 0.18s ease;
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .social-link:hover,
 .social-link:focus-visible {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
   background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
 }
 
 .social-link img,
@@ -483,6 +556,10 @@ h3 {
   border-radius: 999px;
   background: var(--accent-soft);
   border: 1px solid var(--line);
+  transition:
+    transform 0.24s ease,
+    background-color 0.24s ease,
+    border-color 0.24s ease;
 }
 
 .tile-label {
@@ -499,6 +576,10 @@ h3 {
   font-size: 0.9rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.panel-tile:hover .tile-icon {
+  transform: scale(1.08);
 }
 
 .orbital-card {
@@ -553,6 +634,7 @@ h3 {
   box-shadow:
     0 0 0 0.78rem var(--accent-soft),
     0 0 3rem rgba(15, 111, 103, 0.22);
+  animation: orbitalPulse 5.6s ease-in-out infinite;
 }
 
 .section-heading {
@@ -592,6 +674,7 @@ h3 {
   border-radius: inherit;
   background: linear-gradient(90deg, var(--accent-soft) 0%, transparent 26%);
   pointer-events: none;
+  transition: opacity 0.24s ease;
 }
 
 .publication-index,
@@ -606,6 +689,9 @@ h3 {
   font-family: var(--font-heading);
   font-size: 1.85rem;
   line-height: 1;
+  transition:
+    transform 0.24s ease,
+    color 0.24s ease;
 }
 
 .publication-body {
@@ -660,6 +746,10 @@ h3 {
   font-size: 0.92rem;
 }
 
+.publication-item:hover .publication-index {
+  transform: scale(1.08);
+}
+
 .timeline-item,
 .section-card,
 .resume-band,
@@ -688,6 +778,13 @@ h3 {
   width: 4px;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+  transition:
+    transform 0.24s ease,
+    opacity 0.24s ease;
+}
+
+.timeline-item:hover::before {
+  transform: scaleY(1.08);
 }
 
 .timeline-header {
@@ -858,6 +955,27 @@ h3 {
 
 .footer-inner p {
   margin: 0;
+}
+
+@keyframes orbitalPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .error-card {
