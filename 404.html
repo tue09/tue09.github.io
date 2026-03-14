@@ -1,26 +1,26 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>404 | Le Dinh Tri Tue</title>
     <meta name="description" content="Page not found on Le Dinh Tri Tue's personal website." />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="dark light" />
     <script>
       (() => {
         try {
-          const saved = localStorage.getItem("site-theme");
-          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+          const savedTheme = localStorage.getItem("site-theme");
+          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Cormorant+Garamond:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -31,12 +31,12 @@
         <article class="hero-copy">
           <p class="eyebrow">404</p>
           <h1>Page not found</h1>
-          <p class="hero-lead">This route does not exist on the site.</p>
+          <p class="hero-lead">This route does not exist on the academic website.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="./">Back to Home</a>
+            <a class="button button-primary" href="./">Back to Home</a>
             <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color mode" aria-pressed="false">
-              <span class="theme-toggle-label">Theme</span>
-              <strong id="themeLabel">Light</strong>
+              <span>Theme</span>
+              <strong id="themeLabel">Dark</strong>
             </button>
           </div>
         </article>
