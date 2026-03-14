@@ -3,191 +3,673 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tue Le | AI Research</title>
+    <title>AI Residency CV Screening</title>
     <meta
       name="description"
-      content="Personal academic website of Tue Le, AI researcher focusing on post-training large language models for code and reasoning."
+      content="Interactive product prototype for the AI Residency CV Screening Platform, translating the February 2026 PRD into a role-aware screening workspace."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-layer" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-one" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb-two" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
 
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#top" class="brand">Tue Le</a>
+        <a href="#top" class="brand" aria-label="AI Residency CV Screening">
+          <span class="brand-mark">AR</span>
+          <span class="brand-copy">
+            <strong>AI Residency</strong>
+            <span>CV Screening Platform</span>
+          </span>
+        </a>
+
         <button class="menu-btn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+
         <nav class="site-nav" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#publications">Publications</a>
-          <a href="#education">Education</a>
-          <a href="#honors">Honors</a>
-          <a href="#resume">Resume</a>
+          <a href="#overview">Overview</a>
+          <a href="#workspace">Workspace</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#security">Security</a>
+          <a href="#reports">Reports</a>
         </nav>
       </div>
     </header>
 
     <main id="top">
       <section class="hero container">
-        <p class="eyebrow reveal">AI Researcher | Computer Science</p>
-        <h1 class="reveal" style="--delay: 0.1s">Tue Le</h1>
-        <p class="lead reveal" style="--delay: 0.2s">
-          Researching post-training for large language models, with emphasis on reinforcement fine-tuning,
-          reliability, and generalization in code and reasoning tasks.
-        </p>
-        <div class="hero-cta reveal" style="--delay: 0.3s">
-          <a class="btn btn-primary" href="#publications">View Publications</a>
-          <a class="btn btn-secondary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">Open Resume</a>
-        </div>
-        <ul class="contact-row reveal" style="--delay: 0.4s">
-          <li><a href="mailto:tue209003@gmail.com">tue209003@gmail.com</a></li>
-          <li><a href="https://github.com/tue09" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://huggingface.co/LeTue09" target="_blank" rel="noopener noreferrer">Hugging Face</a></li>
-          <li><a href="https://www.linkedin.com/in/tue-le-2b1769280/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
-      </section>
+        <div class="hero-copy">
+          <p class="eyebrow reveal">PRD Prototype · February 2026</p>
+          <h1 class="reveal" style="--delay: 0.05s">
+            Screen 500 AI residency applications with one calm workflow.
+          </h1>
+          <p class="lead reveal" style="--delay: 0.1s">
+            A role-secured platform for batch-based hiring: intake, CV screening, entry tests, interview
+            assignments, dashboards, audit trails, and final decisions without spreadsheet sprawl.
+          </p>
 
-      <section id="about" class="section container">
-        <div class="section-head reveal">
-          <p class="eyebrow">About</p>
-          <h2>Research Profile</h2>
-        </div>
-        <div class="panel reveal" style="--delay: 0.1s">
-          <p>
-            I am an AI researcher based in Hanoi, Vietnam. My work centers on post-training large language models,
-            particularly reinforcement fine-tuning methods that improve alignment, robustness, and out-of-distribution
-            generalization for code and reasoning.
-          </p>
-          <p>
-            I have worked across both academic and applied settings, including AI research roles at Fsoft AI Center,
-            VinBigdata Institute, and BKAI labs. I am actively building a long-term research agenda at the intersection
-            of reliable LLM systems, optimization, and practical deployment.
-          </p>
-          <div class="chips">
-            <span>Post-training LLMs</span>
-            <span>Reinforcement Fine-Tuning</span>
-            <span>Code Intelligence</span>
-            <span>Reasoning Models</span>
-            <span>Model Alignment</span>
+          <div class="hero-actions reveal" style="--delay: 0.15s">
+            <a class="btn btn-primary" href="#workspace">Open Screening Workspace</a>
+            <a class="btn btn-secondary" href="#security">Inspect Role Controls</a>
           </div>
-        </div>
-      </section>
 
-      <section id="publications" class="section container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Publications</p>
-          <h2>Selected Papers</h2>
-        </div>
-
-        <div class="pub-grid">
-          <article class="pub-card reveal">
-            <p class="venue">NAACL 2025</p>
-            <h3>Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations</h3>
-            <p>Co-first author</p>
-            <a href="https://aclanthology.org/2025.naacl-long.231.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-          </article>
-
-          <article class="pub-card reveal" style="--delay: 0.05s">
-            <p class="venue">ACL 2025 (Findings)</p>
-            <h3>HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning</h3>
-            <p>Co-first author</p>
-            <a href="https://aclanthology.org/2025.findings-acl.715.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-          </article>
-
-          <article class="pub-card reveal" style="--delay: 0.1s">
-            <p class="venue">EMNLP 2025 (Findings)</p>
-            <h3>Multi-Surrogate-Objective Optimization for Neural Topic Models</h3>
-            <p>First author</p>
-            <a href="https://aclanthology.org/2025.findings-emnlp.9.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-          </article>
-
-          <article class="pub-card reveal" style="--delay: 0.15s">
-            <p class="venue">NeurIPS 2025</p>
-            <h3>Token-Level Self-Play with Importance-Aware Guidance for Large Language Models</h3>
-            <p>First author</p>
-            <a href="https://openreview.net/pdf/5591739a79d255024eb42902320b9cab3a38d803.pdf" target="_blank" rel="noopener noreferrer">Paper</a>
-          </article>
-
-          <article class="pub-card reveal" style="--delay: 0.2s">
-            <p class="venue">AAAI 2026</p>
-            <h3>MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models</h3>
-            <p>Co-author</p>
-            <span class="coming-soon">Link not public in resume</span>
-          </article>
-
-          <article class="pub-card reveal" style="--delay: 0.25s">
-            <p class="venue">Under Review</p>
-            <h3>SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios</h3>
-            <p>Co-first author</p>
-            <a href="https://www.arxiv.org/pdf/2512.18470" target="_blank" rel="noopener noreferrer">Preprint</a>
-          </article>
-        </div>
-      </section>
-
-      <section id="education" class="section container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Education</p>
-          <h2>Academic Background</h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <h3>Hanoi University of Science and Technology</h3>
-            <p class="meta">B.S. in Computer Science (Talented Program) | Sep 2021 - Jul 2025</p>
-            <p>GPA: 3.4/4.0, Hanoi, Vietnam</p>
-          </article>
-          <article class="timeline-item reveal" style="--delay: 0.1s">
-            <h3>Ha Tinh High School for Gifted Students</h3>
-            <p class="meta">Math Honors Class | Aug 2018 - Jun 2021</p>
-            <p>Grade: 9.4/10, Ha Tinh, Vietnam</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="honors" class="section container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Honors</p>
-          <h2>Awards & Distinctions</h2>
-        </div>
-        <div class="panel reveal" style="--delay: 0.1s">
-          <ul class="honor-list">
-            <li>Second Prize, Vietnam National Mathematical Olympiad (VMO), 2021</li>
-            <li>Third Prize, Vietnam National Mathematical Olympiad (VMO), 2020</li>
-            <li>Participant, Vietnam Team Selection Tests for IMO</li>
-            <li>Odon Vallet Scholarship, 2020</li>
+          <ul class="hero-facts reveal" style="--delay: 0.2s">
+            <li>
+              <strong>300-500</strong>
+              <span>applications per batch</span>
+            </li>
+            <li>
+              <strong>3 roles</strong>
+              <span>super admin, coordinator, reviewer</span>
+            </li>
+            <li>
+              <strong>25/page</strong>
+              <span>paginated candidate list</span>
+            </li>
+            <li>
+              <strong>Full audit</strong>
+              <span>logged changes and exports</span>
+            </li>
           </ul>
         </div>
+
+        <aside class="hero-panel reveal" style="--delay: 0.22s">
+          <article class="glass-card batch-card">
+            <div class="chip-row">
+              <span class="ghost-chip">Batch A · 2026</span>
+              <span class="status-pill active" id="batchStatusHero">Active</span>
+            </div>
+            <h2>AI Residency Recruitment</h2>
+            <p>
+              Coordinators manage intake, reviewers score interviews, and super admins govern access,
+              policy, and audit logs.
+            </p>
+            <div class="snapshot-grid">
+              <div>
+                <span>OAuth</span>
+                <strong>Google SSO</strong>
+              </div>
+              <div>
+                <span>Storage</span>
+                <strong>Watermarked CVs</strong>
+              </div>
+              <div>
+                <span>Backend</span>
+                <strong>FastAPI + Supabase</strong>
+              </div>
+              <div>
+                <span>Governance</span>
+                <strong>RLS + Triggers</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-card pulse-card">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Live Batch Pulse</p>
+                <h3>Pipeline health</h3>
+              </div>
+              <span class="ghost-chip">Auto refreshed</span>
+            </div>
+            <div class="funnel-list" id="heroFunnel"></div>
+          </article>
+        </aside>
       </section>
 
-      <section id="resume" class="section container">
+      <section id="overview" class="section container">
         <div class="section-head reveal">
-          <p class="eyebrow">Resume</p>
-          <h2>Curriculum Vitae</h2>
-        </div>
-        <div class="panel resume-panel reveal" style="--delay: 0.1s">
+          <p class="eyebrow">Overview</p>
+          <h2>Built around the actual residency funnel</h2>
           <p>
-            Full CV with experience, activities, and publication details.
+            The product turns the PRD into a single operating surface: candidate intake, screening, interviews,
+            decisions, and reporting connected under role-based access.
           </p>
-          <div class="resume-actions">
-            <a class="btn btn-primary" href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn btn-secondary" href="assets/LeDinhTriTue_resume.pdf" download>Download PDF</a>
+        </div>
+
+        <div class="overview-grid">
+          <article class="glass-card reveal">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Objectives</p>
+                <h3>Replace fragile spreadsheet ops</h3>
+              </div>
+            </div>
+            <div class="objective-list">
+              <div class="objective-item">
+                <strong>Centralize candidate records</strong>
+                <span>CVs, tests, evaluations, and status changes live in one batch-aware system.</span>
+              </div>
+              <div class="objective-item">
+                <strong>Protect candidate PII</strong>
+                <span>Reviewers never see email or phone, and reviewer CV access is visibly watermarked.</span>
+              </div>
+              <div class="objective-item">
+                <strong>Standardize interviews</strong>
+                <span>Assignments, rubric scores, minimum-comment rules, and read-only submissions.</span>
+              </div>
+              <div class="objective-item">
+                <strong>Drive decisions with reporting</strong>
+                <span>Funnel metrics, university breakdowns, workload views, and exportable summaries.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.08s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Status Flow</p>
+                <h3>From application to final decision</h3>
+              </div>
+            </div>
+            <div class="status-path">
+              <span>new</span>
+              <span>under_review</span>
+              <span>test_invited</span>
+              <span>test_completed</span>
+              <span>interview_scheduled</span>
+              <span>interview_completed</span>
+              <span>shortlisted</span>
+              <span>accepted / rejected / waitlisted / withdrawn</span>
+            </div>
+            <div class="feature-banner">
+              <strong>Key product promise</strong>
+              <p>Every downstream action is traceable: imports, assignments, evaluations, exports, and status changes.</p>
+            </div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.14s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Role Lens</p>
+                <h3>Three perspectives, one dataset</h3>
+              </div>
+            </div>
+            <div class="role-mini-grid">
+              <div>
+                <span>Super Admin</span>
+                <p>User management, batch control, audit logs, full candidate visibility.</p>
+              </div>
+              <div>
+                <span>Coordinator</span>
+                <p>Imports, candidate ops, assignments, status changes, reporting.</p>
+              </div>
+              <div>
+                <span>Reviewer</span>
+                <p>Assigned evaluations, dashboards, no CV downloads, no contact details.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="workspace" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Workspace</p>
+          <h2>Interactive screening console</h2>
+          <p>
+            This prototype simulates the main screen, candidate detail tabs, role-aware visibility, quick presets,
+            and the operational feel described in the PRD.
+          </p>
+        </div>
+
+        <div class="workspace-shell reveal" style="--delay: 0.06s">
+          <aside class="workspace-sidebar">
+            <article class="glass-card sidebar-card">
+              <div class="subsection-head">
+                <div>
+                  <p class="eyebrow">Role Switcher</p>
+                  <h3>Access posture</h3>
+                </div>
+              </div>
+              <div class="role-switch" id="roleSwitch">
+                <button class="role-btn active" type="button" data-role="coordinator">Coordinator</button>
+                <button class="role-btn" type="button" data-role="reviewer">Reviewer</button>
+                <button class="role-btn" type="button" data-role="super_admin">Super Admin</button>
+              </div>
+              <div class="role-summary" id="roleSummary"></div>
+            </article>
+
+            <article class="glass-card sidebar-card">
+              <div class="subsection-head">
+                <div>
+                  <p class="eyebrow">Filter Presets</p>
+                  <h3>Saved reviewer slices</h3>
+                </div>
+                <button class="link-btn" id="savePresetBtn" type="button">Save current</button>
+              </div>
+              <div class="preset-list">
+                <button class="preset-btn" type="button" data-preset="needs_review">
+                  Needs Review
+                  <span>new + under_review candidates</span>
+                </button>
+                <button class="preset-btn" type="button" data-preset="research_heavy">
+                  Research Heavy
+                  <span>publications and research-oriented profiles</span>
+                </button>
+                <button class="preset-btn" type="button" data-preset="final_round">
+                  Final Round
+                  <span>completed interviews sorted by strongest score</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="glass-card sidebar-card">
+              <div class="subsection-head">
+                <div>
+                  <p class="eyebrow">Batch Ops</p>
+                  <h3>Recruitment cycle controls</h3>
+                </div>
+              </div>
+              <div class="batch-meta">
+                <div>
+                  <span>Name</span>
+                  <strong>AI Residency 2026 · Batch A</strong>
+                </div>
+                <div>
+                  <span>Window</span>
+                  <strong>Jan 12 - Mar 28</strong>
+                </div>
+                <div>
+                  <span>Status</span>
+                  <strong id="batchStatusInline">active</strong>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-block hidden" id="archiveBatchBtn" type="button">
+                Archive Batch
+              </button>
+            </article>
+
+            <article class="glass-card sidebar-card hidden" id="adminPanelCard">
+              <div class="subsection-head">
+                <div>
+                  <p class="eyebrow">Super Admin</p>
+                  <h3>Governance layer</h3>
+                </div>
+              </div>
+              <div class="admin-list">
+                <div>
+                  <strong>User management</strong>
+                  <span>Add users, switch roles, activate or deactivate without hard delete.</span>
+                </div>
+                <div>
+                  <strong>RLS and audit view</strong>
+                  <span>Inspect protected logs and policy-sensitive changes across the batch.</span>
+                </div>
+              </div>
+            </article>
+          </aside>
+
+          <div class="workspace-main">
+            <div class="metric-strip" id="metricStrip" aria-live="polite"></div>
+
+            <section class="glass-card board-card">
+              <div class="board-head">
+                <div>
+                  <p class="eyebrow">Candidate List</p>
+                  <h3>Main screening screen</h3>
+                  <p>Sortable, filterable, 25 per page, with bulk actions restricted by role.</p>
+                </div>
+                <div class="table-actions">
+                  <button class="action-btn" id="shortlistBtn" type="button">Move Selected to Shortlist</button>
+                  <button class="action-btn" id="assignBtn" type="button">Assign Reviewer</button>
+                  <button class="action-btn" id="exportBtn" type="button">Export Filtered CSV</button>
+                </div>
+              </div>
+
+              <div class="toolbar">
+                <label class="field">
+                  <span>Search</span>
+                  <input
+                    id="searchInput"
+                    type="search"
+                    placeholder="Search by name, university, major, or interest"
+                    autocomplete="off"
+                  />
+                </label>
+
+                <label class="field">
+                  <span>University</span>
+                  <select id="universityFilter">
+                    <option value="all">All universities</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span>Sort</span>
+                  <select id="sortSelect">
+                    <option value="score-desc">Composite score ↓</option>
+                    <option value="gpa-desc">GPA ↓</option>
+                    <option value="status-asc">Status A-Z</option>
+                    <option value="name-asc">Name A-Z</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="status-filters" id="statusFilters"></div>
+
+              <div class="table-wrap">
+                <table class="candidate-table">
+                  <thead id="candidateHead"></thead>
+                  <tbody id="candidateTableBody"></tbody>
+                </table>
+                <div class="empty-state hidden" id="emptyState">
+                  <strong>No candidates match this slice.</strong>
+                  <p>Try clearing a status chip, switching university, or loading a different preset.</p>
+                </div>
+              </div>
+
+              <div class="pagination-note">
+                <span id="resultsCount">0 candidates</span>
+                <span>Page size set to 25</span>
+              </div>
+            </section>
+
+            <div class="detail-grid">
+              <section class="glass-card detail-card">
+                <div class="detail-header" id="detailHeader"></div>
+
+                <div class="tab-bar" id="detailTabs">
+                  <button class="tab-btn active" type="button" data-tab="profile">Profile</button>
+                  <button class="tab-btn" type="button" data-tab="cv">CV</button>
+                  <button class="tab-btn" type="button" data-tab="entry">Entry Test</button>
+                  <button class="tab-btn" type="button" data-tab="interviews">Interviews</button>
+                  <button class="tab-btn" type="button" data-tab="activity">Activity Log</button>
+                </div>
+
+                <div class="detail-content" id="detailContent"></div>
+              </section>
+
+              <aside class="insight-column">
+                <section class="glass-card insight-card">
+                  <div class="subsection-head">
+                    <div>
+                      <p class="eyebrow">Ranking</p>
+                      <h3>Top candidates</h3>
+                    </div>
+                  </div>
+                  <div class="rank-list" id="topCandidates"></div>
+                </section>
+
+                <section class="glass-card insight-card">
+                  <div class="subsection-head">
+                    <div>
+                      <p class="eyebrow">Audit Feed</p>
+                      <h3>Recent activity</h3>
+                    </div>
+                  </div>
+                  <div class="activity-feed" id="recentActivity"></div>
+                </section>
+              </aside>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Workflow</p>
+          <h2>Imports, interviews, and decision hygiene</h2>
+          <p>
+            The PRD calls for more than a table. The surrounding mechanics keep review quality high as batch volume
+            scales.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="glass-card reveal">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Import Wizard</p>
+                <h3>Guardrails before data lands</h3>
+              </div>
+            </div>
+            <div class="step-list">
+              <div class="step-item">
+                <strong>1. Upload</strong>
+                <span>CSV intake plus ZIP-based CV upload for one recruitment batch.</span>
+              </div>
+              <div class="step-item">
+                <strong>2. Column Mapping</strong>
+                <span>Map source headers to the candidate schema with import-time validation.</span>
+              </div>
+              <div class="step-item">
+                <strong>3. Preview & Validate</strong>
+                <span>Catch invalid GPA ranges, malformed email addresses, and duplicates by email.</span>
+              </div>
+              <div class="step-item">
+                <strong>4. Confirm</strong>
+                <span>Persist candidates, upload CVs, and log the import event to audit history.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.08s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Interview Workflow</p>
+                <h3>Structured, comparable evaluations</h3>
+              </div>
+            </div>
+            <div class="rubric-card">
+              <div class="rubric-row">
+                <span>Technical Knowledge</span>
+                <div class="rubric-bar"><i style="width: 92%"></i></div>
+              </div>
+              <div class="rubric-row">
+                <span>Research Aptitude</span>
+                <div class="rubric-bar"><i style="width: 88%"></i></div>
+              </div>
+              <div class="rubric-row">
+                <span>Problem Solving</span>
+                <div class="rubric-bar"><i style="width: 94%"></i></div>
+              </div>
+              <div class="rubric-row">
+                <span>Communication</span>
+                <div class="rubric-bar"><i style="width: 81%"></i></div>
+              </div>
+              <div class="rubric-row">
+                <span>Motivation & Fit</span>
+                <div class="rubric-bar"><i style="width: 87%"></i></div>
+              </div>
+            </div>
+            <p class="support-copy">
+              Required comments, weighted averages, read-only submissions, and cross-round comparison for coordinators
+              and admins.
+            </p>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.14s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Candidate Detail</p>
+                <h3>Everything on one record</h3>
+              </div>
+            </div>
+            <div class="detail-mini-tabs">
+              <span>Profile</span>
+              <span>CV</span>
+              <span>Entry Test</span>
+              <span>Interviews</span>
+              <span>Activity Log</span>
+            </div>
+            <ul class="feature-list">
+              <li>Inline edits for coordinators and admins</li>
+              <li>Reviewer-safe CV viewer with watermark and blocked download</li>
+              <li>Cross-round interview comparisons and assignment history</li>
+              <li>Activity tracing for imports, status changes, and report generation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="security" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Security</p>
+          <h2>Role-based access is part of the product, not decoration</h2>
+          <p>
+            The backend contract assumes Supabase Auth, Row Level Security, protected CV access, and automatic
+            audit logging via triggers.
+          </p>
+        </div>
+
+        <div class="security-grid">
+          <article class="glass-card reveal">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Access Matrix</p>
+                <h3>Who can see what</h3>
+              </div>
+            </div>
+            <div class="matrix">
+              <div class="matrix-row">
+                <span>Super Admin</span>
+                <p>All candidate data, users, batches, audit logs, and policy-sensitive controls.</p>
+              </div>
+              <div class="matrix-row">
+                <span>Coordinator</span>
+                <p>Candidate operations, imports, assignments, exports, and dashboards. No user management.</p>
+              </div>
+              <div class="matrix-row">
+                <span>Reviewer</span>
+                <p>No email, no phone, no contact export, no CV download, only own evaluations writable.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.08s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Controls</p>
+                <h3>Enforced by the stack</h3>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>Google OAuth using pre-provisioned corporate accounts only</li>
+              <li>RLS on every table backing the recruitment workflow</li>
+              <li>Audit logs readable only by super admin</li>
+              <li>Watermarked reviewer CV viewer with right-click disabled in the real app</li>
+              <li>Trigger-based logging for candidates, assignments, and evaluations</li>
+            </ul>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.14s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">UX Requirements</p>
+                <h3>Operational polish</h3>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li>Responsive desktop and tablet layouts</li>
+              <li>Loading skeletons during data fetch</li>
+              <li>Confirmation dialogs for destructive actions</li>
+              <li>Toast feedback for success and error states</li>
+              <li>Friendly empty states and a dedicated 404 page</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="reports" class="section container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Reports</p>
+          <h2>Decision support for the entire batch</h2>
+          <p>
+            Dashboards summarize progress at a glance while deeper reports reveal score distributions, interviewer
+            workload, and application timelines.
+          </p>
+        </div>
+
+        <div class="reports-grid">
+          <article class="glass-card reveal">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">University Breakdown</p>
+                <h3>Top candidate sources</h3>
+              </div>
+            </div>
+            <div class="bar-chart" id="universityChart"></div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.08s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Funnel Report</p>
+                <h3>Pipeline metrics by status</h3>
+              </div>
+            </div>
+            <div class="funnel-list report-funnel" id="reportFunnel"></div>
+          </article>
+
+          <article class="glass-card reveal" style="--delay: 0.14s">
+            <div class="subsection-head">
+              <div>
+                <p class="eyebrow">Stack</p>
+                <h3>Implementation target</h3>
+              </div>
+            </div>
+            <div class="stack-grid">
+              <div>
+                <span>Frontend</span>
+                <strong>React + TypeScript + Tailwind</strong>
+              </div>
+              <div>
+                <span>Backend</span>
+                <strong>FastAPI</strong>
+              </div>
+              <div>
+                <span>Database</span>
+                <strong>Supabase PostgreSQL</strong>
+              </div>
+              <div>
+                <span>Auth</span>
+                <strong>Supabase Auth + Google OAuth</strong>
+              </div>
+              <div>
+                <span>Files</span>
+                <strong>Supabase Storage for CV PDFs</strong>
+              </div>
+              <div>
+                <span>Exports</span>
+                <strong>CSV + PDF reports</strong>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p>Copyright <span id="year"></span> Tue Le</p>
-        <p>Built for GitHub Pages</p>
+        <div>
+          <strong>AI Residency CV Screening</strong>
+          <p>Static product prototype translating the February 2026 PRD into an interactive web experience.</p>
+        </div>
+        <p>Copyright <span id="year"></span></p>
       </div>
     </footer>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+
+    <div class="confirm-backdrop hidden" id="confirmBackdrop" aria-hidden="true">
+      <div class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <p class="eyebrow">Confirm action</p>
+        <h2 id="confirmTitle">Proceed?</h2>
+        <p id="confirmMessage">This action will update the current batch.</p>
+        <div class="confirm-actions">
+          <button class="btn btn-secondary" id="confirmCancel" type="button">Cancel</button>
+          <button class="btn btn-primary" id="confirmAccept" type="button">Confirm</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
