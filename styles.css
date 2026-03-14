@@ -112,13 +112,15 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 0.8rem;
+  min-width: 2.6rem;
+  min-height: 2.6rem;
+  padding: 0 0.9rem;
+  border-radius: 999px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: var(--button-text);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
 }
 
 .brand-text {
@@ -251,16 +253,17 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.4rem;
-  height: 4.4rem;
-  border-radius: 1.25rem;
+  width: fit-content;
+  min-height: 2.7rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
   background:
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25), transparent 40%),
     linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: var(--button-text);
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.05em;
 }
 
 .eyebrow {
@@ -297,7 +300,7 @@ h3 {
 .profile-summary,
 .section-note,
 .timeline-header p,
-.contact-card span,
+.contact-card div span,
 .fact-list dt,
 .fact-list dd,
 .publication-item p,
@@ -325,34 +328,20 @@ h3 {
   gap: 0.7rem;
 }
 
-.opportunity-card {
-  padding: 1rem;
-  border-radius: var(--radius-lg);
-  background: var(--accent-soft);
-  border: 1px solid var(--line);
-}
-
-.opportunity-label {
-  display: inline-block;
-  margin-bottom: 0.4rem;
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent-strong);
-}
-
-.opportunity-card p {
-  margin: 0;
-}
-
 .fact-list {
   display: grid;
   gap: 0.75rem;
   margin: 0;
 }
 
-.fact-list div {
+.fact-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.fact-item > div {
   display: grid;
   gap: 0.12rem;
 }
@@ -372,16 +361,35 @@ h3 {
   text-decoration: none;
 }
 
+.fact-icon,
+.link-badge,
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .profile-links {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 0.65rem;
 }
 
 .profile-links a {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  gap: 0.7rem;
   min-height: 2.6rem;
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-md);
@@ -390,16 +398,6 @@ h3 {
   text-decoration: none;
 }
 
-.interest-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.interest-pills li,
 .meta-badge {
   display: inline-flex;
   align-items: center;
@@ -554,10 +552,17 @@ h3 {
 
 .contact-card {
   display: grid;
-  gap: 0.35rem;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
   padding: 1.25rem;
   border-radius: var(--radius-xl);
   text-decoration: none;
+}
+
+.contact-card div {
+  display: grid;
+  gap: 0.25rem;
 }
 
 .contact-card strong {
@@ -670,10 +675,6 @@ h3 {
 
   .container {
     width: min(var(--max-width), calc(100% - 1rem));
-  }
-
-  .profile-links {
-    grid-template-columns: 1fr;
   }
 
   .contact-grid {
