@@ -13,8 +13,7 @@
       (() => {
         try {
           const savedTheme = localStorage.getItem("site-theme");
-          const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-          document.documentElement.setAttribute("data-theme", savedTheme || systemTheme);
+          document.documentElement.setAttribute("data-theme", savedTheme || "light");
         } catch (error) {
           document.documentElement.setAttribute("data-theme", "light");
         }
