@@ -1,13 +1,37 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 64 64"
-  fill="none"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M17 32a15 15 0 0 1 25.64-10.61" stroke="#1d4ed8" stroke-width="6" />
-  <path d="M47 32a15 15 0 0 1-25.64 10.61" stroke="#60a5fa" stroke-width="6" />
-  <circle cx="43.2" cy="21.4" r="4.8" fill="#1d4ed8" />
-  <circle cx="20.8" cy="42.6" r="4.8" fill="#60a5fa" />
-  <circle cx="32" cy="32" r="5.2" fill="#1e40af" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="strokeGrad" x1="18" y1="12" x2="50" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+    <linearGradient id="paperGrad" x1="20" y1="10" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#eff6ff" />
+    </linearGradient>
+  </defs>
+
+  <rect
+    x="14"
+    y="17"
+    width="22"
+    height="28"
+    rx="6"
+    transform="rotate(-8 14 17)"
+    fill="#f8fbff"
+    stroke="#93c5fd"
+    stroke-width="4"
+  />
+
+  <path
+    d="M25 12h15l10 10v20c0 5.523-4.477 10-10 10H25c-5.523 0-10-4.477-10-10V22c0-5.523 4.477-10 10-10Z"
+    fill="url(#paperGrad)"
+    stroke="url(#strokeGrad)"
+    stroke-width="4"
+  />
+  <path d="M40 12v10h10" stroke="url(#strokeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+
+  <path
+    d="M32 22l3.4 7.6 7.6 3.4-7.6 3.4L32 44l-3.4-7.6-7.6-3.4 7.6-3.4L32 22Z"
+    fill="url(#strokeGrad)"
+  />
 </svg>
