@@ -1,37 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="strokeGrad" x1="18" y1="12" x2="50" y2="52" gradientUnits="userSpaceOnUse">
+    <linearGradient id="edge" x1="18" y1="12" x2="50" y2="52" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#1d4ed8" />
       <stop offset="100%" stop-color="#60a5fa" />
     </linearGradient>
-    <linearGradient id="paperGrad" x1="20" y1="10" x2="48" y2="50" gradientUnits="userSpaceOnUse">
+    <linearGradient id="sheet" x1="22" y1="14" x2="46" y2="50" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ffffff" />
       <stop offset="100%" stop-color="#eff6ff" />
     </linearGradient>
   </defs>
 
-  <rect
-    x="14"
-    y="17"
-    width="22"
-    height="28"
-    rx="6"
-    transform="rotate(-8 14 17)"
-    fill="#f8fbff"
+  <path
+    d="M20 14h15l8 8v20a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z"
+    fill="#dbeafe"
     stroke="#93c5fd"
     stroke-width="4"
+    transform="rotate(-8 27.5 32)"
   />
 
   <path
-    d="M25 12h15l10 10v20c0 5.523-4.477 10-10 10H25c-5.523 0-10-4.477-10-10V22c0-5.523 4.477-10 10-10Z"
-    fill="url(#paperGrad)"
-    stroke="url(#strokeGrad)"
+    d="M26 12h14l10 10v22a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8Z"
+    fill="url(#sheet)"
+    stroke="url(#edge)"
     stroke-width="4"
   />
-  <path d="M40 12v10h10" stroke="url(#strokeGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-
-  <path
-    d="M32 22l3.4 7.6 7.6 3.4-7.6 3.4L32 44l-3.4-7.6-7.6-3.4 7.6-3.4L32 22Z"
-    fill="url(#strokeGrad)"
-  />
+  <path d="M40 12v10h10" stroke="url(#edge)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M27 26h7" stroke="#1d4ed8" stroke-width="4.5" stroke-linecap="round" />
+  <path d="M27 34h15" stroke="#3b82f6" stroke-width="4.5" stroke-linecap="round" />
+  <path d="M27 42h11" stroke="#60a5fa" stroke-width="4.5" stroke-linecap="round" />
 </svg>
