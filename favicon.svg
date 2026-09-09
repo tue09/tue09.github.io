@@ -1,31 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="LT">
   <defs>
-    <linearGradient id="edge" x1="18" y1="12" x2="50" y2="52" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1d4ed8" />
-      <stop offset="100%" stop-color="#60a5fa" />
-    </linearGradient>
-    <linearGradient id="sheet" x1="22" y1="14" x2="46" y2="50" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#eff6ff" />
+    <linearGradient id="bg" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#073f47"/>
+      <stop offset="1" stop-color="#16717c"/>
     </linearGradient>
   </defs>
-
-  <path
-    d="M20 14h15l8 8v20a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z"
-    fill="#dbeafe"
-    stroke="#93c5fd"
-    stroke-width="4"
-    transform="rotate(-8 27.5 32)"
-  />
-
-  <path
-    d="M26 12h14l10 10v22a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8Z"
-    fill="url(#sheet)"
-    stroke="url(#edge)"
-    stroke-width="4"
-  />
-  <path d="M40 12v10h10" stroke="url(#edge)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M27 26h7" stroke="#1d4ed8" stroke-width="4.5" stroke-linecap="round" />
-  <path d="M27 34h15" stroke="#3b82f6" stroke-width="4.5" stroke-linecap="round" />
-  <path d="M27 42h11" stroke="#60a5fa" stroke-width="4.5" stroke-linecap="round" />
+  <circle cx="32" cy="32" r="29" fill="url(#bg)"/>
+  <circle cx="32" cy="32" r="27.5" fill="none" stroke="#ffffff" stroke-opacity="0.18"/>
+  <text x="32" y="38" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle" letter-spacing="1">LT</text>
 </svg>

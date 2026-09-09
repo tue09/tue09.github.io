@@ -1,0 +1,219 @@
+identity:
+  name: Le Dinh Tri Tue
+  name_native: null
+  title: AI Researcher
+  email: tue209003@gmail.com
+  location: Hanoi, Vietnam
+affiliations:
+  current:
+  - institution: Mila - Quebec AI Institute
+    department: null
+    role: Research Collaborator
+    start: 2026-01
+    end: null
+    location: Remote
+    topics:
+    - Secure code generation
+    - Coding agents
+    - Post-training for large language models
+    summary: Develop training and inference methods to improve the security, safety,
+      and reliability of coding agents.
+  - institution: Fsoft AI Center
+    department: null
+    role: AI Resident
+    start: 2025-05
+    end: null
+    location: Hanoi, Vietnam
+    topics:
+    - AI for software engineering
+    - Coding agents
+    - Post-training for large language models
+    summary: Develop training and evaluation pipelines to improve reliability and
+      generalization on reasoning and coding tasks.
+  past:
+  - institution: VinBigdata Institute
+    department: null
+    role: AI Engineer
+    start: 2024-07
+    end: 2025-05
+    location: Hanoi, Vietnam
+    topics:
+    - Multimodal large language models
+    - Audio-text alignment
+    - Post-training for large language models
+    summary: Built and trained multimodal models for speech-language understanding
+      and generation.
+  - institution: Hanoi University of Science and Technology
+    department: Data Science Laboratory, BKAI
+    role: Research Student
+    start: 2023-10
+    end: 2025-09
+    location: Hanoi, Vietnam
+    topics:
+    - Optimization for neural networks
+    - Multi-objective optimization
+    - Sharpness-aware minimization
+    summary: Designed and evaluated optimization algorithms for training stability
+      and generalization.
+  - institution: Hanoi University of Science and Technology
+    department: Modeling, Simulation and Optimization Laboratory, BKAI
+    role: Research Student
+    start: 2023-02
+    end: 2024-01
+    location: Hanoi, Vietnam
+    topics:
+    - Evolutionary algorithms
+    - Vehicle routing problems
+    - Combinatorial optimization
+    summary: Developed metaheuristic algorithms for vehicle routing problem variants.
+education:
+- degree: 'B.S. in Computer Science (Talented Program), GPA: 3.4/4.0'
+  institution: Hanoi University of Science and Technology
+  department: null
+  advisor: []
+  start: 2021-09
+  end: 2025-07
+- degree: 'Mathematics Honors Class, Grade: 9.4/10'
+  institution: Ha Tinh High School for Gifted Students
+  department: null
+  advisor: []
+  start: 2018-08
+  end: 2021-06
+research:
+  summary: I study reasoning and alignment in large language models, with a focus
+    on post-training and reinforcement learning for more generalizable, reliable,
+    and controllable reasoning systems.
+  interests:
+  - Reasoning and alignment in large language models
+  - Post-training and reinforcement learning
+  - Reliable and controllable reasoning models
+  - Secure code generation and coding agents
+links:
+  github: https://github.com/tue09
+  huggingface: https://huggingface.co/LeTue09
+  linkedin: https://www.linkedin.com/in/tue-le-2b1769280/
+  homepage: https://tue09.github.io/
+  cv: assets/LeDinhTriTue_resume.pdf
+featured_projects:
+- id: swe-evo
+  name: SWE-EVO
+  tagline: Benchmarking coding agents in long-horizon software evolution scenarios.
+  subtitle: A research benchmark for sustained, repository-scale software engineering
+  stats:
+  - label: Tasks
+    value: '48'
+    source_url: https://arxiv.org/abs/2512.18470
+  - label: Open-source projects
+    value: '7'
+    source_url: https://arxiv.org/abs/2512.18470
+  - label: Average tests per task
+    value: '874'
+    source_url: https://arxiv.org/abs/2512.18470
+  links:
+    repo: https://github.com/SWE-EVO/SWE-EVO
+    arxiv: https://arxiv.org/abs/2512.18470
+  elevator: SWE-EVO evaluates whether coding agents can interpret high-level requirements
+    and coordinate changes across many files while preserving existing behavior over
+    extended tasks.
+  subprojects: []
+  open_problems: []
+awards:
+- title: Selected for the Vietnam Mathematics Team selection process among the nation's
+    top 50 mathematics students
+  issuer: Vietnam Mathematical Olympiad
+  year: null
+  url: null
+- title: Second Prize, Vietnam Mathematical Olympiad
+  issuer: VMO
+  year: 2021
+  url: null
+- title: Third Prize, Vietnam Mathematical Olympiad
+  issuer: VMO
+  year: 2020
+  url: null
+- title: Odon Vallet Scholarship
+  issuer: Odon Vallet Scholarship Fund
+  year: 2020
+  url: null
+activities:
+- name: SOICT Hackathon
+  year: 2024
+  detail: Legal Document Retrieval, NAVER track
+- name: IAI Hackathon
+  year: 2024
+  detail: Intelligence DECODE-A-THON
+- name: SOICT Hackathon
+  year: 2023
+  detail: Routing Optimization, Samsung-Tiki track
+publications:
+  preamble: Selected work on coding agents, language-model alignment, knowledge distillation,
+    and neural topic modeling.
+selected_publications:
+- group: Language Models and Coding Agents
+  keys:
+  - le2025sweevo
+  - vuong2026mcwkd
+  - le2025swift
+- group: Neural Topic Models and Optimization
+  keys:
+  - khanh2026multiobjective
+  - le2025msoo
+  - vuong2025hicot
+  - nguyen2025sharpness
+publications_meta:
+  le2025sweevo:
+    spotlight: true
+    description: A benchmark for realistic software evolution tasks that require sustained
+      planning and coordinated changes across many files.
+    co_first:
+    - Tue Le
+    - Minh Vu Thai Pham
+    links:
+      arxiv: https://arxiv.org/abs/2512.18470
+      code: https://github.com/SWE-EVO/SWE-EVO
+  khanh2026multiobjective:
+    co_first:
+    - Chi Pham Khanh
+    - Tue Le
+    links:
+      paper: https://www.sciencedirect.com/science/article/pii/S0925231226008295
+      code: https://github.com/tue09/MSOO
+  vuong2026mcwkd:
+    links:
+      paper: https://ojs.aaai.org/index.php/AAAI/article/view/40619
+  le2025swift:
+    spotlight: true
+    description: A self-play alignment method that uses teacher-guided token importance
+      to focus learning on the most useful parts of each response.
+    links:
+      paper: https://papers.nips.cc/paper_files/paper/2025/hash/aec7c15af9de0979b7c138e46d057c80-Abstract-Conference.html
+      openreview: https://openreview.net/forum?id=3VvdoCcVPU
+      code: https://github.com/tue09/SWIFT
+  le2025msoo:
+    co_first:
+    - Tue Le
+    - Hoang Tran Vuong
+    links:
+      paper: https://aclanthology.org/2025.findings-emnlp.9/
+      code: https://github.com/tue09/MSOO
+  vuong2025hicot:
+    co_first:
+    - Hoang Tran Vuong
+    - Tue Le
+    - Tu Vu
+    - Tung Nguyen
+    links:
+      paper: https://aclanthology.org/2025.findings-acl.715/
+  nguyen2025sharpness:
+    co_first:
+    - Tung Nguyen
+    - Tue Le
+    - Hoang Tran Vuong
+    links:
+      paper: https://aclanthology.org/2025.naacl-long.231/
+ship:
+  persona: theory-minimal
+  accent_color: '#0f5b66'
+  lang: en
+  awards_heading: Honors & Awards
+schema_version: 1

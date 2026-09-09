@@ -1,0 +1,3 @@
+I am an AI researcher working on reasoning and alignment in large language models. My current work studies post-training and reinforcement learning methods that make reasoning systems more generalizable, reliable, and controllable, with a growing focus on secure code generation and coding agents.
+
+I am currently a Research Collaborator at Mila - Quebec AI Institute and an AI Resident at Fsoft AI Center. Previously, I worked as an AI Engineer at VinBigdata Institute and conducted research on optimization and neural topic models at BKAI, Hanoi University of Science and Technology.

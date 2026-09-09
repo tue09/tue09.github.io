@@ -1,0 +1,6 @@
+- 2026-06: Published A Multi-Objective Surrogate Framework for Training Neural Topic Models in Neurocomputing.
+- 2026-03: MCW-KD appeared in the AAAI 2026 proceedings.
+- 2026-01: Started collaborating with Mila - Quebec AI Institute on secure code generation and coding agents.
+- 2025-12: Released SWE-EVO, a benchmark for long-horizon software evolution by coding agents.
+- 2025-11: Published Multi-Surrogate-Objective Optimization for Neural Topic Models in Findings of EMNLP 2025.
+- 2025-05: Joined Fsoft AI Center as an AI Resident.
