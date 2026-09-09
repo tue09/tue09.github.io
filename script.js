@@ -1,6 +1,6 @@
 /* =========================================================================
-   Le Dinh Tri Tue — homepage behaviour
-   Theme · navigation · scroll reveal · publication filters · inline editing
+   Le Dinh Tri Tue homepage behaviour
+   Theme · navigation · scroll reveal · inline editing
    ========================================================================= */
 
 (() => {
@@ -146,31 +146,6 @@
     sections.forEach((section) => spy.observe(section));
   }
 
-  /* ---------- Publication filters ---------- */
-
-  const chips = Array.from(document.querySelectorAll(".chip[data-filter]"));
-  const pubs = Array.from(document.querySelectorAll(".pub[data-topic]"));
-  const pubEmpty = document.getElementById("pubEmpty");
-
-  if (chips.length && pubs.length) {
-    chips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        const filter = chip.dataset.filter;
-
-        chips.forEach((node) => node.classList.toggle("is-active", node === chip));
-
-        let shown = 0;
-        pubs.forEach((pub) => {
-          const match = filter === "all" || pub.dataset.topic === filter;
-          pub.classList.toggle("is-hidden", !match);
-          if (match) shown += 1;
-        });
-
-        if (pubEmpty) pubEmpty.hidden = shown > 0;
-      });
-    });
-  }
-
   /* ---------- Inline authoring (hidden top-left affordance) ---------- */
 
   const hotzone = document.getElementById("editHotzone");
@@ -281,19 +256,12 @@
       clone.setAttribute("data-edit-version", `${version}-export-${Date.now().toString(36)}`);
       clone.querySelectorAll('[contenteditable]').forEach((node) => node.setAttribute("contenteditable", "false"));
       clone.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-in"));
-      clone.querySelectorAll(".pub.is-hidden").forEach((node) => node.classList.remove("is-hidden"));
-      clone.querySelectorAll(".chip[data-filter]").forEach((node) => {
-        node.classList.toggle("is-active", node.dataset.filter === "all");
-      });
 
       const openNav = clone.querySelector(".site-nav.is-open");
       if (openNav) openNav.classList.remove("is-open");
 
       const status = clone.querySelector("#editStatus");
       if (status) status.textContent = "";
-
-      const emptyNote = clone.querySelector("#pubEmpty");
-      if (emptyNote) emptyNote.setAttribute("hidden", "");
 
       const html = `<!doctype html>\n${clone.outerHTML}`;
       const blob = new Blob([html], { type: "text/html;charset=utf-8" });
