@@ -1,31 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="edge" x1="18" y1="12" x2="50" y2="52" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1d4ed8" />
-      <stop offset="100%" stop-color="#60a5fa" />
-    </linearGradient>
-    <linearGradient id="sheet" x1="22" y1="14" x2="46" y2="50" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#eff6ff" />
-    </linearGradient>
-  </defs>
-
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="T monogram">
+  <rect width="64" height="64" rx="10" fill="#17150f" />
   <path
-    d="M20 14h15l8 8v20a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8Z"
-    fill="#dbeafe"
-    stroke="#93c5fd"
-    stroke-width="4"
-    transform="rotate(-8 27.5 32)"
+    d="M18 21.5h28M32 21.5V45"
+    fill="none"
+    stroke="#faf7f2"
+    stroke-width="6"
+    stroke-linecap="round"
   />
-
-  <path
-    d="M26 12h14l10 10v22a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8V20a8 8 0 0 1 8-8Z"
-    fill="url(#sheet)"
-    stroke="url(#edge)"
-    stroke-width="4"
-  />
-  <path d="M40 12v10h10" stroke="url(#edge)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M27 26h7" stroke="#1d4ed8" stroke-width="4.5" stroke-linecap="round" />
-  <path d="M27 34h15" stroke="#3b82f6" stroke-width="4.5" stroke-linecap="round" />
-  <path d="M27 42h11" stroke="#60a5fa" stroke-width="4.5" stroke-linecap="round" />
+  <circle cx="46.5" cy="45" r="5" fill="#b4441c" />
 </svg>
