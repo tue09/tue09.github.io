@@ -1,6 +1,6 @@
 /* ==========================================================================
    Tue Le — personal homepage
-   Warm paper, one teal accent, Space Grotesk for anything that names things.
+   Warm paper, one blue accent, Space Grotesk for anything that names things.
    ========================================================================== */
 
 /* ---------- 1. Tokens ---------- */
@@ -13,9 +13,9 @@
   --text-3: #8a8780;
   --rule: #e3e0d8;
   --rule-2: #cdc9be;
-  --accent: #0f766a;
-  --accent-hover: #0a5b52;
-  --accent-wash: rgba(15, 118, 106, 0.09);
+  --accent: #1a5fd0;
+  --accent-hover: #12459c;
+  --accent-wash: rgba(26, 95, 208, 0.09);
   --chip: #edeae3;
   --live: #a4530f;
 
@@ -36,9 +36,9 @@
   --text-3: #85827c;
   --rule: #2c2b30;
   --rule-2: #3d3c42;
-  --accent: #4fd0bd;
-  --accent-hover: #7ee0d1;
-  --accent-wash: rgba(79, 208, 189, 0.13);
+  --accent: #7aaeff;
+  --accent-hover: #a8c9ff;
+  --accent-wash: rgba(122, 174, 255, 0.13);
   --chip: #26252a;
   --live: #e0a45f;
 }
