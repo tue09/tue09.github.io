@@ -1,14 +1,8 @@
-<!-- Glyph: Lucide "bot" (https://lucide.dev) — ISC licensed -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Robot">
+<!-- Glyph: Lucide "sigma" (https://lucide.dev) — ISC licensed -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Sigma">
   <rect width="32" height="32" rx="7.5" fill="#0f766a" />
-  <g transform="translate(4.96 5.2) scale(0.92)"
-     fill="none" stroke="#f2fbf9" stroke-width="2.6"
+  <g transform="translate(4 4)" fill="none" stroke="#f2fbf9" stroke-width="2.4"
      stroke-linecap="round" stroke-linejoin="round">
-    <path d="M12 8V4H8" />
-    <rect width="16" height="12" x="4" y="8" rx="2.5" />
-    <path d="M2.4 14h1.6" />
-    <path d="M20 14h1.6" />
-    <path d="M15 13v2" />
-    <path d="M9 13v2" />
+    <path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2" />
   </g>
 </svg>
