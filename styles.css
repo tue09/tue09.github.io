@@ -23,7 +23,7 @@
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  --shell: 760px;
+  --shell: 860px;
   --pad: clamp(20px, 5vw, 32px);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
