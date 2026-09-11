@@ -1,13 +1,12 @@
 /* =========================================================================
-   Le Dinh Tri Tue homepage behaviour
-   Theme · navigation · scroll reveal · inline editing
+   Tue Le homepage behaviour
+   Theme · hash-routed tabs · abstract toggles · inline editing
    ========================================================================= */
 
 (() => {
   "use strict";
 
   const root = document.documentElement;
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---------- Theme ---------- */
 
@@ -29,124 +28,123 @@
   }
 
   if (themeToggle) {
+    applyTheme(root.getAttribute("data-theme"));
     themeToggle.addEventListener("click", () => {
       applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
     });
   }
 
-  /* ---------- Header state ---------- */
+  /* ---------- Tabs (hash-routed, so old #publications links still land) ---------- */
 
-  const header = document.getElementById("siteHeader");
+  const panels = Array.from(document.querySelectorAll("[data-tab]"));
+  const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
 
-  if (header) {
-    const onScroll = () => header.classList.toggle("is-scrolled", window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+  // Anchors that used to point at sections of the old single-page layout.
+  const ALIASES = {
+    "": "home",
+    top: "home",
+    about: "home",
+    contact: "home",
+    news: "home",
+    background: "experience",
+    education: "experience"
+  };
+
+  const names = panels.map((panel) => panel.dataset.tab);
+
+  let current = "home";
+
+  // Anything unrecognised (e.g. the #main skip link) leaves the current tab alone.
+  function tabFromHash() {
+    const raw = decodeURIComponent(location.hash.replace(/^#\/?/, ""));
+    if (names.includes(raw)) return raw;
+    if (Object.prototype.hasOwnProperty.call(ALIASES, raw)) return ALIASES[raw];
+    return current;
   }
 
-  /* ---------- Mobile navigation ---------- */
+  function showTab(name) {
+    current = name;
 
-  const navToggle = document.getElementById("navToggle");
-  const siteNav = document.getElementById("siteNav");
-
-  if (navToggle && siteNav) {
-    const closeNav = () => {
-      siteNav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
-      navToggle.setAttribute("aria-label", "Open menu");
-    };
-
-    navToggle.addEventListener("click", () => {
-      const open = siteNav.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    panels.forEach((panel) => {
+      const active = panel.dataset.tab === name;
+      panel.hidden = !active;
     });
 
-    siteNav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") closeNav();
+    tabLinks.forEach((link) => {
+      const active = link.dataset.tabLink === name;
+      link.classList.toggle("is-active", active);
+      if (active) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
     });
+
+    document.title = name === "home" ? "Tue Le" : `Tue Le · ${name}`;
   }
 
-  /* ---------- Scroll reveal ---------- */
+  const toTop = () => window.scrollTo({ top: 0, behavior: "auto" });
 
-  const revealables = Array.from(document.querySelectorAll(".reveal"));
+  if (panels.length) {
+    showTab(tabFromHash());
 
-  if (!("IntersectionObserver" in window) || reduceMotion) {
-    revealables.forEach((node) => node.classList.add("is-in"));
-  } else {
-    const groups = new Map();
+    // A panel id doubles as its anchor, so the browser would otherwise scroll the
+    // header out of view when the page opens on (or navigates to) a deep link.
+    // Browsers re-apply the fragment scroll after load, so undo it again then —
+    // unless the reader has already started scrolling for themselves.
+    toTop();
 
-    revealables.forEach((node) => {
-      const container = node.closest(".section-main, .hero-grid, .hero, .shell") || document.body;
-      const list = groups.get(container) || [];
-      list.push(node);
-      groups.set(container, list);
-    });
+    let userScrolled = false;
+    const markScrolled = () => (userScrolled = true);
+    window.addEventListener("wheel", markScrolled, { passive: true, once: true });
+    window.addEventListener("touchmove", markScrolled, { passive: true, once: true });
+    window.addEventListener("keydown", markScrolled, { once: true });
+    window.addEventListener("load", () => !userScrolled && toTop(), { once: true });
 
-    groups.forEach((list) => {
-      list.forEach((node, index) => node.style.setProperty("--d", `${Math.min(index, 6) * 85}ms`));
-    });
+    tabLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+        event.preventDefault();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          observer.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.06 }
-    );
+        const name = link.dataset.tabLink;
+        const target = `#${name}`;
 
-    revealables.forEach((node) => observer.observe(node));
-
-    // Safety net: anything already inside the first screen is revealed on load,
-    // so a missed observer callback can never leave content permanently invisible.
-    const revealAboveFold = () => {
-      revealables.forEach((node) => {
-        if (node.classList.contains("is-in")) return;
-        const box = node.getBoundingClientRect();
-        if (box.top < window.innerHeight && box.bottom > 0) {
-          node.classList.add("is-in");
-          observer.unobserve(node);
+        if (location.hash !== target && window.history && window.history.pushState) {
+          window.history.pushState(null, "", target);
+        } else if (location.hash !== target) {
+          location.hash = target;
         }
+
+        if (name !== current) showTab(name);
+        toTop();
       });
-    };
-
-    revealAboveFold();
-    window.addEventListener("load", revealAboveFold);
-  }
-
-  /* ---------- Active section in nav ---------- */
-
-  const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
-  const sections = Array.from(document.querySelectorAll("main section[id]"));
-
-  if (navLinks.length && sections.length && "IntersectionObserver" in window) {
-    const linkFor = new Map();
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href") || "";
-      if (href.startsWith("#")) linkFor.set(href.slice(1), link);
     });
 
-    const spy = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const link = linkFor.get(entry.target.id);
-          if (!link || !entry.isIntersecting) return;
-          navLinks.forEach((node) => node.classList.remove("is-active"));
-          link.classList.add("is-active");
-        });
-      },
-      { rootMargin: "-25% 0px -60% 0px", threshold: 0.01 }
-    );
+    const sync = () => {
+      const next = tabFromHash();
+      if (next === current) return;
+      showTab(next);
+      toTop();
+    };
 
-    sections.forEach((section) => spy.observe(section));
+    window.addEventListener("hashchange", sync);
+    window.addEventListener("popstate", sync);
   }
 
-  /* ---------- Inline authoring (hidden top-left affordance) ---------- */
+  /* ---------- Publication abstracts ---------- */
+
+  document.querySelectorAll(".pub-toggle").forEach((button) => {
+    const panel = document.getElementById(button.getAttribute("aria-controls"));
+    if (!panel) return;
+
+    button.addEventListener("click", () => {
+      const open = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!open));
+      panel.hidden = open;
+    });
+  });
+
+  /* ---------- Inline authoring (hidden bottom-left affordance) ---------- */
 
   const hotzone = document.getElementById("editHotzone");
   const editToggle = document.getElementById("editToggle");
@@ -155,16 +153,13 @@
 
   const EDITABLE = "[data-edit-id]";
   const version = root.getAttribute("data-edit-version") || "v1";
-  const baseKey = `homepage-edits:${location.pathname}`;
-  const key = `${baseKey}::${version}`;
+  const key = `homepage-edits:${location.pathname}::${version}`;
 
   const nodes = () => Array.from(document.querySelectorAll(EDITABLE));
 
   function readStore() {
     try {
-      const scoped = localStorage.getItem(key);
-      const legacy = localStorage.getItem(baseKey);
-      const raw = scoped || legacy;
+      const raw = localStorage.getItem(key);
       const parsed = raw ? JSON.parse(raw) : null;
       return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
     } catch (error) {
@@ -254,11 +249,8 @@
       const clone = document.documentElement.cloneNode(true);
 
       clone.setAttribute("data-edit-version", `${version}-export-${Date.now().toString(36)}`);
-      clone.querySelectorAll('[contenteditable]').forEach((node) => node.setAttribute("contenteditable", "false"));
-      clone.querySelectorAll(".reveal").forEach((node) => node.classList.add("is-in"));
-
-      const openNav = clone.querySelector(".site-nav.is-open");
-      if (openNav) openNav.classList.remove("is-open");
+      clone.querySelectorAll("[contenteditable]").forEach((node) => node.setAttribute("contenteditable", "false"));
+      clone.querySelectorAll("[data-tab]").forEach((node) => node.removeAttribute("hidden"));
 
       const status = clone.querySelector("#editStatus");
       if (status) status.textContent = "";

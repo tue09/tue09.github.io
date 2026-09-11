@@ -1,78 +1,61 @@
 <!doctype html>
-<html lang="en" data-edit-version="ldt-2026-09">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 — Le Dinh Tri Tue</title>
-    <meta name="description" content="This page does not exist on Le Dinh Tri Tue's homepage." />
+    <title>404 · Tue Le</title>
+    <meta name="description" content="This page does not exist on Tue Le's homepage." />
     <meta name="robots" content="noindex" />
     <meta name="color-scheme" content="light dark" />
     <script>
       (() => {
+        const root = document.documentElement;
+        root.classList.add("js");
         try {
           const saved = localStorage.getItem("site-theme");
           const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-          document.documentElement.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
+          root.setAttribute("data-theme", saved || (prefersDark ? "dark" : "light"));
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          root.setAttribute("data-theme", "light");
         }
       })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2026090901" />
-    <link rel="stylesheet" href="styles.css?v=2026090901" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2026091101" />
+    <link rel="stylesheet" href="styles.css?v=2026091101" />
   </head>
   <body>
-    <div class="page-grain" aria-hidden="true"></div>
+    <div class="shell">
+      <header class="topbar">
+        <nav class="tabs" aria-label="Sections">
+          <a href="./">home</a>
+          <a href="./#publications">publications</a>
+          <a href="./#experience">experience</a>
+        </nav>
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
+          <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.6M12 19v2.6M4.2 12H1.6M22.4 12h-2.6M6.1 6.1 4.3 4.3M19.7 19.7l-1.8-1.8M17.9 6.1l1.8-1.8M4.3 19.7l1.8-1.8"/></svg>
+          <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg>
+        </button>
+      </header>
 
-    <header class="site-header is-scrolled">
-      <div class="shell header-inner">
-        <a class="wordmark" href="./">
-          <span class="wordmark-mark" aria-hidden="true">T</span>
-          <span class="wordmark-text">
-            <strong>Le Dinh Tri Tue</strong>
-            <em>AI Researcher</em>
-          </span>
-        </a>
-        <div class="header-tools">
-          <button class="icon-btn theme-btn" id="themeToggle" type="button" aria-label="Switch to dark mode">
-            <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.4v2.6M12 19v2.6M4.2 12H1.6M22.4 12h-2.6M6.1 6.1 4.3 4.3M19.7 19.7l-1.8-1.8M17.9 6.1l1.8-1.8M4.3 19.7l1.8-1.8"/></svg>
-            <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1Z"/></svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <main class="error-wrap">
-      <div class="shell error-inner">
-        <p class="error-code">404</p>
-        <h1>This page took a branch that was never sampled.</h1>
-        <p>The address does not exist on this site. The publications, experience, and contact details are all one click away.</p>
-        <div class="error-actions">
-          <a class="btn btn-solid" href="./">
-            Back to homepage
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12.5 5.8 19 12l-6.5 6.2"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="./#publications">Publications</a>
-        </div>
-      </div>
-    </main>
-
-    <footer class="site-footer">
-      <div class="shell footer-inner">
-        <p class="footer-id">
-          <strong>Le Dinh Tri Tue</strong>
-          <span>Reasoning &amp; alignment in large language models · Hanoi, Vietnam</span>
+      <main>
+        <h1>404</h1>
+        <p class="lead" style="margin-top: 10px">
+          This page took a branch that was never sampled. Nothing lives at this address —
+          <a href="./">head back to the homepage</a>.
         </p>
-        <p class="footer-meta"><a href="mailto:tue209003@gmail.com">tue209003@gmail.com</a></p>
-      </div>
-    </footer>
+      </main>
 
-    <script src="script.js?v=2026090901"></script>
+      <footer class="site-footer">
+        <p><a href="mailto:tue209003@gmail.com">tue209003@gmail.com</a></p>
+      </footer>
+    </div>
+
+    <script src="script.js?v=2026091101"></script>
   </body>
 </html>
