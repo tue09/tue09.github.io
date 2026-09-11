@@ -1,24 +1,26 @@
 /* ==========================================================================
    Tue Le — personal homepage
-   Plain paper, one blue accent, one column. Nothing that needs explaining.
+   Warm paper, one teal accent, Space Grotesk for anything that names things.
    ========================================================================== */
 
 /* ---------- 1. Tokens ---------- */
 
 :root {
-  --bg: #ffffff;
-  --bg-soft: #f6f7f8;
-  --text: #1f2328;
-  --text-2: #4a5159;
-  --text-3: #848d96;
-  --rule: #e6e8ea;
-  --rule-2: #d3d7db;
-  --link: #1a62d6;
-  --link-hover: #0f49ab;
-  --chip: #eef0f2;
-  --live: #1a7f4b;
+  --bg: #fbfaf7;
+  --bg-soft: #f2f0ea;
+  --text: #1c1b18;
+  --text-2: #4c4a44;
+  --text-3: #8a8780;
+  --rule: #e3e0d8;
+  --rule-2: #cdc9be;
+  --accent: #0f766a;
+  --accent-hover: #0a5b52;
+  --accent-wash: rgba(15, 118, 106, 0.09);
+  --chip: #edeae3;
+  --live: #a4530f;
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --shell: 760px;
@@ -27,17 +29,18 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #16181c;
-  --bg-soft: #1d2026;
-  --text: #e8eaed;
-  --text-2: #b5bcc4;
-  --text-3: #858d96;
-  --rule: #2a2e35;
-  --rule-2: #3a3f47;
-  --link: #74a9ff;
-  --link-hover: #9cc2ff;
-  --chip: #262a31;
-  --live: #4cc48a;
+  --bg: #17171a;
+  --bg-soft: #201f23;
+  --text: #eceae5;
+  --text-2: #b8b5ae;
+  --text-3: #85827c;
+  --rule: #2c2b30;
+  --rule-2: #3d3c42;
+  --accent: #4fd0bd;
+  --accent-hover: #7ee0d1;
+  --accent-wash: rgba(79, 208, 189, 0.13);
+  --chip: #26252a;
+  --live: #e0a45f;
 }
 
 /* ---------- 2. Base ---------- */
@@ -68,9 +71,10 @@ h2,
 h3 {
   margin: 0;
   color: var(--text);
+  font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.25;
-  letter-spacing: -0.012em;
+  letter-spacing: -0.015em;
 }
 
 p {
@@ -85,13 +89,13 @@ ol {
 }
 
 a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
   transition: color 0.15s var(--ease);
 }
 
 a:hover {
-  color: var(--link-hover);
+  color: var(--accent-hover);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -103,14 +107,14 @@ sup {
 
 code {
   font-family: var(--font-mono);
-  font-size: 0.88em;
-  padding: 1px 5px;
-  border-radius: 4px;
+  font-size: 0.86em;
+  padding: 2px 6px;
+  border-radius: 5px;
   background: var(--chip);
 }
 
 :focus-visible {
-  outline: 2px solid var(--link);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 3px;
 }
@@ -142,38 +146,40 @@ code {
 
 .topbar {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 40px;
+  padding: 16px 0 14px;
+  margin-bottom: 38px;
   border-bottom: 1px solid var(--rule);
 }
 
 .tabs {
   display: flex;
-  gap: 4px;
+  gap: 5px;
 }
 
 .tabs a {
-  position: relative;
-  padding: 20px 12px 13px;
+  padding: 6px 13px;
+  border-radius: 7px;
   color: var(--text-3);
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 14.5px;
   font-weight: 500;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: color 0.15s var(--ease), border-color 0.15s var(--ease);
+  letter-spacing: -0.005em;
+  transition: color 0.15s var(--ease), background-color 0.15s var(--ease);
 }
 
 .tabs a:hover {
   color: var(--text);
+  background: var(--bg-soft);
   text-decoration: none;
 }
 
 .tabs a.is-active {
-  color: var(--text);
+  color: var(--accent);
+  background: var(--accent-wash);
   font-weight: 600;
-  border-bottom-color: var(--link);
 }
 
 .theme-btn {
@@ -181,10 +187,9 @@ code {
   place-items: center;
   width: 32px;
   height: 32px;
-  margin-bottom: 10px;
   padding: 0;
   border: 1px solid transparent;
-  border-radius: 999px;
+  border-radius: 7px;
   background: transparent;
   color: var(--text-3);
   cursor: pointer;
@@ -215,7 +220,7 @@ code {
   display: block;
 }
 
-/* ---------- 4. Panels ---------- */
+/* ---------- 4. Panels & block headings ---------- */
 
 .panel {
   animation: fade 0.28s var(--ease) both;
@@ -238,13 +243,37 @@ html.js .panel[hidden] {
   }
 }
 
+.block {
+  display: block;
+  margin-top: 40px;
+}
+
+.block-h,
 .panel-h {
-  margin: 44px 0 4px;
-  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-3);
+}
+
+.block-h::before,
+.panel-h::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  flex: none;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.panel-h {
+  margin-top: 42px;
 }
 
 .panel > .panel-h:first-child {
@@ -252,18 +281,15 @@ html.js .panel[hidden] {
 }
 
 .panel-note {
-  margin-bottom: 18px;
-  margin-top: 2px;
+  margin: -6px 0 16px 29px;
   font-size: 13.5px;
   color: var(--text-3);
 }
 
-.panel-h + .rows {
-  margin-top: 14px;
-}
-
-.panel-note-lead {
-  margin-bottom: 10px;
+.block-foot {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-3);
 }
 
 .panel-foot {
@@ -280,7 +306,7 @@ html.js .panel[hidden] {
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-bottom: 26px;
+  margin-bottom: 24px;
 }
 
 .avatar {
@@ -290,23 +316,26 @@ html.js .panel[hidden] {
   border-radius: 999px;
   object-fit: cover;
   background: var(--bg-soft);
-  box-shadow: 0 0 0 1px var(--rule-2);
+  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 5px var(--bg), 0 0 0 6px var(--accent-wash);
 }
 
 .intro-id h1 {
-  font-size: 30px;
-  letter-spacing: -0.022em;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: -0.028em;
 }
 
 .intro-alt {
-  margin-top: 1px;
-  font-size: 15px;
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.01em;
   color: var(--text-3);
 }
 
 .handles {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   margin-left: auto;
   align-self: flex-start;
   padding-top: 6px;
@@ -315,68 +344,78 @@ html.js .panel[hidden] {
 .handles a {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  background: var(--chip);
+  min-width: 36px;
+  height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--rule-2);
+  border-radius: 7px;
+  background: transparent;
   color: var(--text-2);
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  transition: background-color 0.15s var(--ease), color 0.15s var(--ease);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
 }
 
 .handles a:hover {
-  background: var(--link);
-  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent-wash);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .lead {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-size: 16.5px;
   line-height: 1.68;
 }
 
 .contact {
-  margin-top: 28px;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
   font-size: 15.5px;
 }
 
 /* ---------- 6. Home: recently ---------- */
 
-.news {
-  margin-top: 32px;
-  padding: 22px 24px;
-  border-radius: 10px;
-  background: var(--bg-soft);
-}
-
-.news-h {
-  margin-bottom: 12px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-3);
-}
-
 .news-list {
   display: grid;
-  gap: 11px;
+  gap: 14px;
+  padding-left: 22px;
+  border-left: 1px solid var(--rule);
 }
 
-.news-list li,
-.row {
+.news-list li {
+  position: relative;
   display: grid;
-  grid-template-columns: 84px 1fr;
-  gap: 16px;
+  grid-template-columns: 66px 1fr;
+  gap: 14px;
   align-items: baseline;
   font-size: 15px;
 }
 
+.news-list li::before {
+  content: "";
+  position: absolute;
+  left: -25.5px;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--bg);
+  box-shadow: 0 0 0 1.5px var(--rule-2);
+}
+
+.news-list li:first-child::before {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-wash);
+}
+
 .when {
   color: var(--text-3);
-  font-size: 13.5px;
-  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
   white-space: nowrap;
 }
 
@@ -388,29 +427,34 @@ html.js .panel[hidden] {
 
 .pubs {
   display: grid;
-  gap: 4px;
 }
 
 .pub {
-  padding: 14px 0;
+  padding: 13px 0;
   border-bottom: 1px solid var(--rule);
+}
+
+.pub:first-child {
+  padding-top: 0;
 }
 
 .pub:last-child {
   border-bottom: 0;
+  padding-bottom: 0;
 }
 
 .pub-title {
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
 }
 
 .pub-toggle {
   display: block;
   width: 100%;
   position: relative;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 22px;
   margin: 0;
   border: 0;
   background: none;
@@ -422,13 +466,13 @@ html.js .panel[hidden] {
 }
 
 .pub-toggle:hover {
-  color: var(--link);
+  color: var(--accent);
 }
 
 .chev {
   position: absolute;
   left: 0;
-  top: 0.52em;
+  top: 0.5em;
   width: 7px;
   height: 7px;
   border-right: 1.8px solid var(--text-3);
@@ -438,7 +482,7 @@ html.js .panel[hidden] {
 }
 
 .pub-toggle:hover .chev {
-  border-color: var(--link);
+  border-color: var(--accent);
 }
 
 .pub-toggle[aria-expanded="true"] .chev {
@@ -446,15 +490,15 @@ html.js .panel[hidden] {
 }
 
 .pub-abstract {
-  padding: 12px 0 2px 20px;
+  padding: 11px 0 2px 22px;
   font-size: 14.5px;
   line-height: 1.66;
   color: var(--text-2);
 }
 
 .pub-abstract p {
-  padding-left: 14px;
-  border-left: 2px solid var(--rule-2);
+  padding: 2px 0 2px 14px;
+  border-left: 2px solid var(--accent-wash);
 }
 
 .abs-note {
@@ -465,8 +509,8 @@ html.js .panel[hidden] {
 }
 
 .pub-authors {
-  margin-top: 6px;
-  padding-left: 20px;
+  margin-top: 5px;
+  padding-left: 22px;
   font-size: 14.5px;
   color: var(--text-2);
 }
@@ -480,22 +524,25 @@ html.js .panel[hidden] {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 14px;
+  gap: 5px 14px;
   margin-top: 7px;
-  padding-left: 20px;
+  padding-left: 22px;
   font-size: 13.5px;
 }
 
 .venue {
-  padding: 2px 9px;
-  border-radius: 999px;
-  background: var(--chip);
-  color: var(--text-2);
-  font-size: 12.5px;
-  font-weight: 500;
+  padding: 2px 8px;
+  border: 1px solid var(--rule-2);
+  border-radius: 5px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .venue-live {
+  border-color: currentColor;
   color: var(--live);
 }
 
@@ -504,6 +551,13 @@ html.js .panel[hidden] {
 .rows {
   display: grid;
   gap: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 16px;
+  align-items: baseline;
 }
 
 .row .what {
@@ -526,10 +580,11 @@ html.js .panel[hidden] {
 /* ---------- 9. Footer ---------- */
 
 .site-footer {
-  margin-top: 56px;
+  margin-top: 52px;
   padding-top: 18px;
   border-top: 1px solid var(--rule);
-  font-size: 13px;
+  font-family: var(--font-mono);
+  font-size: 12px;
   color: var(--text-3);
 }
 
@@ -589,8 +644,8 @@ html.js .panel[hidden] {
 }
 
 .edit-bar button:hover {
-  border-color: var(--link);
-  color: var(--link);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .edit-status {
@@ -632,10 +687,6 @@ html.js .panel[hidden] {
     padding-top: 0;
   }
 
-  .news {
-    padding: 18px;
-  }
-
   .news-list li,
   .row {
     grid-template-columns: 1fr;
@@ -643,7 +694,7 @@ html.js .panel[hidden] {
   }
 
   .tabs a {
-    padding: 18px 9px 12px;
+    padding: 6px 10px;
     font-size: 14px;
   }
 

@@ -6,7 +6,7 @@
     <title>Tue Le</title>
     <meta
       name="description"
-      content="Tue Le (Le Dinh Tri Tue) works on post-training and reinforcement learning for reasoning models. AI Resident at FPT Software AI Center, Hanoi."
+      content="Tue Le (Le Dinh Tri Tue) works on reasoning and alignment for large language models. Based in Hanoi, Vietnam."
     />
     <meta name="author" content="Le Dinh Tri Tue" />
     <meta name="color-scheme" content="light dark" />
@@ -16,7 +16,7 @@
     <meta property="og:title" content="Tue Le" />
     <meta
       property="og:description"
-      content="Post-training and reinforcement learning for reasoning models."
+      content="Reasoning and alignment for large language models."
     />
     <meta property="og:url" content="https://tue09.github.io/" />
     <meta property="og:image" content="https://tue09.github.io/assets/profile.jpg" />
@@ -39,11 +39,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2026091101" />
-    <link rel="stylesheet" href="styles.css?v=2026091101" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=2026091102" />
+    <link rel="stylesheet" href="styles.css?v=2026091102" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -85,7 +85,7 @@
             />
             <div class="intro-id">
               <h1 id="home-name">Tue Le</h1>
-              <p class="intro-alt">Lê Đình Trí Tuệ</p>
+              <p class="intro-alt">AI researcher · Hanoi, Vietnam</p>
             </div>
             <ul class="handles" aria-label="Profiles">
               <li><a href="https://github.com/tue09" target="_blank" rel="noopener" title="GitHub">gh</a></li>
@@ -96,20 +96,17 @@
           </div>
 
           <p class="lead" data-edit-id="bio-1">
-            Hi, my name is Tue. I work on post-training and reinforcement learning for reasoning models, currently as
-            an AI Resident at the <a href="https://www.fpt-aicenter.com/en/" target="_blank" rel="noopener">FPT Software AI Center</a>
-            in Hanoi, and as a research collaborator with <a href="https://mila.quebec/en" target="_blank" rel="noopener">Mila</a>
-            on the safety and reliability of coding agents.
+            Hi, my name is Tue. I work on reasoning and alignment for large language models. Until recently I was an
+            undergraduate at the Hanoi University of Science and Technology (HUST), where I was advised by
+            Dr. <a href="https://scholar.google.com/citations?user=tZ78MoQAAAAJ&amp;hl=en" target="_blank" rel="noopener">Linh Ngo</a>.
           </p>
 
           <p class="lead" data-edit-id="bio-2">
-            I spent most of school doing competition mathematics, and I still think about research problems the same
-            way — poke at the smallest version until something gives. These days I mostly care about what makes a
-            reasoning model generalize instead of memorize.
+            In my free time I draw and play strategy games. I make no claims about being good at either.
           </p>
 
-          <div class="news" aria-labelledby="news-h">
-            <h2 class="news-h" id="news-h">Recently</h2>
+          <section class="block" aria-labelledby="news-h">
+            <h2 class="block-h" id="news-h">Recently</h2>
             <ul class="news-list">
               <li>
                 <span class="when">Sep '26</span>
@@ -146,15 +143,25 @@
                 </span>
               </li>
             </ul>
-          </div>
+          </section>
+
+          <section class="block" aria-labelledby="home-pub-h">
+            <h2 class="block-h" id="home-pub-h">Publications</h2>
+            <!-- Filled from the publications tab on load; that list stays the single source. -->
+            <div id="homePubs" data-clone-of="pubList"></div>
+            <p class="block-foot">
+              <b>*</b> denotes equal contribution. Click a title to read the abstract.
+            </p>
+          </section>
 
           <p class="contact" data-edit-id="contact-line">
             Feel free to contact me at <a href="mailto:tue209003@gmail.com"><code>tue209003@gmail.com</code></a>.</p>
         </section>
 
         <!-- ==================== PUBLICATIONS ==================== -->
-        <section class="panel" id="publications" data-tab="publications" aria-label="Publications">
-          <p class="panel-note panel-note-lead"><b>*</b> denotes equal contribution. Click a title to read the abstract.</p>
+        <section class="panel" id="publications" data-tab="publications" aria-labelledby="pub-h">
+          <h2 class="panel-h" id="pub-h">Publications</h2>
+          <p class="panel-note"><b>*</b> denotes equal contribution. Click a title to read the abstract.</p>
 
           <ol class="pubs" id="pubList">
             <li class="pub">
@@ -487,11 +494,6 @@
               </span>
             </li>
           </ul>
-
-          <p class="panel-foot">
-            The full <a href="assets/LeDinhTriTue_resume.pdf" target="_blank" rel="noopener">CV</a> has the rest,
-            including hackathons and coursework.
-          </p>
         </section>
       </main>
 
@@ -529,6 +531,6 @@
       }
     </script>
 
-    <script src="script.js?v=2026091101"></script>
+    <script src="script.js?v=2026091102"></script>
   </body>
 </html>

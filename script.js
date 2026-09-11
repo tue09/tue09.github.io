@@ -131,6 +131,28 @@
     window.addEventListener("popstate", sync);
   }
 
+  /* ---------- Mirror the publication list onto the home tab ---------- */
+
+  // The list lives once in the markup (inside the publications tab) so there is
+  // only one copy to edit; home gets a clone with re-prefixed ids.
+  document.querySelectorAll("[data-clone-of]").forEach((slot) => {
+    const source = document.getElementById(slot.dataset.cloneOf);
+    if (!source) return;
+
+    const copy = source.cloneNode(true);
+    const prefix = `${slot.id || "copy"}-`;
+
+    copy.removeAttribute("id");
+    copy.querySelectorAll("[id]").forEach((node) => {
+      node.id = prefix + node.id;
+    });
+    copy.querySelectorAll("[aria-controls]").forEach((node) => {
+      node.setAttribute("aria-controls", prefix + node.getAttribute("aria-controls"));
+    });
+
+    slot.appendChild(copy);
+  });
+
   /* ---------- Publication abstracts ---------- */
 
   document.querySelectorAll(".pub-toggle").forEach((button) => {

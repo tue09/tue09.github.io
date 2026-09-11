@@ -1,7 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Smiley face">
-  <rect width="64" height="64" rx="16" fill="#ffd25e" />
-  <circle cx="23" cy="26" r="4" fill="#2a2118" />
-  <circle cx="41" cy="26" r="4" fill="#2a2118" />
-  <path d="M20 39c3.6 5.4 8 8.1 12 8.1s8.4-2.7 12-8.1"
-        fill="none" stroke="#2a2118" stroke-width="5.5" stroke-linecap="round" />
+<!-- Glyph: Lucide "bot" (https://lucide.dev) — ISC licensed -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Robot">
+  <rect width="32" height="32" rx="7.5" fill="#0f766a" />
+  <g transform="translate(4.96 5.2) scale(0.92)"
+     fill="none" stroke="#f2fbf9" stroke-width="2.6"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8V4H8" />
+    <rect width="16" height="12" x="4" y="8" rx="2.5" />
+    <path d="M2.4 14h1.6" />
+    <path d="M20 14h1.6" />
+    <path d="M15 13v2" />
+    <path d="M9 13v2" />
+  </g>
 </svg>
