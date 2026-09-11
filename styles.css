@@ -327,25 +327,36 @@ html.js .panel[hidden] {
 
 .handles {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 7px;
   margin-left: auto;
   align-self: center;
+  justify-content: flex-end;
 }
 
 .handles a {
-  display: grid;
-  place-items: center;
-  min-width: 36px;
-  height: 30px;
-  padding: 0 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 31px;
+  padding: 0 11px;
   border: 1px solid var(--rule-2);
-  border-radius: 7px;
+  border-radius: 8px;
   background: transparent;
   color: var(--text-2);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
   transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+}
+
+.handles svg {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  fill: currentColor;
+  opacity: 0.75;
+  transition: opacity 0.15s var(--ease);
 }
 
 .handles a:hover {
@@ -353,6 +364,10 @@ html.js .panel[hidden] {
   background: var(--accent-wash);
   color: var(--accent);
   text-decoration: none;
+}
+
+.handles a:hover svg {
+  opacity: 1;
 }
 
 .lead {
@@ -675,6 +690,7 @@ html.js .panel[hidden] {
   .handles {
     margin-left: 0;
     width: 100%;
+    justify-content: flex-start;
   }
 
   .news-list li,
