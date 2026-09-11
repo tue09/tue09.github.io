@@ -217,11 +217,7 @@
               </h3>
               <div class="pub-abstract" id="abs-2" hidden>
                 <p>
-                  Neural topic models combine several loss terms whose magnitudes are hard to balance by hand. This
-                  work builds a multi-objective surrogate framework that optimizes those objectives jointly, without
-                  requiring the hard-parameter-sharing architecture that standard multi-objective optimization methods
-                  assume, and reports consistent gains over the underlying topic models.
-                  <em class="abs-note">Summary written by the author; see the published paper for the official abstract.</em>
+                  Neural topic models have achieved notable advances in generating coherent topics and learning document-topic distributions, yet they commonly rely on multiple loss components that vary widely in scale. These imbalances make joint optimization difficult and often require extensive hyperparameter tuning. Multi-objective optimization (MOO) methods offer a promising direction, but their use has largely been limited to settings with shared-parameter architectures, restricting their applicability to many topic modeling frameworks. Moreover, applying standard MOO techniques directly to neural topic models can lead to degraded performance due to incompatibilities between the objectives. This work introduces a new strategy for integrating MOO into neural topic modeling without relying on hard parameter sharing. The proposed method enables effective coordination of multiple loss functions and facilitates stable optimization. Experiments on widely used benchmark corpora show that the approach yields substantial improvements over baseline neural topic models and consistently surpasses naïve MOO-based variants.
                 </p>
               </div>
               <p class="pub-authors">
