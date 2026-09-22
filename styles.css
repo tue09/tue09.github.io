@@ -552,6 +552,14 @@ html.js .panel[hidden] {
   color: var(--live);
 }
 
+/* Rank sits inside the venue chip behind a divider, in the chip's own colour. */
+.rank {
+  margin-left: 7px;
+  padding-left: 7px;
+  border-left: 1px solid currentColor;
+  font-weight: 700;
+}
+
 /* ---------- 8. Experience rows ---------- */
 
 .rows {
