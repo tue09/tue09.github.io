@@ -48,7 +48,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2026091111" />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=2026091111" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2026091111" />
-    <link rel="stylesheet" href="styles.css?v=2026092201" />
+    <link rel="stylesheet" href="styles.css?v=2026100401" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -183,6 +183,75 @@
           <ol class="pubs" id="pubList">
             <li class="pub">
               <h3 class="pub-title">
+                <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-survey">
+                  <span class="chev" aria-hidden="true"></span>
+                  Beyond the Training Distribution: A Survey of Reasoning Generalization in Large Language Models
+                </button>
+              </h3>
+              <div class="pub-abstract" id="abs-survey" hidden>
+                <p>
+                  Large language models (LLMs) have achieved strong performance on mathematical, logical, and
+                  scientific reasoning tasks. However, this progress is commonly measured on benchmarks that remain
+                  close to the distributions encountered during training. Even small changes in notation, problem
+                  structure, reasoning depth, domain, or tool interface can lead to substantial performance
+                  degradation, raising a central question: whether LLMs learn reusable reasoning procedures or rely on
+                  patterns tied to familiar data. This paper presents a comprehensive survey of reasoning
+                  generalization in LLMs. We organize existing work into four complementary perspectives: (1) training
+                  methods that encourage transferable reasoning, (2) inference strategies that adapt computation
+                  without changing model parameters, (3) architectural designs that support reusable operations, and
+                  (4) analyses that characterize when and why generalization succeeds or fails. Building on this
+                  taxonomy, we compare the assumptions, evaluation settings, and generalization claims of
+                  representative approaches. We further summarize the main empirical findings and theoretical results,
+                  and discuss the evaluation practices and open challenges that shape this emerging research
+                  direction.
+                </p>
+              </div>
+              <p class="pub-authors">
+                <b>Tue Le</b>, Hoang Tran Vuong, Duan Bui, Dang Luu, Done Le, Huy Nguyen, Linh Ngo Van
+              </p>
+              <p class="pub-meta">
+                <span class="venue venue-live">Under review</span>
+                <a href="https://github.com/tue09/awesome-reasoning-generalization" target="_blank" rel="noopener">Paper list</a>
+              </p>
+            </li>
+
+            <li class="pub">
+              <h3 class="pub-title">
+                <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-falcon">
+                  <span class="chev" aria-hidden="true"></span>
+                  Secure Agentic Coding through Counterexample-Grounded Feedback
+                </button>
+              </h3>
+              <div class="pub-abstract" id="abs-falcon" hidden>
+                <p>
+                  As coding models and agent harnesses become more capable, reliable security verification is becoming
+                  a central bottleneck. Improving secure code generation requires a signal whose reported progress
+                  remains aligned with actual program behavior under optimization; otherwise, an optimizer can improve
+                  the signal's verdict without removing the underlying vulnerability. Existing model-based approaches
+                  require models to either infer program behavior from source code or specify correct outcomes for
+                  adversarial tests, placing substantial reasoning demands on the security signal. We introduce FALCON,
+                  a counterexample-grounded verification framework that separates attack exploration from behavioral
+                  verification and connects them through execution traces of the program under test. In test-time
+                  repair, FALCON yields substantially stronger held-out functional-security gains than alternative
+                  security signals across secure code generation benchmarks, while preserving or improving
+                  functionality. As an RL reward, FALCON also outperforms static-analysis and learned rewards on
+                  held-out functional-security, even when all policies successfully optimize their respective training
+                  rewards. Combining FALCON with either proxy reward further improves held-out performance, suggesting
+                  that execution-grounded feedback can mitigate reward overoptimization while preserving useful
+                  guidance from existing security signals.
+                </p>
+              </div>
+              <p class="pub-authors">
+                <b>Tue Le</b>, Anh Nguyen Hoang, Gabriel Sasseville, Doseok Jang, Pierre-Luc Bacon, Nghi D. Q. Bui
+              </p>
+              <p class="pub-meta">
+                <span class="venue venue-live">Under review</span>
+                <a href="https://github.com/SafeCodeAgent/FALCON" target="_blank" rel="noopener">Code</a>
+              </p>
+            </li>
+
+            <li class="pub">
+              <h3 class="pub-title">
                 <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-1">
                   <span class="chev" aria-hidden="true"></span>
                   SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios
@@ -229,7 +298,7 @@
                 Chi Pham Khanh<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Anh-Cuong Le, Linh Ngo Van
               </p>
               <p class="pub-meta">
-                <span class="venue">Neurocomputing, 2026<span class="rank">Q1</span></span>
+                <span class="venue">Neurocomputing, 2026</span>
                 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231226008295" target="_blank" rel="noopener">Paper</a>
               </p>
             </li>
@@ -263,7 +332,7 @@
                 Hoang Tran Vuong, <b>Tue Le</b>, Quyen Tran, Linh Ngo Van, Trung Le
               </p>
               <p class="pub-meta">
-                <span class="venue">AAAI 2026<span class="rank">A*</span></span>
+                <span class="venue">AAAI 2026</span>
                 <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40619" target="_blank" rel="noopener">Paper</a>
               </p>
             </li>
@@ -298,7 +367,7 @@
                 <b>Tue Le</b>, Hoang Tran, Quyen Tran, Linh Ngo, Mehrtash Harandi, Trung Le
               </p>
               <p class="pub-meta">
-                <span class="venue">NeurIPS 2025<span class="rank">A*</span></span>
+                <span class="venue">NeurIPS 2025</span>
                 <a href="https://openreview.net/forum?id=3VvdoCcVPU" target="_blank" rel="noopener">OpenReview</a>
                 <a href="https://openreview.net/pdf?id=3VvdoCcVPU" target="_blank" rel="noopener">PDF</a>
               </p>
@@ -333,7 +402,7 @@
                 Trung Le, Thien Huu Nguyen
               </p>
               <p class="pub-meta">
-                <span class="venue">EMNLP 2025 Findings<span class="rank">A*</span></span>
+                <span class="venue">EMNLP 2025 Findings</span>
                 <a href="https://aclanthology.org/2025.findings-emnlp.9/" target="_blank" rel="noopener">ACL Anthology</a>
               </p>
             </li>
@@ -365,7 +434,7 @@
                 Tung Nguyen<sup>*</sup>, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
               </p>
               <p class="pub-meta">
-                <span class="venue">ACL 2025 Findings<span class="rank">A*</span></span>
+                <span class="venue">ACL 2025 Findings</span>
                 <a href="https://aclanthology.org/2025.findings-acl.715/" target="_blank" rel="noopener">ACL Anthology</a>
               </p>
             </li>
@@ -401,7 +470,7 @@
                 Quang Duc Nguyen, Duc Anh Nguyen, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
               </p>
               <p class="pub-meta">
-                <span class="venue">NAACL 2025<span class="rank">A</span></span>
+                <span class="venue">NAACL 2025</span>
                 <a href="https://aclanthology.org/2025.naacl-long.231/" target="_blank" rel="noopener">ACL Anthology</a>
               </p>
             </li>
