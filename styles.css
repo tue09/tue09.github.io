@@ -121,6 +121,18 @@ code {
   border-radius: 3px;
 }
 
+/* Selection picks up the accent; the two rules stay separate because one
+   unknown selector would invalidate the whole list. */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+::-moz-selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -248,6 +260,10 @@ html.js .panel[hidden] {
 .block {
   display: block;
   margin-top: 40px;
+}
+
+.block-first {
+  margin-top: 26px;
 }
 
 .block-h,
