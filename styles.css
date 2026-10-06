@@ -24,7 +24,7 @@
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
-  --shell: 860px;
+  --shell: 1140px;
   --pad: clamp(20px, 5vw, 32px);
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
@@ -263,7 +263,7 @@ html.js .panel[hidden] {
 }
 
 .block-first {
-  margin-top: 26px;
+  margin-top: 0;
 }
 
 .block-h,
@@ -318,73 +318,75 @@ html.js .panel[hidden] {
   color: var(--text-3);
 }
 
-/* ---------- 5. Home: intro ---------- */
+/* ---------- 5. Layout: profile sidebar + content ---------- */
 
-.intro {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 24px;
+.layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
 }
 
+/* Sticky so the links stay in reach down a long publication list. */
+.profile {
+  position: sticky;
+  top: 28px;
+}
+
+/* The ring is a 7px shadow; the margin keeps it inside the column edge. */
 .avatar {
-  width: 84px;
-  height: 84px;
-  flex: none;
+  display: block;
+  width: 164px;
+  height: 164px;
+  margin: 7px;
   border-radius: 999px;
   object-fit: cover;
   background: var(--bg-soft);
-  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 5px var(--bg), 0 0 0 6px var(--accent-wash);
+  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 6px var(--bg), 0 0 0 7px var(--accent-wash);
 }
 
-.intro-id h1 {
-  font-size: 31px;
+.profile-name {
+  margin: 16px 0 16px;
+  font-size: 26px;
   font-weight: 700;
-  letter-spacing: -0.028em;
+  letter-spacing: -0.025em;
 }
 
-.handles {
+.profile-links {
+  display: grid;
+  gap: 1px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.profile-links a {
   display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-left: auto;
-  align-self: center;
-  justify-content: flex-end;
-}
-
-.handles a {
-  display: inline-flex;
   align-items: center;
-  gap: 7px;
-  height: 31px;
-  padding: 0 11px;
-  border: 1px solid var(--rule-2);
-  border-radius: 8px;
-  background: transparent;
+  gap: 10px;
+  margin: 0 -8px;
+  padding: 5px 8px;
+  border-radius: 6px;
   color: var(--text-2);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background-color 0.15s var(--ease);
+  font-size: 14px;
+  transition: color 0.15s var(--ease), background-color 0.15s var(--ease);
 }
 
-.handles svg {
-  width: 14px;
-  height: 14px;
+.profile-links svg {
+  width: 15px;
+  height: 15px;
   flex: none;
   fill: currentColor;
-  opacity: 0.75;
+  opacity: 0.7;
   transition: opacity 0.15s var(--ease);
 }
 
-.handles a:hover {
-  border-color: var(--accent);
+.profile-links a:hover {
   background: var(--accent-wash);
   color: var(--accent);
   text-decoration: none;
 }
 
-.handles a:hover svg {
+.profile-links a:hover svg {
   opacity: 1;
 }
 
@@ -690,26 +692,6 @@ html.js .panel[hidden] {
     padding-bottom: 56px;
   }
 
-  .intro {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .avatar {
-    width: 68px;
-    height: 68px;
-  }
-
-  .intro-id h1 {
-    font-size: 26px;
-  }
-
-  .handles {
-    margin-left: 0;
-    width: 100%;
-    justify-content: flex-start;
-  }
-
   .news-list li,
   .row {
     grid-template-columns: 1fr;
@@ -726,12 +708,67 @@ html.js .panel[hidden] {
   }
 }
 
+/* Under ~860px there is no room for two columns: the profile goes back on top,
+   photo beside the name, links as a wrapping row of chips. */
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .profile {
+    position: static;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 18px;
+  }
+
+  .avatar {
+    width: 76px;
+    height: 76px;
+    margin: 5px;
+    box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 4px var(--bg), 0 0 0 5px var(--accent-wash);
+  }
+
+  .profile-name {
+    margin: 0;
+  }
+
+  .profile-links {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 18px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .profile-links a {
+    margin: 0;
+    height: 31px;
+    padding: 0 11px;
+    border: 1px solid var(--rule-2);
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .profile-links a:hover {
+    border-color: var(--accent);
+  }
+}
+
 @media print {
   .topbar,
   .edit-hotzone,
   .site-footer,
-  .handles {
+  .profile-links {
     display: none;
+  }
+
+  .layout {
+    display: block;
   }
 
   html.js .panel[hidden] {
