@@ -336,8 +336,8 @@ html.js .panel[hidden] {
 /* The ring is a 7px shadow; the margin keeps it inside the column edge. */
 .avatar {
   display: block;
-  width: 164px;
-  height: 164px;
+  width: 148px;
+  height: 148px;
   margin: 7px;
   border-radius: 999px;
   object-fit: cover;
