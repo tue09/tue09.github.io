@@ -48,7 +48,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=2026091111" />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=2026091111" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2026091111" />
-    <link rel="stylesheet" href="styles.css?v=2026100602" />
+    <link rel="stylesheet" href="styles.css?v=2026100603" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -207,191 +207,221 @@
 
               <ol class="pubs" id="pubList">
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-2">
-                      <span class="chev" aria-hidden="true"></span>
-                      A Multi-Objective Surrogate Framework for Training Neural Topic Models
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-2" hidden>
-                    <p>
-                      Neural topic models have achieved notable advances in generating coherent topics and learning document-topic distributions, yet they commonly rely on multiple loss components that vary widely in scale. These imbalances make joint optimization difficult and often require extensive hyperparameter tuning. Multi-objective optimization (MOO) methods offer a promising direction, but their use has largely been limited to settings with shared-parameter architectures, restricting their applicability to many topic modeling frameworks. Moreover, applying standard MOO techniques directly to neural topic models can lead to degraded performance due to incompatibilities between the objectives. This work introduces a new strategy for integrating MOO into neural topic modeling without relying on hard parameter sharing. The proposed method enables effective coordination of multiple loss functions and facilitates stable optimization. Experiments on widely used benchmark corpora show that the approach yields substantial improvements over baseline neural topic models and consistently surpasses naïve MOO-based variants.
+                  <a class="pub-fig" href="assets/papers/moo-surrogate-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/moo-surrogate.webp" alt="Pipeline: a neural topic model turns a bag-of-words input into several losses, which become surrogate losses for multi-objective optimization" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-2">
+                        <span class="chev" aria-hidden="true"></span>
+                        A Multi-Objective Surrogate Framework for Training Neural Topic Models
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-2" hidden>
+                      <p>
+                        Neural topic models have achieved notable advances in generating coherent topics and learning document-topic distributions, yet they commonly rely on multiple loss components that vary widely in scale. These imbalances make joint optimization difficult and often require extensive hyperparameter tuning. Multi-objective optimization (MOO) methods offer a promising direction, but their use has largely been limited to settings with shared-parameter architectures, restricting their applicability to many topic modeling frameworks. Moreover, applying standard MOO techniques directly to neural topic models can lead to degraded performance due to incompatibilities between the objectives. This work introduces a new strategy for integrating MOO into neural topic modeling without relying on hard parameter sharing. The proposed method enables effective coordination of multiple loss functions and facilitates stable optimization. Experiments on widely used benchmark corpora show that the approach yields substantial improvements over baseline neural topic models and consistently surpasses naïve MOO-based variants.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      Chi Pham Khanh<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Anh-Cuong Le, Linh Ngo Van
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">Neurocomputing, 2026</span>
+                      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231226008295" target="_blank" rel="noopener">Paper</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    Chi Pham Khanh<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Anh-Cuong Le, Linh Ngo Van
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">Neurocomputing, 2026</span>
-                    <a href="https://www.sciencedirect.com/science/article/abs/pii/S0925231226008295" target="_blank" rel="noopener">Paper</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-3">
-                      <span class="chev" aria-hidden="true"></span>
-                      MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-3" hidden>
-                    <p>
-                      Knowledge distillation (KD) is widely recognized as an effective approach for compressing large
-                      language models (LLMs). However, standard KD methods often falter when confronted with architectural
-                      or tokenization heterogeneity between teacher and student models, which creates a mismatch in their
-                      representations. While Optimal Transport (OT) provides a promising solution to align these
-                      representations, most OT-based methods rely on a single cost function, which isn't enough to capture
-                      the multifaceted discrepancies between models with distinct designs. To address this limitation, we
-                      introduce Multi-Cost Wasserstein Knowledge Distillation (MCW-KD), a novel framework that enhances KD
-                      by simultaneously optimizing several cost functions within a unified OT formulation. MCW-KD employs
-                      specific cost matrices to effectively align both the final hidden states and the output distributions
-                      of the models. We also provide a rigorous theoretical foundation for the proposed Multi-Cost
-                      Wasserstein Distance, ensuring both mathematical validity and computational ability. Extensive
-                      experiments on instruction-following datasets demonstrate that MCW-KD significantly improves student
-                      model performance compared to state-of-the-art KD baselines, especially when teacher and student
-                      models have different tokenizers.
+                  <a class="pub-fig" href="assets/papers/mcw-kd-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/mcw-kd.webp" alt="Bar chart of GPT-4o-mini win rates for MCW-KD against ULD, MinED, MultiLevelOT and DSKD" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-3">
+                        <span class="chev" aria-hidden="true"></span>
+                        MCW-KD: Multi-Cost Wasserstein Knowledge Distillation for Large Language Models
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-3" hidden>
+                      <p>
+                        Knowledge distillation (KD) is widely recognized as an effective approach for compressing large
+                        language models (LLMs). However, standard KD methods often falter when confronted with architectural
+                        or tokenization heterogeneity between teacher and student models, which creates a mismatch in their
+                        representations. While Optimal Transport (OT) provides a promising solution to align these
+                        representations, most OT-based methods rely on a single cost function, which isn't enough to capture
+                        the multifaceted discrepancies between models with distinct designs. To address this limitation, we
+                        introduce Multi-Cost Wasserstein Knowledge Distillation (MCW-KD), a novel framework that enhances KD
+                        by simultaneously optimizing several cost functions within a unified OT formulation. MCW-KD employs
+                        specific cost matrices to effectively align both the final hidden states and the output distributions
+                        of the models. We also provide a rigorous theoretical foundation for the proposed Multi-Cost
+                        Wasserstein Distance, ensuring both mathematical validity and computational ability. Extensive
+                        experiments on instruction-following datasets demonstrate that MCW-KD significantly improves student
+                        model performance compared to state-of-the-art KD baselines, especially when teacher and student
+                        models have different tokenizers.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      Hoang Tran Vuong, <b>Tue Le</b>, Quyen Tran, Linh Ngo Van, Trung Le
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">AAAI 2026</span>
+                      <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40619" target="_blank" rel="noopener">Paper</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    Hoang Tran Vuong, <b>Tue Le</b>, Quyen Tran, Linh Ngo Van, Trung Le
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">AAAI 2026</span>
-                    <a href="https://ojs.aaai.org/index.php/AAAI/article/view/40619" target="_blank" rel="noopener">Paper</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-4">
-                      <span class="chev" aria-hidden="true"></span>
-                      Token-Level Self-Play with Importance-Aware Guidance for Large Language Models
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-4" hidden>
-                    <p>
-                      Leveraging the power of Large Language Models (LLMs) through preference optimization is crucial for
-                      aligning model outputs with human values. Direct Preference Optimization (DPO) has recently emerged
-                      as a simple yet effective method by directly optimizing on preference data without the need for
-                      explicit reward models. However, DPO typically relies on human-labeled preference data, which can
-                      limit its scalability. Self-Play Fine-Tuning (SPIN) addresses this by allowing models to generate
-                      their own rejected samples, reducing the dependence on human annotations. Nevertheless, SPIN
-                      uniformly applies learning signals across all tokens, ignoring the fine-grained quality variations
-                      within responses. As the model improves, rejected samples increasingly contain high-quality tokens,
-                      making the uniform treatment of tokens suboptimal. In this paper, we propose SWIFT (Self-Play
-                      Weighted Fine-Tuning), a fine-grained self-refinement method that assigns token-level importance
-                      weights estimated from a stronger teacher model. Beyond alignment, we also demonstrate that SWIFT
-                      serves as an effective knowledge distillation strategy by using the teacher not for logits matching,
-                      but for reward-guided token weighting. Extensive experiments on diverse benchmarks and settings
-                      demonstrate that SWIFT consistently surpasses both existing alignment approaches and conventional
-                      knowledge distillation methods.
+                  <a class="pub-fig" href="assets/papers/swift-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/swift.webp" alt="Teacher and student tokens mapped to shared components, with each student token weighted by the difference in log-probabilities" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-4">
+                        <span class="chev" aria-hidden="true"></span>
+                        Token-Level Self-Play with Importance-Aware Guidance for Large Language Models
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-4" hidden>
+                      <p>
+                        Leveraging the power of Large Language Models (LLMs) through preference optimization is crucial for
+                        aligning model outputs with human values. Direct Preference Optimization (DPO) has recently emerged
+                        as a simple yet effective method by directly optimizing on preference data without the need for
+                        explicit reward models. However, DPO typically relies on human-labeled preference data, which can
+                        limit its scalability. Self-Play Fine-Tuning (SPIN) addresses this by allowing models to generate
+                        their own rejected samples, reducing the dependence on human annotations. Nevertheless, SPIN
+                        uniformly applies learning signals across all tokens, ignoring the fine-grained quality variations
+                        within responses. As the model improves, rejected samples increasingly contain high-quality tokens,
+                        making the uniform treatment of tokens suboptimal. In this paper, we propose SWIFT (Self-Play
+                        Weighted Fine-Tuning), a fine-grained self-refinement method that assigns token-level importance
+                        weights estimated from a stronger teacher model. Beyond alignment, we also demonstrate that SWIFT
+                        serves as an effective knowledge distillation strategy by using the teacher not for logits matching,
+                        but for reward-guided token weighting. Extensive experiments on diverse benchmarks and settings
+                        demonstrate that SWIFT consistently surpasses both existing alignment approaches and conventional
+                        knowledge distillation methods.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      <b>Tue Le</b>, Hoang Tran, Quyen Tran, Linh Ngo, Mehrtash Harandi, Trung Le
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">NeurIPS 2025</span>
+                      <a href="https://openreview.net/forum?id=3VvdoCcVPU" target="_blank" rel="noopener">OpenReview</a>
+                      <a href="https://openreview.net/pdf?id=3VvdoCcVPU" target="_blank" rel="noopener">PDF</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    <b>Tue Le</b>, Hoang Tran, Quyen Tran, Linh Ngo, Mehrtash Harandi, Trung Le
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">NeurIPS 2025</span>
-                    <a href="https://openreview.net/forum?id=3VvdoCcVPU" target="_blank" rel="noopener">OpenReview</a>
-                    <a href="https://openreview.net/pdf?id=3VvdoCcVPU" target="_blank" rel="noopener">PDF</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-5">
-                      <span class="chev" aria-hidden="true"></span>
-                      Multi-Surrogate-Objective Optimization for Neural Topic Models
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-5" hidden>
-                    <p>
-                      Neural topic modeling has substantially improved topic quality and document topic distribution
-                      compared to traditional probabilistic methods. These models often incorporate multiple loss
-                      functions. However, the disparate magnitudes of these losses can make hyperparameter tuning for these
-                      loss functions challenging, potentially creating obstacles for simultaneous optimization. While
-                      gradient-based Multi-objective Optimization (MOO) algorithms offer a potential solution, they are
-                      typically applied to shared parameters in multi-task learning, hindering their broader adoption,
-                      particularly in Neural Topic Models (NTMs). Furthermore, our experiments reveal that naïve MOO
-                      applications on NTMs can yield suboptimal results, even underperforming compared to implementations
-                      without the MOO mechanism. This paper proposes a novel approach to integrate MOO algorithms,
-                      independent of hard-parameter sharing architectures, and effectively optimizes multiple NTMs loss
-                      functions. Comprehensive evaluations on widely used benchmark datasets demonstrate that our approach
-                      significantly enhances baseline topic model performance and outperforms direct MOO applications on
-                      NTMs.
+                  <a class="pub-fig" href="assets/papers/msoo-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/msoo.webp" alt="Optimization trajectories on a two-objective toy problem for MGDA, PCGrad and CAGrad, with and without MSOO" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-5">
+                        <span class="chev" aria-hidden="true"></span>
+                        Multi-Surrogate-Objective Optimization for Neural Topic Models
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-5" hidden>
+                      <p>
+                        Neural topic modeling has substantially improved topic quality and document topic distribution
+                        compared to traditional probabilistic methods. These models often incorporate multiple loss
+                        functions. However, the disparate magnitudes of these losses can make hyperparameter tuning for these
+                        loss functions challenging, potentially creating obstacles for simultaneous optimization. While
+                        gradient-based Multi-objective Optimization (MOO) algorithms offer a potential solution, they are
+                        typically applied to shared parameters in multi-task learning, hindering their broader adoption,
+                        particularly in Neural Topic Models (NTMs). Furthermore, our experiments reveal that naïve MOO
+                        applications on NTMs can yield suboptimal results, even underperforming compared to implementations
+                        without the MOO mechanism. This paper proposes a novel approach to integrate MOO algorithms,
+                        independent of hard-parameter sharing architectures, and effectively optimizes multiple NTMs loss
+                        functions. Comprehensive evaluations on widely used benchmark datasets demonstrate that our approach
+                        significantly enhances baseline topic model performance and outperforms direct MOO applications on
+                        NTMs.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      <b>Tue Le</b><sup>*</sup>, Hoang Tran Vuong<sup>*</sup>, Tung Nguyen, Linh Ngo Van, Sang Dinh,
+                      Trung Le, Thien Huu Nguyen
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">EMNLP 2025 Findings</span>
+                      <a href="https://aclanthology.org/2025.findings-emnlp.9/" target="_blank" rel="noopener">ACL Anthology</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    <b>Tue Le</b><sup>*</sup>, Hoang Tran Vuong<sup>*</sup>, Tung Nguyen, Linh Ngo Van, Sang Dinh,
-                    Trung Le, Thien Huu Nguyen
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">EMNLP 2025 Findings</span>
-                    <a href="https://aclanthology.org/2025.findings-emnlp.9/" target="_blank" rel="noopener">ACL Anthology</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-6">
-                      <span class="chev" aria-hidden="true"></span>
-                      HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-6" hidden>
-                    <p>
-                      Recent advances in neural topic models (NTMs) have improved topic quality but still face challenges:
-                      weak document-topic alignment, high inference costs due to large pretrained language models (PLMs),
-                      and limited modeling of hierarchical topic structures. To address these issues, we introduce HiCOT
-                      (Hierarchical Clustering and Contrastive Learning with Optimal Transport for Neural Topic Modeling),
-                      a novel framework that enhances topic coherence and efficiency. HiCOT integrates Optimal Transport to
-                      refine document-topic relationships using compact PLM-based embeddings, captures semantic structure
-                      of the documents. Additionally, it employs hierarchical clustering combine with contrastive learning
-                      to disentangle topic-word and topic-topic relationships, ensuring clearer structure and better
-                      coherence. Experimental results on multiple benchmark datasets demonstrate HiCOT's superior
-                      effectiveness over existing NTMs in topic coherence, topic performance, representation quality, and
-                      computational efficiency.
+                  <a class="pub-fig" href="assets/papers/hicot-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/hicot.webp" alt="t-SNE plots of topic embeddings for ETM, ECRTM, NeuroMax, FASTopic and HiCOT" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-6">
+                        <span class="chev" aria-hidden="true"></span>
+                        HiCOT: Improving Neural Topic Models via Optimal Transport and Contrastive Learning
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-6" hidden>
+                      <p>
+                        Recent advances in neural topic models (NTMs) have improved topic quality but still face challenges:
+                        weak document-topic alignment, high inference costs due to large pretrained language models (PLMs),
+                        and limited modeling of hierarchical topic structures. To address these issues, we introduce HiCOT
+                        (Hierarchical Clustering and Contrastive Learning with Optimal Transport for Neural Topic Modeling),
+                        a novel framework that enhances topic coherence and efficiency. HiCOT integrates Optimal Transport to
+                        refine document-topic relationships using compact PLM-based embeddings, captures semantic structure
+                        of the documents. Additionally, it employs hierarchical clustering combine with contrastive learning
+                        to disentangle topic-word and topic-topic relationships, ensuring clearer structure and better
+                        coherence. Experimental results on multiple benchmark datasets demonstrate HiCOT's superior
+                        effectiveness over existing NTMs in topic coherence, topic performance, representation quality, and
+                        computational efficiency.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      Hoang Tran Vuong<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Tu Vu<sup>*</sup>,
+                      Tung Nguyen<sup>*</sup>, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">ACL 2025 Findings</span>
+                      <a href="https://aclanthology.org/2025.findings-acl.715/" target="_blank" rel="noopener">ACL Anthology</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    Hoang Tran Vuong<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Tu Vu<sup>*</sup>,
-                    Tung Nguyen<sup>*</sup>, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">ACL 2025 Findings</span>
-                    <a href="https://aclanthology.org/2025.findings-acl.715/" target="_blank" rel="noopener">ACL Anthology</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-7">
-                      <span class="chev" aria-hidden="true"></span>
-                      Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-7" hidden>
-                    <p>
-                      Recent advanced frameworks in topic models have significantly enhanced the performance compared to
-                      conventional probabilistic approaches. Such models, mostly constructed from neural network
-                      architecture together with other advanced techniques such as contextual embedding, optimal transport
-                      distance and pre-trained language model, etc. have effectively improved the topic quality and
-                      document topic distribution. Despite the improvements, these methods lack considerations of effective
-                      optimization for complex objective functions that contain log-likelihood and additional
-                      regularization terms. In this study, we propose to apply an efficient optimization method to improve
-                      the generalization and performance of topic models. Our approach explicitly considers the sharpness
-                      of the loss landscape during optimization, which forces the optimizer to choose directions in the
-                      parameter space that lead to flatter minima, in which the models are typically more stable and robust
-                      to small perturbations in the data. Additionally, we propose an effective strategy to select the
-                      flatness region for parameter optimization by leveraging the optimal transport distance between
-                      doc-topic distributions and doc-cluster proportions, which can effectively enhance document
-                      representation. Experimental results on popular benchmark datasets demonstrate that our method
-                      effectively improves the performance of baseline topic models.
+                  <a class="pub-fig" href="assets/papers/sam-ntm-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/sam-ntm.webp" alt="Architecture: a topic model trained with DREAM, using an optimal-transport distance to clustered PLM embeddings to steer toward a flat minimum" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-7">
+                        <span class="chev" aria-hidden="true"></span>
+                        Sharpness-Aware Minimization for Topic Models with High-Quality Document Representations
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-7" hidden>
+                      <p>
+                        Recent advanced frameworks in topic models have significantly enhanced the performance compared to
+                        conventional probabilistic approaches. Such models, mostly constructed from neural network
+                        architecture together with other advanced techniques such as contextual embedding, optimal transport
+                        distance and pre-trained language model, etc. have effectively improved the topic quality and
+                        document topic distribution. Despite the improvements, these methods lack considerations of effective
+                        optimization for complex objective functions that contain log-likelihood and additional
+                        regularization terms. In this study, we propose to apply an efficient optimization method to improve
+                        the generalization and performance of topic models. Our approach explicitly considers the sharpness
+                        of the loss landscape during optimization, which forces the optimizer to choose directions in the
+                        parameter space that lead to flatter minima, in which the models are typically more stable and robust
+                        to small perturbations in the data. Additionally, we propose an effective strategy to select the
+                        flatness region for parameter optimization by leveraging the optimal transport distance between
+                        doc-topic distributions and doc-cluster proportions, which can effectively enhance document
+                        representation. Experimental results on popular benchmark datasets demonstrate that our method
+                        effectively improves the performance of baseline topic models.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      Tung Nguyen<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Hoang Tran Vuong<sup>*</sup>,
+                      Quang Duc Nguyen, Duc Anh Nguyen, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue">NAACL 2025</span>
+                      <a href="https://aclanthology.org/2025.naacl-long.231/" target="_blank" rel="noopener">ACL Anthology</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    Tung Nguyen<sup>*</sup>, <b>Tue Le</b><sup>*</sup>, Hoang Tran Vuong<sup>*</sup>,
-                    Quang Duc Nguyen, Duc Anh Nguyen, Linh Van Ngo, Sang Dinh, Thien Huu Nguyen
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue">NAACL 2025</span>
-                    <a href="https://aclanthology.org/2025.naacl-long.231/" target="_blank" rel="noopener">ACL Anthology</a>
-                  </p>
                 </li>
               </ol>
 
@@ -399,102 +429,117 @@
 
               <ol class="pubs" id="preprintList">
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-survey">
-                      <span class="chev" aria-hidden="true"></span>
-                      Beyond the Training Distribution: A Survey of Reasoning Generalization in Large Language Models
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-survey" hidden>
-                    <p>
-                      Large language models (LLMs) have achieved strong performance on mathematical, logical, and
-                      scientific reasoning tasks. However, this progress is commonly measured on benchmarks that remain
-                      close to the distributions encountered during training. Even small changes in notation, problem
-                      structure, reasoning depth, domain, or tool interface can lead to substantial performance
-                      degradation, raising a central question: whether LLMs learn reusable reasoning procedures or rely on
-                      patterns tied to familiar data. This paper presents a comprehensive survey of reasoning
-                      generalization in LLMs. We organize existing work into four complementary perspectives: (1) training
-                      methods that encourage transferable reasoning, (2) inference strategies that adapt computation
-                      without changing model parameters, (3) architectural designs that support reusable operations, and
-                      (4) analyses that characterize when and why generalization succeeds or fails. Building on this
-                      taxonomy, we compare the assumptions, evaluation settings, and generalization claims of
-                      representative approaches. We further summarize the main empirical findings and theoretical results,
-                      and discuss the evaluation practices and open challenges that shape this emerging research
-                      direction.
+                  <a class="pub-fig" href="assets/papers/survey-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/survey.webp" alt="Taxonomy of reasoning generalization in LLMs: training, inference, architecture and analysis" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-survey">
+                        <span class="chev" aria-hidden="true"></span>
+                        Beyond the Training Distribution: A Survey of Reasoning Generalization in Large Language Models
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-survey" hidden>
+                      <p>
+                        Large language models (LLMs) have achieved strong performance on mathematical, logical, and
+                        scientific reasoning tasks. However, this progress is commonly measured on benchmarks that remain
+                        close to the distributions encountered during training. Even small changes in notation, problem
+                        structure, reasoning depth, domain, or tool interface can lead to substantial performance
+                        degradation, raising a central question: whether LLMs learn reusable reasoning procedures or rely on
+                        patterns tied to familiar data. This paper presents a comprehensive survey of reasoning
+                        generalization in LLMs. We organize existing work into four complementary perspectives: (1) training
+                        methods that encourage transferable reasoning, (2) inference strategies that adapt computation
+                        without changing model parameters, (3) architectural designs that support reusable operations, and
+                        (4) analyses that characterize when and why generalization succeeds or fails. Building on this
+                        taxonomy, we compare the assumptions, evaluation settings, and generalization claims of
+                        representative approaches. We further summarize the main empirical findings and theoretical results,
+                        and discuss the evaluation practices and open challenges that shape this emerging research
+                        direction.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      <b>Tue Le</b>, Hoang Tran Vuong, Duan Bui, Dang Luu, Dong Le, Huy Nguyen, Linh Ngo Van
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue venue-live">Preprint, 2026</span>
+                      <a href="https://github.com/tue09/awesome-reasoning-generalization" target="_blank" rel="noopener">Paper</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    <b>Tue Le</b>, Hoang Tran Vuong, Duan Bui, Dang Luu, Dong Le, Huy Nguyen, Linh Ngo Van
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue venue-live">Preprint, 2026</span>
-                    <a href="https://github.com/tue09/awesome-reasoning-generalization" target="_blank" rel="noopener">Paper</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-falcon">
-                      <span class="chev" aria-hidden="true"></span>
-                      Secure Agentic Coding through Counterexample-Grounded Feedback
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-falcon" hidden>
-                    <p>
-                      As coding models and agent harnesses become more capable, reliable security verification is becoming
-                      a central bottleneck. Improving secure code generation requires a signal whose reported progress
-                      remains aligned with actual program behavior under optimization; otherwise, an optimizer can improve
-                      the signal's verdict without removing the underlying vulnerability. Existing model-based approaches
-                      require models to either infer program behavior from source code or specify correct outcomes for
-                      adversarial tests, placing substantial reasoning demands on the security signal. We introduce FALCON,
-                      a counterexample-grounded verification framework that separates attack exploration from behavioral
-                      verification and connects them through execution traces of the program under test. In test-time
-                      repair, FALCON yields substantially stronger held-out functional-security gains than alternative
-                      security signals across secure code generation benchmarks, while preserving or improving
-                      functionality. As an RL reward, FALCON also outperforms static-analysis and learned rewards on
-                      held-out functional-security, even when all policies successfully optimize their respective training
-                      rewards. Combining FALCON with either proxy reward further improves held-out performance, suggesting
-                      that execution-grounded feedback can mitigate reward overoptimization while preserving useful
-                      guidance from existing security signals.
+                  <a class="pub-fig" href="assets/papers/falcon-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/falcon.webp" alt="Plots comparing FALCON with attacker-only, LLM-as-a-judge and static-analyzer signals over five repair rounds" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-falcon">
+                        <span class="chev" aria-hidden="true"></span>
+                        Secure Agentic Coding through Counterexample-Grounded Feedback
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-falcon" hidden>
+                      <p>
+                        As coding models and agent harnesses become more capable, reliable security verification is becoming
+                        a central bottleneck. Improving secure code generation requires a signal whose reported progress
+                        remains aligned with actual program behavior under optimization; otherwise, an optimizer can improve
+                        the signal's verdict without removing the underlying vulnerability. Existing model-based approaches
+                        require models to either infer program behavior from source code or specify correct outcomes for
+                        adversarial tests, placing substantial reasoning demands on the security signal. We introduce FALCON,
+                        a counterexample-grounded verification framework that separates attack exploration from behavioral
+                        verification and connects them through execution traces of the program under test. In test-time
+                        repair, FALCON yields substantially stronger held-out functional-security gains than alternative
+                        security signals across secure code generation benchmarks, while preserving or improving
+                        functionality. As an RL reward, FALCON also outperforms static-analysis and learned rewards on
+                        held-out functional-security, even when all policies successfully optimize their respective training
+                        rewards. Combining FALCON with either proxy reward further improves held-out performance, suggesting
+                        that execution-grounded feedback can mitigate reward overoptimization while preserving useful
+                        guidance from existing security signals.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      <b>Tue Le</b>, Anh Nguyen Hoang, Gabriel Sasseville, Doseok Jang, Pierre-Luc Bacon, Nghi D. Q. Bui
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue venue-live">Preprint, 2026</span>
+                      <a href="https://github.com/SafeCodeAgent/FALCON" target="_blank" rel="noopener">Paper</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    <b>Tue Le</b>, Anh Nguyen Hoang, Gabriel Sasseville, Doseok Jang, Pierre-Luc Bacon, Nghi D. Q. Bui
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue venue-live">Preprint, 2026</span>
-                    <a href="https://github.com/SafeCodeAgent/FALCON" target="_blank" rel="noopener">Paper</a>
-                  </p>
                 </li>
                 <li class="pub">
-                  <h3 class="pub-title">
-                    <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-1">
-                      <span class="chev" aria-hidden="true"></span>
-                      SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios
-                    </button>
-                  </h3>
-                  <div class="pub-abstract" id="abs-1" hidden>
-                    <p>
-                      Existing benchmarks for AI coding agents focus on isolated, single-issue tasks such as fixing a bug
-                      or adding a small feature. However, real-world software engineering is a long-horizon endeavor:
-                      developers interpret high-level requirements, coordinate changes across many files, and evolve
-                      codebases over multiple iterations while preserving functionality. We introduce SWE-EVO, a benchmark
-                      for this long-horizon software evolution challenge. Constructed from release notes of seven mature
-                      open-source Python projects, SWE-EVO comprises 48 tasks requiring multi-step modifications spanning
-                      an average of 21 files, validated against test suites averaging 874 tests per instance. Experiments
-                      reveal a striking capability gap: GPT-5.4 with OpenHands achieves only 25% on SWE-EVO versus 72.80%
-                      achieved by GPT-5.2 on SWE-Bench Verified, showing that current agents struggle with sustained,
-                      multi-file reasoning. We also propose Fix Rate, a metric capturing partial progress on these complex,
-                      long-horizon tasks.
+                  <a class="pub-fig" href="assets/papers/swe-evo-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/swe-evo.webp" alt="SWE-EVO pipeline: release notes and a codebase go to a coding agent, whose multi-file patch is scored by the test suite" loading="lazy" decoding="async" />
+                  </a>
+                  <div class="pub-body">
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-1">
+                        <span class="chev" aria-hidden="true"></span>
+                        SWE-EVO: Benchmarking Coding Agents in Long-Horizon Software Evolution Scenarios
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-1" hidden>
+                      <p>
+                        Existing benchmarks for AI coding agents focus on isolated, single-issue tasks such as fixing a bug
+                        or adding a small feature. However, real-world software engineering is a long-horizon endeavor:
+                        developers interpret high-level requirements, coordinate changes across many files, and evolve
+                        codebases over multiple iterations while preserving functionality. We introduce SWE-EVO, a benchmark
+                        for this long-horizon software evolution challenge. Constructed from release notes of seven mature
+                        open-source Python projects, SWE-EVO comprises 48 tasks requiring multi-step modifications spanning
+                        an average of 21 files, validated against test suites averaging 874 tests per instance. Experiments
+                        reveal a striking capability gap: GPT-5.4 with OpenHands achieves only 25% on SWE-EVO versus 72.80%
+                        achieved by GPT-5.2 on SWE-Bench Verified, showing that current agents struggle with sustained,
+                        multi-file reasoning. We also propose Fix Rate, a metric capturing partial progress on these complex,
+                        long-horizon tasks.
+                      </p>
+                    </div>
+                    <p class="pub-authors">
+                      <b>Tue Le</b><sup>*</sup>, Minh Vu Thai Pham<sup>*</sup>, Dung Nguyen Manh, Huy Nhat Phan,
+                      Nghi D. Q. Bui
+                    </p>
+                    <p class="pub-meta">
+                      <span class="venue venue-live">Preprint, 2026</span>
+                      <a href="https://arxiv.org/abs/2512.18470" target="_blank" rel="noopener">Paper</a>
                     </p>
                   </div>
-                  <p class="pub-authors">
-                    <b>Tue Le</b><sup>*</sup>, Minh Vu Thai Pham<sup>*</sup>, Dung Nguyen Manh, Huy Nhat Phan,
-                    Nghi D. Q. Bui
-                  </p>
-                  <p class="pub-meta">
-                    <span class="venue venue-live">Preprint, 2026</span>
-                    <a href="https://arxiv.org/abs/2512.18470" target="_blank" rel="noopener">Paper</a>
-                  </p>
                 </li>
               </ol>
             </section>
