@@ -19,6 +19,8 @@
   --chip: #edeae3;
   --live: #a4530f;
   --accepted: #127a43;
+  --sel-bg: #ffe27a;
+  --sel-fg: #1c1b18;
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,6 +45,8 @@
   --chip: #26252a;
   --live: #e0a45f;
   --accepted: #5cc98c;
+  --sel-bg: #d9b44a;
+  --sel-fg: #17171a;
 }
 
 /* ---------- 2. Base ---------- */
@@ -121,16 +125,17 @@ code {
   border-radius: 3px;
 }
 
-/* Selection picks up the accent; the two rules stay separate because one
-   unknown selector would invalidate the whole list. */
+/* Selection is a highlighter yellow (a softer gold in dark mode) with dark
+   text. The two rules stay separate because one unknown selector would
+   invalidate the whole list. */
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--sel-bg);
+  color: var(--sel-fg);
 }
 
 ::-moz-selection {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--sel-bg);
+  color: var(--sel-fg);
 }
 
 .skip-link {
