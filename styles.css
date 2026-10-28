@@ -19,6 +19,7 @@
   --chip: #edeae3;
   --live: #a4530f;
   --accepted: #127a43;
+  --sel-bg: #cdc9be;
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,6 +44,7 @@
   --chip: #26252a;
   --live: #e0a45f;
   --accepted: #5cc98c;
+  --sel-bg: #504f55;
 }
 
 /* ---------- 2. Base ---------- */
@@ -121,17 +123,16 @@ code {
   border-radius: 3px;
 }
 
-/* Selection inverts the page: ink background with paper-coloured text, which
-   flips to light-on-dark text colours in dark mode. The two rules stay separate
-   because one unknown selector would invalidate the whole list. */
+/* Selection is a warm gray with the normal text colour on top. The two rules
+   stay separate because one unknown selector would invalidate the whole list. */
 ::selection {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--sel-bg);
+  color: var(--text);
 }
 
 ::-moz-selection {
-  background: var(--text);
-  color: var(--bg);
+  background: var(--sel-bg);
+  color: var(--text);
 }
 
 .skip-link {
