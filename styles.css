@@ -19,7 +19,7 @@
   --chip: #edeae3;
   --live: #a4530f;
   --accepted: #127a43;
-  --sel-bg: #75726b;
+  --sel-bg: #1e2a44;
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -44,7 +44,7 @@
   --chip: #26252a;
   --live: #e0a45f;
   --accepted: #5cc98c;
-  --sel-bg: #504f55;
+  --sel-bg: #334a78;
 }
 
 /* ---------- 2. Base ---------- */
@@ -123,9 +123,9 @@ code {
   border-radius: 3px;
 }
 
-/* Selection is a warm gray with white text. The light-mode gray is the lightest
-   that keeps white text readable. The two rules stay separate because one
-   unknown selector would invalidate the whole list. */
+/* Selection is a blue-black navy with white text; dark mode uses a lighter
+   navy so the highlight still stands off the near-black page. The two rules
+   stay separate because one unknown selector would invalidate the whole list. */
 ::selection {
   background: var(--sel-bg);
   color: #fff;
