@@ -490,6 +490,28 @@ html.js .panel[hidden] {
   box-shadow: 0 8px 22px -14px rgba(0, 0, 0, 0.4);
 }
 
+/* Stand-in for a paper with no public figure yet: the short name on the same
+   white card. Not a link, so it has no hover state. */
+.pub-fig-text {
+  display: grid;
+  place-items: center;
+  color: #1c1b18;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pub-fig-text:hover {
+  border-color: var(--rule);
+  box-shadow: none;
+}
+
+/* A title with no abstract behind it: plain text, aligned with the toggles. */
+.pub-title-plain {
+  padding-left: 22px;
+}
+
 .pub:first-child {
   padding-top: 0;
 }
@@ -743,6 +765,10 @@ html.js .panel[hidden] {
 
   .pub-fig img {
     height: auto;
+  }
+
+  .pub-fig-text {
+    padding: 26px 8px;
   }
 
   .tabs a {
