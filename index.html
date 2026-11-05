@@ -507,9 +507,11 @@
                   </div>
                 </li>
                 <li class="pub">
-                  <!-- No public version yet: title card instead of a figure, and the title is not a toggle
-                       because there is no abstract to show. Swap in a figure, abstract and link once public. -->
-                  <div class="pub-fig pub-fig-text" aria-hidden="true">MCP-AT</div>
+                  <!-- No public version yet: the title is not a toggle because there is no abstract to show.
+                       Add the abstract and a link once public. -->
+                  <a class="pub-fig" href="assets/papers/mcp-at-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
+                    <img src="assets/papers/mcp-at.webp" alt="MCP-AT overview: (a) supervised fine-tuning on successful demonstrations with clean and poisoned tool descriptions gives an SFT policy, which (b) initializes a coding policy trained with reinforcement learning under attacks refreshed every 5 steps, rewarded for passing tests and penalized for unauthorized actions" loading="lazy" decoding="async" />
+                  </a>
                   <div class="pub-body">
                     <h3 class="pub-title pub-title-plain">MCP-AT: Reinforcement Learning for Coding Agents under Tool Poisoning</h3>
                     <p class="pub-authors">
