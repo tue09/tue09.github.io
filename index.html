@@ -507,13 +507,36 @@
                   </div>
                 </li>
                 <li class="pub">
-                  <!-- No public version yet: the title is not a toggle because there is no abstract to show.
-                       Add the abstract and a link once public. -->
+                  <!-- No public version yet, so no paper link. Add one once public. -->
                   <a class="pub-fig" href="assets/papers/mcp-at-full.webp" target="_blank" rel="noopener" aria-label="Open the full-size figure">
                     <img src="assets/papers/mcp-at.webp" alt="MCP-AT overview: (a) supervised fine-tuning on successful demonstrations with clean and poisoned tool descriptions gives an SFT policy, which (b) initializes a coding policy trained with reinforcement learning under attacks refreshed every 5 steps, rewarded for passing tests and penalized for unauthorized actions" loading="lazy" decoding="async" />
                   </a>
                   <div class="pub-body">
-                    <h3 class="pub-title pub-title-plain">MCP-AT: Reinforcement Learning for Coding Agents under Tool Poisoning</h3>
+                    <h3 class="pub-title">
+                      <button type="button" class="pub-toggle" aria-expanded="false" aria-controls="abs-mcp-at">
+                        <span class="chev" aria-hidden="true"></span>
+                        MCP-AT: Reinforcement Learning for Coding Agents under Tool Poisoning
+                      </button>
+                    </h3>
+                    <div class="pub-abstract" id="abs-mcp-at" hidden>
+                      <p>
+                        Reinforcement learning for coding agents has become a standard component of modern post-training
+                        pipelines, but it typically optimizes raw task completion. At the same time, Model Context Protocol
+                        (MCP) servers have emerged as a popular mechanism for extending agent capabilities, exposing an attack
+                        vector in which malicious servers inject instructions into tool documentation. Test-passing rewards
+                        alone do not distinguish legitimate work from unauthorized actions, so an agent can solve a task while
+                        following an injected instruction. We introduce MCP-AT, a two-stage post-training recipe that combines
+                        adversarial supervised fine-tuning (SFT) with task-oriented reinforcement learning and explicit
+                        security-violation penalties. SFT teaches task completion in the presence of poisoned tool
+                        descriptions while subsequent RL combines verifiable task rewards with penalties on offending
+                        tool-call arguments and refreshes attacks against the current policy. Evaluating Qwen3-14B policies on
+                        clean and poisoned SWE-bench Verified tasks, MCP-AT approximately halves targeted attack success rate
+                        relative to adversarial SFT and raises robust solve (task completion without the targeted violation
+                        under attack) from 9.1% to 17.6%, with the relative benefit transferring to a held-out attacker. These
+                        results suggest that adversarial post-training can strengthen resistance to tool-description
+                        poisoning while improving coding performance.
+                      </p>
+                    </div>
                     <p class="pub-authors">
                       Doseok Jang, Gabriel Sasseville, <b>Tue Le</b>, Anh Nguyen Hoang, Nghi D. Q. Bui, Pierre-Luc Bacon
                     </p>
