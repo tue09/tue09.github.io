@@ -1,25 +1,31 @@
 /* ==========================================================================
    Tue Le — personal homepage
-   Warm paper, one blue accent, Space Grotesk for anything that names things.
+   Cool white, cobalt accent, Space Grotesk for anything that names things.
    ========================================================================== */
 
 /* ---------- 1. Tokens ---------- */
 
 :root {
-  --bg: #fbfaf7;
-  --bg-soft: #f2f0ea;
-  --text: #121110;
-  --text-2: #3d3b36;
-  --text-3: #6b6862;
-  --rule: #d9d5cb;
-  --rule-2: #bfbaae;
-  --accent: #1554c2;
-  --accent-hover: #0f3f91;
-  --accent-wash: rgba(21, 84, 194, 0.1);
-  --chip: #e9e5dc;
-  --live: #934708;
-  --accepted: #0e6b3a;
+  --bg: #f7f9fd;
+  --bg-soft: #eceff8;
+  --text: #0d1526;
+  --text-2: #353f55;
+  --text-3: #5b6680;
+  --rule: #dbe1ef;
+  --rule-2: #b8c2d9;
+  --accent: #2453e0;
+  --accent-2: #19b8e8;
+  --accent-hover: #173aa8;
+  --accent-wash: rgba(36, 83, 224, 0.1);
+  --on-accent: #fff;
+  --chip: #e5eaf6;
+  --live: #9c4708;
+  --accepted: #0b6e41;
   --sel-bg: #1e2a44;
+  --name-from: #173aa8;
+  --name-to: #2f7dff;
+  --glow: rgba(36, 83, 224, 0.11);
+  --glow-2: rgba(0, 170, 230, 0.08);
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -31,20 +37,25 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #17171a;
-  --bg-soft: #201f23;
-  --text: #f4f2ee;
-  --text-2: #cac7c0;
-  --text-3: #a19e97;
-  --rule: #34333a;
-  --rule-2: #4a4950;
-  --accent: #8dbaff;
-  --accent-hover: #b3d0ff;
-  --accent-wash: rgba(141, 186, 255, 0.14);
-  --chip: #26252a;
-  --live: #eab274;
-  --accepted: #6dd59a;
-  --sel-bg: #334a78;
+  --bg: #0b1020;
+  --bg-soft: #141b30;
+  --text: #eef2fb;
+  --text-2: #c3cbdd;
+  --text-3: #8f9ab3;
+  --rule: #1f2841;
+  --rule-2: #2f3a58;
+  --accent: #82a8ff;
+  --accent-hover: #aec6ff;
+  --accent-wash: rgba(130, 168, 255, 0.15);
+  --on-accent: #0b1020;
+  --chip: #182039;
+  --live: #f0b070;
+  --accepted: #62d39c;
+  --sel-bg: #33467a;
+  --name-from: #eef2fb;
+  --name-to: #82a8ff;
+  --glow: rgba(70, 110, 255, 0.2);
+  --glow-2: rgba(0, 170, 230, 0.1);
 }
 
 /* ---------- 2. Base ---------- */
@@ -59,9 +70,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+/* Two faint glows at the top of the page; they scroll away with the content. */
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(900px 420px at 12% -120px, var(--glow), transparent 70%),
+    radial-gradient(700px 360px at 95% -80px, var(--glow-2), transparent 70%),
+    var(--bg);
+  background-repeat: no-repeat;
   color: var(--text-2);
   font-family: var(--font);
   font-size: 16px;
@@ -194,8 +210,8 @@ code {
 }
 
 .tabs a.is-active {
-  color: var(--accent);
-  background: var(--accent-wash);
+  color: var(--on-accent);
+  background: var(--accent);
   font-weight: 600;
 }
 
@@ -280,17 +296,17 @@ html.js .panel[hidden] {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: var(--accent);
 }
 
 .block-h::before,
 .panel-h::before {
   content: "";
-  width: 18px;
-  height: 2px;
+  width: 22px;
+  height: 3px;
   flex: none;
   border-radius: 2px;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
 .panel-h {
@@ -345,7 +361,7 @@ html.js .panel[hidden] {
   border-radius: 999px;
   object-fit: cover;
   background: var(--bg-soft);
-  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 6px var(--bg), 0 0 0 7px var(--accent-wash);
+  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 5px var(--bg), 0 0 0 7px var(--accent);
 }
 
 .profile-name {
@@ -353,6 +369,10 @@ html.js .panel[hidden] {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.025em;
+  background: linear-gradient(90deg, var(--name-from), var(--name-to));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .profile-links {
@@ -471,7 +491,7 @@ html.js .panel[hidden] {
   display: block;
   aspect-ratio: 16 / 10;
   padding: 8px;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--rule-2);
   border-radius: 8px;
   background: #fff;
   overflow: hidden;
@@ -503,7 +523,7 @@ html.js .panel[hidden] {
 }
 
 .pub-fig-text:hover {
-  border-color: var(--rule);
+  border-color: var(--rule-2);
   box-shadow: none;
 }
 
@@ -801,7 +821,7 @@ html.js .panel[hidden] {
     width: 76px;
     height: 76px;
     margin: 5px;
-    box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 4px var(--bg), 0 0 0 5px var(--accent-wash);
+    box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
   }
 
   .profile-name {
