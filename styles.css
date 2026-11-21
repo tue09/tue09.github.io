@@ -352,16 +352,13 @@ html.js .panel[hidden] {
   top: 28px;
 }
 
-/* The ring is a 7px shadow; the margin keeps it inside the column edge. */
 .avatar {
   display: block;
   width: 148px;
   height: 148px;
-  margin: 7px;
   border-radius: 999px;
   object-fit: cover;
   background: var(--bg-soft);
-  box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 5px var(--bg), 0 0 0 7px var(--accent);
 }
 
 .profile-name {
@@ -820,8 +817,6 @@ html.js .panel[hidden] {
   .avatar {
     width: 76px;
     height: 76px;
-    margin: 5px;
-    box-shadow: 0 0 0 1px var(--rule-2), 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
   }
 
   .profile-name {
