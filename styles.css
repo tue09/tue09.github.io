@@ -1,6 +1,6 @@
 /* ==========================================================================
    Tue Le — personal homepage
-   Cool white, cobalt accent, Space Grotesk for anything that names things.
+   Cool white, cobalt accent, papers as cards, Space Grotesk for anything that names things.
    ========================================================================== */
 
 /* ---------- 1. Tokens ---------- */
@@ -26,6 +26,10 @@
   --name-to: #2f7dff;
   --glow: rgba(36, 83, 224, 0.11);
   --glow-2: rgba(0, 170, 230, 0.08);
+  --dot: rgba(36, 83, 224, 0.13);
+  --card: linear-gradient(180deg, #ffffff, #f8faff);
+  --card-shadow: 0 1px 2px rgba(13, 21, 38, 0.04), 0 10px 26px -18px rgba(13, 21, 38, 0.22);
+  --card-shadow-hover: 0 16px 36px -20px rgba(36, 83, 224, 0.42);
 
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-display: "Space Grotesk", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -56,6 +60,10 @@
   --name-to: #82a8ff;
   --glow: rgba(70, 110, 255, 0.2);
   --glow-2: rgba(0, 170, 230, 0.1);
+  --dot: rgba(130, 168, 255, 0.1);
+  --card: linear-gradient(180deg, #111830, #0e1529);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 26px -18px rgba(0, 0, 0, 0.7);
+  --card-shadow-hover: 0 16px 36px -20px rgba(130, 168, 255, 0.35);
 }
 
 /* ---------- 2. Base ---------- */
@@ -72,6 +80,7 @@ html {
 
 /* Two faint glows at the top of the page; they scroll away with the content. */
 body {
+  position: relative;
   margin: 0;
   background:
     radial-gradient(900px 420px at 12% -120px, var(--glow), transparent 70%),
@@ -84,6 +93,20 @@ body {
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* A faint dot grid behind the top of the page that fades out going down. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 520px;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, var(--dot) 1.1px, transparent 1.6px);
+  background-size: 22px 22px;
+  -webkit-mask-image: linear-gradient(#000, transparent);
+  mask-image: linear-gradient(#000, transparent);
 }
 
 h1,
@@ -184,7 +207,7 @@ code {
   gap: 16px;
   padding: 16px 0 14px;
   margin-bottom: 38px;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 2px solid var(--rule);
 }
 
 .tabs {
@@ -332,7 +355,7 @@ html.js .panel[hidden] {
 .panel-foot {
   margin-top: 32px;
   padding-top: 18px;
-  border-top: 1px solid var(--rule);
+  border-top: 2px solid var(--rule);
   font-size: 14px;
   color: var(--text-3);
 }
@@ -376,7 +399,7 @@ html.js .panel[hidden] {
   display: grid;
   gap: 1px;
   padding-top: 12px;
-  border-top: 1px solid var(--rule);
+  border-top: 2px solid var(--rule);
 }
 
 .profile-links a {
@@ -424,10 +447,22 @@ html.js .panel[hidden] {
 /* ---------- 6. Home: recently ---------- */
 
 .news-list {
+  position: relative;
   display: grid;
   gap: 14px;
   padding-left: 22px;
-  border-left: 1px solid var(--rule);
+}
+
+/* The timeline: a 2px line that runs from blue to cyan and fades out. */
+.news-list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(var(--accent), var(--accent-2) 55%, transparent);
 }
 
 .news-list li {
@@ -442,18 +477,18 @@ html.js .panel[hidden] {
 .news-list li::before {
   content: "";
   position: absolute;
-  left: -25.5px;
+  left: -24.5px;
   top: 0.6em;
   width: 7px;
   height: 7px;
   border-radius: 999px;
   background: var(--bg);
-  box-shadow: 0 0 0 1.5px var(--rule-2);
+  box-shadow: 0 0 0 2px var(--accent-2);
 }
 
 .news-list li:first-child::before {
   background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-wash);
+  box-shadow: 0 0 0 4px var(--accent-wash);
 }
 
 .when {
@@ -471,15 +506,33 @@ html.js .panel[hidden] {
 
 .pubs {
   display: grid;
+  gap: 16px;
 }
 
+/* Each paper is a card that lifts a little on hover. */
 .pub {
   display: grid;
   grid-template-columns: 232px minmax(0, 1fr);
   gap: 24px;
   align-items: start;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--rule);
+  padding: 16px 18px 16px 16px;
+  border: 1.5px solid var(--rule);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.pub:hover {
+  transform: translateY(-2px);
+  border-color: var(--rule-2);
+  box-shadow: var(--card-shadow-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub:hover {
+    transform: none;
+  }
 }
 
 /* Paper figures are drawn on white, so the frame stays white in dark mode too.
@@ -488,8 +541,8 @@ html.js .panel[hidden] {
   display: block;
   aspect-ratio: 16 / 10;
   padding: 8px;
-  border: 1px solid var(--rule-2);
-  border-radius: 8px;
+  border: 1.5px solid var(--rule-2);
+  border-radius: 10px;
   background: #fff;
   overflow: hidden;
   transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease);
@@ -529,15 +582,6 @@ html.js .panel[hidden] {
   padding-left: 22px;
 }
 
-.pub:first-child {
-  padding-top: 0;
-}
-
-.pub:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-
 .pub-title {
   font-size: 15.5px;
   font-weight: 600;
@@ -570,8 +614,8 @@ html.js .panel[hidden] {
   top: 0.5em;
   width: 7px;
   height: 7px;
-  border-right: 1.8px solid var(--text-3);
-  border-bottom: 1.8px solid var(--text-3);
+  border-right: 2.2px solid var(--text-3);
+  border-bottom: 2.2px solid var(--text-3);
   transform: rotate(-45deg);
   transition: transform 0.2s var(--ease), border-color 0.15s var(--ease);
 }
@@ -593,7 +637,7 @@ html.js .panel[hidden] {
 
 .pub-abstract p {
   padding: 2px 0 2px 14px;
-  border-left: 2px solid var(--accent-wash);
+  border-left: 3px solid var(--accent-wash);
 }
 
 .abs-note {
@@ -628,7 +672,7 @@ html.js .panel[hidden] {
 /* Green = accepted / published; the preprint overrides to amber below. */
 .venue {
   padding: 2px 8px;
-  border: 1px solid currentColor;
+  border: 1.5px solid currentColor;
   border-radius: 5px;
   color: var(--accepted);
   font-family: var(--font-mono);
@@ -673,12 +717,19 @@ html.js .panel[hidden] {
   font-weight: 400;
 }
 
+.row .adv {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-3);
+  font-size: 14px;
+}
+
 /* ---------- 9. Footer ---------- */
 
 .site-footer {
   margin-top: 52px;
   padding-top: 18px;
-  border-top: 1px solid var(--rule);
+  border-top: 2px solid var(--rule);
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-3);
@@ -837,7 +888,7 @@ html.js .panel[hidden] {
     margin: 0;
     height: 31px;
     padding: 0 11px;
-    border: 1px solid var(--rule-2);
+    border: 1.5px solid var(--rule-2);
     border-radius: 8px;
     font-size: 13px;
   }
